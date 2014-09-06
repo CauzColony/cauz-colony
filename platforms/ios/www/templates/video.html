@@ -1,0 +1,14 @@
+<ion-view title="{{video.title}}" class="video">
+  <ion-content padding="true">
+    <div class="video-container" ng-hide="videoWatched">
+        <youtube-video id="best-vid" video-id="video.id" player-vars="playerVars"></youtube-video>
+    </div>
+    <button class="button button-block button-positive" ng-click="replay()" ng-show="videoWatched">
+      Watch Again
+    </button>
+    <button class="button button-block button-positive" ng-click="next()" ng-show="videoWatched">
+      Next
+    </button>
+
+  </ion-content>
+</ion-view>

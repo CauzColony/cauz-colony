@@ -1,0 +1,22 @@
+.login, .register {
+  .item {
+    &.no-bottom {
+      border-bottom-style: none;
+    }
+
+    button {
+      margin: 30px 0 15px 0;
+    }
+  }
+
+  button {
+    &.no-padding {
+      margin-top: 0px;
+      padding: 0;
+
+      &.small {
+        font-size: 14px;
+      }
+    }
+  }
+}

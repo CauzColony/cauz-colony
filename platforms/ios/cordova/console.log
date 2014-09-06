@@ -22,3 +22,11 @@
 2014-08-24 20:53:19.971 Cauz Colony[9039:70b] [CDVTimer][TotalPluginStartup] 1.126051ms
 2014-08-24 20:53:20.005 Cauz Colony[9039:70b] Resetting plugins due to page load.
 2014-08-24 20:53:20.101 Cauz Colony[9039:70b] Finished load of: file:///Users/drmunklung/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/610B1C19-59AF-429D-A8B7-D8FC8F71B130/Cauz%20Colony.app/www/index.html#/app/playlists
+2014-08-26 09:09:45.818 Cauz Colony[9942:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-26 09:09:45.845 Cauz Colony[9942:70b] Unlimited access to network resources
+2014-08-26 09:09:45.893 Cauz Colony[9942:70b] [CDVTimer][keyboard] 0.073016ms
+2014-08-26 09:09:45.893 Cauz Colony[9942:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-26 09:09:45.894 Cauz Colony[9942:70b] [CDVTimer][statusbar] 0.375032ms
+2014-08-26 09:09:45.894 Cauz Colony[9942:70b] [CDVTimer][TotalPluginStartup] 1.431048ms
+2014-08-26 09:09:46.054 Cauz Colony[9942:70b] Resetting plugins due to page load.
+2014-08-26 09:09:46.198 Cauz Colony[9942:70b] Finished load of: file:///Users/drmunklung/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/610B1C19-59AF-429D-A8B7-D8FC8F71B130/Cauz%20Colony.app/www/index.html#/app/playlists

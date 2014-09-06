@@ -5,8 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/cauz.min.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -14,6 +13,8 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-youtube-mb/dist/angular-youtube-embed.min.js"></script>
+    <script src="lib/lodash/dist/lodash.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -21,9 +22,17 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
   </head>
 
   <body ng-app="cauz">
-    <ion-nav-view></ion-nav-view>
+    <div ng-controller="RootCtrl"> 
+        <ion-nav-bar class="bar-positive" animation="nav-title-slide-ios7">
+            <div class="buttons">
+                <button class="button icon ion-navicon button-clear" ng-click="openModal('menu.html')" ng-show="loggedIn()"></button>
+            </div>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+    </div>
   </body>
 </html>

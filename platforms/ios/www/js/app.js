@@ -1,10 +1,4 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,51 +16,54 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-
-    .state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl'
+    .state('home', {
+      url: '/home',
+      templateUrl: 'templates/home.html'
     })
 
-    .state('app.search', {
-      url: "/search",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/search.html"
-        }
-      }
+    .state('project', {
+      url: '/project/:pid',
+      templateUrl: 'templates/project.html',
+      controller: 'ProjectCtrl'
     })
 
-    .state('app.browse', {
-      url: "/browse",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/browse.html"
-        }
-      }
+    .state('video', {
+      url: '^/project/:pid/video',
+      templateUrl: 'templates/video.html',
+      controller: 'VideoCtrl'
+    })
+
+    .state('survey', {
+      url: '^/project/:pid/survey',
+      templateUrl: 'templates/survey.html',
+      controller: 'ProjectCtrl'
+    })
+
+    .state('thankyou', {
+      url: '/thankyou',
+      templateUrl: 'templates/thankyou.html',
+      controller: 'ThankYouCtrl'
     })
     .state('app.playlists', {
-      url: "/playlists",
+      url: '/playlists',
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlists.html",
+          templateUrl: 'templates/playlists.html',
           controller: 'PlaylistsCtrl'
         }
       }
     })
 
     .state('app.single', {
-      url: "/playlists/:playlistId",
+      url: '/playlists/:playlistId',
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlist.html",
+          templateUrl: 'templates/playlist.html',
           controller: 'PlaylistCtrl'
         }
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/home');
 });
 
