@@ -7,6 +7,8 @@
     $scope.image = data.image;
     $scope.pid = data.id;
     $scope.firstType = data.steps[0].type;
+    if($scope.firstType === 'survey')
+      $scope.firstType = 'survey.' + data.steps[0].questions[0].type;
   });
 
   $scope.goto = function()

@@ -30,3 +30,36 @@
 2014-08-26 09:09:45.894 Cauz Colony[9942:70b] [CDVTimer][TotalPluginStartup] 1.431048ms
 2014-08-26 09:09:46.054 Cauz Colony[9942:70b] Resetting plugins due to page load.
 2014-08-26 09:09:46.198 Cauz Colony[9942:70b] Finished load of: file:///Users/drmunklung/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/610B1C19-59AF-429D-A8B7-D8FC8F71B130/Cauz%20Colony.app/www/index.html#/app/playlists
+2014-09-07 17:09:12.784 Cauz Colony[16824:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-07 17:09:12.823 Cauz Colony[16824:70b] Unlimited access to network resources
+2014-09-07 17:09:13.058 Cauz Colony[16824:70b] [CDVTimer][keyboard] 0.083983ms
+2014-09-07 17:09:13.059 Cauz Colony[16824:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-07 17:09:13.059 Cauz Colony[16824:70b] [CDVTimer][statusbar] 0.459015ms
+2014-09-07 17:09:13.059 Cauz Colony[16824:70b] [CDVTimer][TotalPluginStartup] 1.478016ms
+2014-09-07 17:09:13.318 Cauz Colony[16824:70b] Resetting plugins due to page load.
+2014-09-07 17:09:13.656 Cauz Colony[16824:70b] Finished load of: file:///Users/drmunklung/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/610B1C19-59AF-429D-A8B7-D8FC8F71B130/Cauz%20Colony.app/www/index.html#/home
+2014-09-07 17:09:36.444 Cauz Colony[16824:70b] SurveyCtrl
+2014-09-07 17:09:36.445 Cauz Colony[16824:70b] {"type":"multiple-choice","text":"How many licks does it take to get to the center of a Tootsie Roll Tottsie Pop?","options":[{"text":"1","value":"1"},{"text":"2","value":"2"},{"text":"3","value":"3"}]}
+2014-09-07 17:09:39.116 Cauz Colony[16824:70b] submit 0
+2014-09-07 17:09:39.116 Cauz Colony[16824:70b] [0]
+2014-09-07 17:09:50.661 Cauz Colony[16824:70b] submit 0,1
+2014-09-07 17:09:50.662 Cauz Colony[16824:70b] [0,[0,1]]
+2014-09-07 17:10:06.680 Cauz Colony[16824:70b] submit 2
+2014-09-07 17:10:06.680 Cauz Colony[16824:70b] [0,[0,1],"2"]
+2014-09-07 17:10:12.671 Cauz Colony[16824:70b] submit a
+2014-09-07 17:10:12.671 Cauz Colony[16824:70b] [0,[0,1],"2","a"]
+2014-09-07 17:10:28.377 Cauz Colony[16824:70b] setting movie path: https://r19---sn-vgqs7n7k.googlevideo.com/videoplayback?sver=3&mm=31&requiressl=yes&id=o-ALQN4p99ZulOvBAZGx8lQ5KrbVGiKx_feh7-Q8nD9KkK&initcwndbps=1381000&itag=18&source=youtube&mv=m&mt=1410124175&ratebypass=yes&ms=au&signature=B0B684971DD24712A51FFF5A7B837D8515D8208D.C57C792CF767B33EB5FDC4CA007A9B90F8FD1333&ip=2601%3A4%3A2780%3A204%3A10b4%3Aeb7f%3Ab4c5%3Af131&key=yt5&sparams=id%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Cmm%2Cms%2Cmv%2Cratebypass%2Crequiressl%2Csource%2Cupn%2Cexpire&expire=1410145831&ipbits=0&upn=PdkbbDRMh78&fexp=927622%2C927880%2C931983%2C932404%2C932623%2C934024%2C934030%2C946023%2C947209%2C953801&cpn=uIsX0uZZ1zoP4hUh&ptk=youtube_none&pltype=contentugc&c=web&cver=html5
+2014-09-07 17:10:28.904 Cauz Colony[16824:1203] RTCReporting: resolve from http://pancake.apple.com/bags/hls?version=4.12
+2014-09-07 17:10:29.219 Cauz Colony[16824:70b] setting movie path: https://r19---sn-vgqs7n7k.googlevideo.com/videoplayback?sver=3&mm=31&requiressl=yes&id=o-ALQN4p99ZulOvBAZGx8lQ5KrbVGiKx_feh7-Q8nD9KkK&initcwndbps=1381000&itag=18&source=youtube&mv=m&mt=1410124175&ratebypass=yes&ms=au&signature=B0B684971DD24712A51FFF5A7B837D8515D8208D.C57C792CF767B33EB5FDC4CA007A9B90F8FD1333&ip=2601%3A4%3A2780%3A204%3A10b4%3Aeb7f%3Ab4c5%3Af131&key=yt5&sparams=id%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Cmm%2Cms%2Cmv%2Cratebypass%2Crequiressl%2Csource%2Cupn%2Cexpire&expire=1410145831&ipbits=0&upn=PdkbbDRMh78&fexp=927622%2C927880%2C931983%2C932404%2C932623%2C934024%2C934030%2C946023%2C947209%2C953801&cpn=uIsX0uZZ1zoP4hUh&ptk=youtube_none&pltype=contentugc&c=web&cver=html5
+2014-09-07 17:10:43.420 Cauz Colony[16824:70b] no thanks
+2014-09-07 17:10:43.420 Cauz Colony[16824:70b] SurveyCtrl
+2014-09-07 17:10:43.420 Cauz Colony[16824:70b] {"type":"multiple-choice","text":"How many licks does it take to get to the center of a Tootsie Roll Tottsie Pop?","options":[{"text":"1","value":"1"},{"text":"2","value":"2"},{"text":"3","value":"3"}]}
+2014-09-07 17:10:46.384 Cauz Colony[16824:70b] submit 2
+2014-09-07 17:10:46.385 Cauz Colony[16824:70b] [2]
+2014-09-07 17:10:48.778 Cauz Colony[16824:70b] submit 0,1
+2014-09-07 17:10:48.778 Cauz Colony[16824:70b] [2,[0,1]]
+2014-09-07 17:10:56.193 Cauz Colony[16824:70b] submit 1
+2014-09-07 17:10:56.193 Cauz Colony[16824:70b] [2,[0,1],"1"]
+2014-09-07 17:11:00.393 Cauz Colony[16824:70b] submit H
+2014-09-07 17:11:00.393 Cauz Colony[16824:70b] [2,[0,1],"1","H"]
+Terminating in response to SpringBoard's termination.

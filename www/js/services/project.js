@@ -65,7 +65,8 @@
             },
             {
               text: 'Anything you\'d like to say?',
-              type: 'open'
+              type: 'open',
+              optional: true
             }
           ]
         }
@@ -180,7 +181,7 @@
     },
     {
       title: 'Survey then Video Project',
-      id: '4',
+      id: '5',
       image: 'http://placehold.it/300x100&text=project+logo',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac venenatis enim. Nunc laoreet pulvinar purus, at aliquam erat convallis eu. Pellentesque tincidunt felis eros, at porttitor turpis viverra ac.',
       steps: [
@@ -256,9 +257,7 @@
     }
   ],
       current = null,
-      step,
-      surveyStep,
-      answers;
+      step;
 
   return {
     getProjects: function()
@@ -276,8 +275,6 @@
       var deferred = $q.defer();
       current = _.find(projects, {id: id});
       step = 0;
-      surveyStep = 0;
-      answers = {};
       deferred.resolve(current);
       return deferred.promise;
     },
@@ -288,8 +285,7 @@
       {
         deferred.resolve({
             project: current,
-            step: step,
-            surveyStep: surveyStep
+            step: step
           }
         );
       }else
@@ -298,8 +294,7 @@
         {
           deferred.resolve({
               project: current,
-              step: step,
-              surveyStep: surveyStep
+              step: step
             }
           );
         });
@@ -310,10 +305,6 @@
     {
       step++;
       return current.steps.length > step;
-    },
-    incrementSurvey: function()
-    {
-      surveyStep++;
     }
   };
 })

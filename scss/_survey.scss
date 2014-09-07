@@ -1,0 +1,13 @@
+.survey {
+  h3 {
+    margin: 0 0 40px;
+  }
+
+  .item-select {
+    select {
+      max-width: 100%;
+      width: 100%;
+      direction: ltr;
+    }
+  }
+}

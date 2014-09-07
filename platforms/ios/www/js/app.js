@@ -28,16 +28,37 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
     })
 
     .state('video', {
-      url: '^/project/:pid/video',
+      url: '/video/:pid',
       templateUrl: 'templates/video.html',
       controller: 'VideoCtrl'
     })
 
     .state('survey', {
-      url: '^/project/:pid/survey',
+      abstract: true,
+      url: '/survey/:pid',
       templateUrl: 'templates/survey.html',
-      controller: 'ProjectCtrl'
+      controller: 'SurveyCtrl'
     })
+      .state('survey.multiple-choice', {
+        url: '/multiple-choice',
+        templateUrl: 'templates/survey.multiple-choice.html',
+        controller: 'SurveyMultipleChoiceCtrl'
+      })
+      .state('survey.check-all', {
+        url: '/check-all',
+        templateUrl: 'templates/survey.check-all.html',
+        controller: 'SurveyCheckAllCtrl'
+      })
+      .state('survey.select', {
+        url: '/select',
+        templateUrl: 'templates/survey.select.html',
+        controller: 'SurveySelectCtrl'
+      })
+      .state('survey.open', {
+        url: '/open',
+        templateUrl: 'templates/survey.open.html',
+        controller: 'SurveyOpenCtrl'
+      })
 
     .state('thankyou', {
       url: '/thankyou',

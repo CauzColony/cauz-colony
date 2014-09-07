@@ -7697,3 +7697,10 @@ a.button {
   padding: 0; }
   .login button.no-padding.small, .register button.no-padding.small {
     font-size: 14px; }
+
+.survey h3 {
+  margin: 0 0 40px; }
+.survey .item-select select {
+  max-width: 100%;
+  width: 100%;
+  direction: ltr; }

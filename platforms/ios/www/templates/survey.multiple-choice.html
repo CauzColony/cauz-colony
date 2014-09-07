@@ -1,0 +1,7 @@
+<h3>{{question.text}}</h3>
+<button class="button button-block button-outline button-positive" ng-repeat="option in question.options" ng-click="select($index)" ng-class="{'button-energized': answer == $index}">
+  {{option.text}}
+</button>
+<button class="button button-block button-positive" ng-click="submit(answer)" ng-show="answer != null">
+  Submit <i class="icon ion-chevron-right"></i>
+</button>

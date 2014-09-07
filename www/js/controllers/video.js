@@ -32,7 +32,7 @@
         }else
         {
           //go to survey page
-          console.log('survey');
+          $scope.navigate('survey.'+data.project.steps[data.step].questions[0].type, $scope.pid);
         }
       });
     }else

@@ -1,5 +1,6 @@
-<ion-view title="Survey">
-  <ion-content class="has-header">
-    <h1>Survey</h1>
+<ion-view title="{{title}}" class="survey">
+  <ion-content padding="true">
+    <h5>Question {{step + 1}} of {{total}}</h5>
+    <div ui-view></div>
   </ion-content>
 </ion-view>

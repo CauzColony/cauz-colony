@@ -66,7 +66,8 @@ angular.module('cauz.services', [])
             },
             {
               text: 'Anything you\'d like to say?',
-              type: 'open'
+              type: 'open',
+              optional: true
             }
           ]
         }
@@ -181,7 +182,7 @@ angular.module('cauz.services', [])
     },
     {
       title: 'Survey then Video Project',
-      id: '4',
+      id: '5',
       image: 'http://placehold.it/300x100&text=project+logo',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac venenatis enim. Nunc laoreet pulvinar purus, at aliquam erat convallis eu. Pellentesque tincidunt felis eros, at porttitor turpis viverra ac.',
       steps: [
@@ -257,9 +258,7 @@ angular.module('cauz.services', [])
     }
   ],
       current = null,
-      step,
-      surveyStep,
-      answers;
+      step;
 
   return {
     getProjects: function()
@@ -277,8 +276,6 @@ angular.module('cauz.services', [])
       var deferred = $q.defer();
       current = _.find(projects, {id: id});
       step = 0;
-      surveyStep = 0;
-      answers = {};
       deferred.resolve(current);
       return deferred.promise;
     },
@@ -289,8 +286,7 @@ angular.module('cauz.services', [])
       {
         deferred.resolve({
             project: current,
-            step: step,
-            surveyStep: surveyStep
+            step: step
           }
         );
       }else
@@ -299,8 +295,7 @@ angular.module('cauz.services', [])
         {
           deferred.resolve({
               project: current,
-              step: step,
-              surveyStep: surveyStep
+              step: step
             }
           );
         });
@@ -311,10 +306,48 @@ angular.module('cauz.services', [])
     {
       step++;
       return current.steps.length > step;
-    },
-    incrementSurvey: function()
+    }
+  };
+})
+.factory('SurveyModels', function(ProjectModels, $q)
+{
+  var project,
+      questions,
+      answers;
+  return {
+    setProject: function(id)
     {
-      surveyStep++;
+      var deferred = $q.defer();
+      ProjectModels.getCurrent(id).then(function(data)
+      {
+        project = data.project;
+        questions = project.steps[data.step].questions;
+        answers = [];
+        deferred.resolve(
+          {
+            title: project.title,
+            question: questions[answers.length],
+            step: answers.length,
+            total: questions.length
+          }
+        );
+      });
+      return deferred.promise;
+    },
+    setAnswer: function(answer)
+    {
+      var deferred = $q.defer();
+      answers.push(answer);
+      console.log(answers);
+      
+      deferred.resolve(
+        {
+          question: questions[answers.length],
+          step: answers.length
+        }
+      );
+
+      return deferred.promise;
     }
   };
 })
