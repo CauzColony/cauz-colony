@@ -28,8 +28,9 @@
   <body ng-app="cauz" class="platform-ios platform-cordova platform-webview">
     <div ng-controller="RootCtrl"> 
         <ion-nav-bar class="bar-positive" animation="nav-title-slide-ios7">
-            <div class="buttons">
-                <button class="button icon ion-navicon button-clear" ng-click="openModal('menu.html')" ng-show="loggedIn()"></button>
+            <div class="buttons header">
+                <button class="button icon ion-navicon button-clear" ng-click="openModal('menu.html')" ng-show="showMenu"></button>
+                <button class="button icon ion-home button-clear" ng-click="navigate('home')" ng-show="showThanks"></button>
             </div>
         </ion-nav-bar>
         <ion-nav-view></ion-nav-view>

@@ -63,3 +63,21 @@
 2014-09-07 17:11:00.393 Cauz Colony[16824:70b] submit H
 2014-09-07 17:11:00.393 Cauz Colony[16824:70b] [2,[0,1],"1","H"]
 Terminating in response to SpringBoard's termination.
+2014-09-09 08:54:31.708 Cauz Colony[25643:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-09 08:54:31.738 Cauz Colony[25643:70b] Unlimited access to network resources
+2014-09-09 08:54:31.881 Cauz Colony[25643:70b] [CDVTimer][keyboard] 0.088036ms
+2014-09-09 08:54:31.882 Cauz Colony[25643:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-09 08:54:31.882 Cauz Colony[25643:70b] [CDVTimer][statusbar] 0.494957ms
+2014-09-09 08:54:31.883 Cauz Colony[25643:70b] [CDVTimer][TotalPluginStartup] 1.505971ms
+2014-09-09 08:54:32.114 Cauz Colony[25643:70b] Resetting plugins due to page load.
+2014-09-09 08:54:32.562 Cauz Colony[25643:70b] Finished load of: file:///Users/drmunklung/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/610B1C19-59AF-429D-A8B7-D8FC8F71B130/Cauz%20Colony.app/www/index.html#/home
+2014-09-09 08:55:36.681 Cauz Colony[25643:70b] SurveyCtrl
+2014-09-09 08:55:36.681 Cauz Colony[25643:70b] {"type":"multiple-choice","text":"How many licks does it take to get to the center of a Tootsie Roll Tottsie Pop?","options":[{"text":"1","value":"1"},{"text":"2","value":"2"},{"text":"3","value":"3"}]}
+2014-09-09 08:55:38.598 Cauz Colony[25643:70b] submit 0
+2014-09-09 08:55:38.599 Cauz Colony[25643:70b] [0]
+2014-09-09 08:55:45.606 Cauz Colony[25643:70b] submit 0
+2014-09-09 08:55:45.607 Cauz Colony[25643:70b] [0,[0]]
+2014-09-09 08:56:08.236 Cauz Colony[25643:70b] submit 0
+2014-09-09 08:56:08.236 Cauz Colony[25643:70b] [0,[0],"0"]
+2014-09-09 08:56:16.934 Cauz Colony[25643:70b] submit sdfg
+2014-09-09 08:56:16.934 Cauz Colony[25643:70b] [0,[0],"0","sdfg"]

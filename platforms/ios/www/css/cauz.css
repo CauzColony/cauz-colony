@@ -7704,3 +7704,6 @@ a.button {
   max-width: 100%;
   width: 100%;
   direction: ltr; }
+
+.header button.ng-hide-add, .header button.ng-hide-remove {
+  transition: 0s linear all; }

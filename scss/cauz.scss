@@ -28,3 +28,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
         "login",
         "survey";
 
+.header {
+  button{
+    &.ng-hide-add, &.ng-hide-remove {
+      transition:0s linear all;
+    }
+  }
+}
+
