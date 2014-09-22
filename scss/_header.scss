@@ -1,8 +1,18 @@
-.bar {
-  .buttons {
-    &.right-buttons {
-      position: absolute;
-      right: 6px;
-    }
+.header {
+  width: 100%;
+  height: 44px;
+  background-color: $teal-lt;
+  position: absolute;
+  z-index: 999;
+  text-align: center;
+  .logo {
+    background: url("../assets/images/cc-logo@2x.png");
+    background-size: 70px 72px;
+    width: 70px;
+    height: 72px;
+    margin: -43px auto;
+  }
+  hr {
+    margin-top: 44px;
   }
 }

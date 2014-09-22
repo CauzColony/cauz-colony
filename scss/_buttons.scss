@@ -1,0 +1,37 @@
+.button {
+  &.button-round {
+    border-radius: 200px;
+    padding: 0;
+    
+    &.button-positive {
+      background-color: $teal-md;
+      border-style: none;
+      width: 70px;
+      height: 70px;
+    }
+
+    &.button-bottom {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      margin-left: -35px;
+    }
+
+    &.button-outline {
+      border-style: 1px solid;
+      &.button-gray {
+        border-color: $gray-lt;
+      }
+      &.button-small {
+        font-size: 35px;
+        width: 55px;
+        height: 55px;
+        float: left;
+        margin: 10px 0 0 22px;
+        &.first {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

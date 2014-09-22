@@ -1,13 +1,42 @@
 .survey {
-  h3 {
-    margin: 0 0 40px;
-  }
-
   .item-select {
     select {
       max-width: 100%;
       width: 100%;
       direction: ltr;
     }
+  }
+
+  p {
+    color: $gray-dk;
+    &.instructions {
+      font-size: 17px;
+      margin-top: 12px;
+
+      span {
+        display: inline-block;
+        border: 1px solid $gray-dk;
+        border-radius: 20px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        margin-top: 3px;
+      }
+    }
+    &.question {
+      span {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+      font-size: 17px;
+      margin-top: 12px;
+    }
+
+  }
+
+  hr {
+    border-top: 1px solid $gray-lt;
+    margin: 15px 0 0 -17px;
+    width: 98%;
   }
 }

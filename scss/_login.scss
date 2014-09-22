@@ -1,22 +1,40 @@
-.login, .register {
-  .item {
-    &.no-bottom {
-      border-bottom-style: none;
-    }
-
-    button {
-      margin: 30px 0 15px 0;
-    }
+.login {
+  input[type="email"] {
+    margin: 20px 0;
+    border: 1px solid $gray-lt;
+    padding: 12px ;
+    height: inherit;
+    font-family: AvenirNext;
+    font-size: 12px;
+    color: $gray-dk;
   }
 
-  button {
-    &.no-padding {
-      margin-top: 0px;
-      padding: 0;
+  ::-webkit-input-placeholder {
+    color: $gray-dk;
+    font-size: 17px;
+    margin-top: 2px;
+  }
 
-      &.small {
-        font-size: 14px;
-      }
+  img {
+    max-width: 300px;
+  }
+
+  i.arrow {
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;  
+    border-right: 16px solid $gray-ltr;
+    position: absolute;
+    top: 199px;
+
+    &.right {
+      left: 284px;
+      border-top: 18px solid transparent;
+      border-bottom: 18px solid transparent;
+      border-left: 16px solid $gray-ltr;
+      border-right: none;
     }
   }
 }

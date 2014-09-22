@@ -3,19 +3,16 @@
   $scope.pid = $stateParams.pid;
   $scope.playerVars = {
     modestbranding: 1,
-    showinfo: 0
-  }
+    showinfo: 0,
+    rel: 0
+  };
+  $scope.videoWatched = false;
 
   $scope.$on('youtube.player.ended', function ($event, player) {
-    $scope.player = player;
+    player.seekTo(0);
+    player.stopVideo();
     $scope.videoWatched = true;
   });
-
-  $scope.replay = function()
-  {
-    $scope.videoWatched = false;
-    $scope.player.playVideo();
-  }
 
   $scope.next = function()
   {
@@ -27,12 +24,11 @@
       {
         if(data.project.steps[data.step].type === 'video')
         {
-          console.log('video');
           updateScopeVars(data)
         }else
         {
           //go to survey page
-          $scope.navigate('survey.'+data.project.steps[data.step].questions[0].type, $scope.pid);
+          $scope.navigate('survey.'+data.project.steps[data.step].type, $scope.pid);
         }
       });
     }else
@@ -59,6 +55,10 @@
     $scope.steps = data.project.steps;
     $scope.currentStep = data.step;
     $scope.video = $scope.steps[$scope.currentStep];
+    $scope.steps = data.project.steps.length;
+    $scope.copy = $scope.video.copy;
+    $scope.copy = $sce.trustAsHtml($scope.copy);
+    $scope.title = data.project.title;
   }
 
   fetchData().then(updateScopeVars);

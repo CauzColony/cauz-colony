@@ -1,15 +1,38 @@
 .thank-you {
   h1 {
-    font-size: 50px;
+    font-size: 47px;
     width: 100%;
-    margin-bottom: -10px;
+    margin: 45px 0 -10px;
     text-align: center;
+    color: $teal-md;
   }
 
   h2 {
-    font-size: 110%;
+    font-size: 18px;
     margin: 0 0 50px 0; 
     width: 100%;
     text-align: center;
+    color: $gray-dk;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 100%;
+  }
+
+  a {
+    color: $teal-md;
+    span {
+      display: inline-block;
+      border-radius: 20px;
+      background: $teal-md;
+      color: white;
+      width: 18px;
+      height: 19px;
+      text-align: center;
+      padding: 0 0 0 2px;
+    }
   }
 }

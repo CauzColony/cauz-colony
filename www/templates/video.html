@@ -1,14 +1,11 @@
-<ion-view title="{{video.title}}" class="video">
-  <ion-content padding="true">
-    <div class="video-container" ng-hide="videoWatched">
-        <youtube-video id="best-vid" video-id="video.id" player-vars="playerVars"></youtube-video>
-    </div>
-    <button class="button button-block button-positive" ng-click="replay()" ng-show="videoWatched">
-      Watch Again
-    </button>
-    <button class="button button-block button-positive" ng-click="next()" ng-show="videoWatched">
-      Next
-    </button>
-
-  </ion-content>
-</ion-view>
+<ion-content class="cauz-panel video step" padding="true" scroll="false">
+  <h1>Project: {{title}}, Step {{currentStep + 1}}/{{steps}}</h1>
+  <p ng-bind-html="copy"></p>
+  <h2 ng-hide="videoWatched">Get started by pushing play.</h2>
+  <div class="video-container" ng-hide="videoWatched">
+      <youtube-video id="best-vid" video-id="video.id" player-vars="playerVars"></youtube-video>
+  </div>
+  <button class="button button-round button-positive button-bottom" ng-click="next()" ng-show="videoWatched">
+    Next
+  </button>
+</ion-content>

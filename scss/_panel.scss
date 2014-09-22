@@ -1,0 +1,23 @@
+.cauz-panel {
+  background: white;
+  h1, h2, h3, h4, h5, h6, p, a, div {
+    color: #AAA;
+  }
+  &.blue {
+    background: $teal-md;
+    h1, h2, h3, h4, h5, h6, p, a, div {
+      color: white;
+    }
+  }
+  &.padding {
+    padding: 70px 16px 16px;
+  }
+  
+  &.step {
+    h1 {
+      color: $teal-md;
+      font-size: 20px;
+      margin: 37px 0 0;
+    }
+  }
+}

@@ -1,4 +1,60 @@
 angular.module('cauz.controllers', [])
+.controller('LoginCtrl', function($scope, $ionicLoading, UserModels, ProjectModels, projects) {
+  $scope.loginData = {
+    email: '',
+    projectId: 0
+  };
+  $scope.projects = projects;
+
+  $scope.showButton = function()
+  {
+    return $scope.loginData.email != undefined && $scope.loginData.email.length > 0;
+  }
+
+  $scope.login = function()
+  {
+    showLoader();
+
+    UserModels.login($scope.loginData).then(function(user)
+    {
+      $ionicLoading.hide();
+      $scope.user = user;
+    })
+    .then(function()
+    {
+      var cur = $scope.loginData.projectId,
+          p;
+      if(cur < 0)
+      {
+        cur = $scope.projects.length - 1;
+      }else if(cur >= $scope.projects.length)
+      {
+        cur -= $scope.projects.length;
+      }
+
+      p = $scope.projects[cur];
+      $scope.navigate(p.steps[0].type, p.id);
+    });
+  }
+
+  $scope.slide = function(i)
+  {
+    var i = parseInt(i);
+
+    $scope.loginData.projectId += i;
+
+    console.log($scope.loginData.projectId);
+  }
+
+
+  function showLoader()
+  {
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
+  }
+
+})
 .controller('MenuCtrl', function($scope, ProjectModels, $ionicLoading) {
   $ionicLoading.show({
     template: 'Loading...'
@@ -33,9 +89,6 @@ angular.module('cauz.controllers', [])
 })
 .controller('RootCtrl', function($scope, $q, $ionicModal, $state, $ionicLoading, $timeout, UserModels)
 {
-  $scope.loginData = {};
-  $scope.showThanks = false;
-  $scope.showMenu = false;
   $scope.loggedIn = false;
   $scope.user = UserModels.getUser();
 
@@ -47,144 +100,31 @@ angular.module('cauz.controllers', [])
     }
   }, 250)
 
-  $scope.openModal = function(t)
-  {
-    $scope.closeModal().then(function()
-    {
-      $ionicModal.fromTemplateUrl('templates/' + t, {
-        scope: $scope,
-        animation: 'slide-in-up'
-      }).then(function(modal) {
-        $scope.modal = modal;
-        $scope.modal.show();
-      });
-    });
-  };
-
-  $scope.closeModal = function()
-  {
-    var deferred = $q.defer();
-    if($scope.modal)
-    {
-      $scope.modal.hide().then(function()
-      {
-        $scope.modal.remove();
-        $scope.modal = null;
-        deferred.resolve();
-      });
-    }else
-    {
-      deferred.resolve();
-    }
-    return deferred.promise;
-  };
-
   $scope.navigate =function(state, id)
   {
-    if($scope.modal)
-    {
-      $scope.closeModal();
-    }
-
-    if(state === 'thankyou')
-    {
-      $scope.showMenu = false;
-      $scope.showThanks = true;
-    }else
-    {
-      $scope.showThanks = false;
-      if($scope.user != null)
-      {
-        $scope.showMenu = true;
-      }
-    }
-
     $state.go(state, {pid: id});
-  }
-
-  $scope.doLogin = function()
-  {
-    showLoader();
-
-    UserModels.login($scope.loginData).then(function(user)
-    {
-      loginHelper(user);
-    });
-  }
-
-  $scope.register = function()
-  {
-    showLoader();
-
-    UserModels.register($scope.loginData).then(function(user)
-    {
-      loginHelper(user);
-    });
-  }
-
-
-  function showLoader()
-  {
-    $ionicLoading.show({
-      template: 'Loading...'
-    });
-  }
-
-  //login helper function
-  function loginHelper(user)
-  {
-    $scope.closeModal();
-    $ionicLoading.hide();
-    $scope.showMenu = true;
-    $scope.loggedIn = true;
-
-    $scope.user = user;
   }
 })
 
-.controller('SurveyCtrl', function($scope, $stateParams, SurveyModels, ProjectModels) {
+.controller('SurveyCtrl', function($scope, $stateParams, $sce, ProjectModels) {
   console.log('SurveyCtrl');
   $scope.pid = $stateParams.pid;
-  SurveyModels.setProject($scope.pid).then(function(data)
+  ProjectModels.getCurrent($scope.pid).then(function(data)
   {
-    $scope.title = data.title;
-    $scope.step = data.step;
-    $scope.total = data.total;
-    $scope.setQuestion(data.question);
-
-    console.log($scope.question);
+    setQuestion(data);
   });
-
-  $scope.setQuestion = function(question)
-  {
-    $scope.question = question;
-    $scope.placeholder = ($scope.question.optional)? 'Optional':'Enter answer';
-    
-  }
 
   $scope.setAnswer = function(answer)
   {
-    SurveyModels.setAnswer(answer).then(function(data)
+    ProjectModels.setAnswer(answer).then(function(data)
     {
-      if(data.question)
+      if(data.step < data.project.steps.length)
       {
-        $scope.step = data.step;
-        $scope.setQuestion(data.question);
-        $scope.navigate('survey.' + $scope.question.type, $scope.pid);
+        setQuestion(data);
       }else
       {
         alert('Jon\'s TODO: submit data to backend');
-
-        if(ProjectModels.incrementProjectStep())
-        {
-          ProjectModels.getCurrent($scope.pid).then(function(data)
-          {
-            $scope.navigate('video', $scope.pid);
-          });
-        }else
-        {
-          $scope.navigate('thankyou', $scope.pid);
-        }
+        $scope.navigate('thankyou', $scope.pid);
       }
     });
   }
@@ -196,8 +136,22 @@ angular.module('cauz.controllers', [])
 
   $scope.submit = function(answer)
   {
-    console.log('submit', answer);
     $scope.setAnswer(answer);
+  }
+
+  function setQuestion(data)
+  {
+    $scope.currentStep = data.step;
+    $scope.title = data.project.title;
+    $scope.steps = data.project.steps;
+    $scope.question = data.project.steps[$scope.currentStep];
+    $scope.steps = data.project.steps.length;
+    $scope.placeholder = (data.project.optional)? 'Optional':'Enter answer';
+    $scope.qText = $scope.question.text;
+    $scope.qText = $sce.trustAsHtml($scope.qText);
+    $scope.answer = null;
+
+    $scope.navigate('survey.' + $scope.question.type, $scope.pid);
   }
 })
 .controller('SurveyMultipleChoiceCtrl', function($scope) {
@@ -226,12 +180,19 @@ angular.module('cauz.controllers', [])
     return ($scope.question.optional || $scope.answer != '')
   }
 })
-.controller('ThankYouCtrl', function($scope) {
+.controller('ThankYouCtrl', function($scope, $stateParams, $sce, ProjectModels) {
+
+  ProjectModels.getCurrent($stateParams.pid).then(function(data)
+  {
+    $scope.offer = data.project.offer;
+    $scope.offerText = $scope.offer.text;
+    $scope.offerText = $sce.trustAsHtml($scope.offerText);
+  });
 
   //TODO
   $scope.offerClick = function()
   {
-    alert('Jon\'s TODO: open offer in native browser');
+    window.open($scope.offer.link, '_blank', 'location=no,closebuttoncaption=Done,disallowoverscroll=yes,enableViewportScale=yes,toolbarposition=top,presentationstyle=fullscreen');
   }
 })
 .controller('VideoCtrl', function($scope, $stateParams, $sce, $q, ProjectModels)
@@ -239,19 +200,16 @@ angular.module('cauz.controllers', [])
   $scope.pid = $stateParams.pid;
   $scope.playerVars = {
     modestbranding: 1,
-    showinfo: 0
-  }
+    showinfo: 0,
+    rel: 0
+  };
+  $scope.videoWatched = false;
 
   $scope.$on('youtube.player.ended', function ($event, player) {
-    $scope.player = player;
+    player.seekTo(0);
+    player.stopVideo();
     $scope.videoWatched = true;
   });
-
-  $scope.replay = function()
-  {
-    $scope.videoWatched = false;
-    $scope.player.playVideo();
-  }
 
   $scope.next = function()
   {
@@ -263,12 +221,11 @@ angular.module('cauz.controllers', [])
       {
         if(data.project.steps[data.step].type === 'video')
         {
-          console.log('video');
           updateScopeVars(data)
         }else
         {
           //go to survey page
-          $scope.navigate('survey.'+data.project.steps[data.step].questions[0].type, $scope.pid);
+          $scope.navigate('survey.'+data.project.steps[data.step].type, $scope.pid);
         }
       });
     }else
@@ -295,6 +252,10 @@ angular.module('cauz.controllers', [])
     $scope.steps = data.project.steps;
     $scope.currentStep = data.step;
     $scope.video = $scope.steps[$scope.currentStep];
+    $scope.steps = data.project.steps.length;
+    $scope.copy = $scope.video.copy;
+    $scope.copy = $sce.trustAsHtml($scope.copy);
+    $scope.title = data.project.title;
   }
 
   fetchData().then(updateScopeVars);

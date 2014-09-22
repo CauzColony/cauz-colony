@@ -1,12 +1,7 @@
-<ion-view title="Cauz Colony" class="project">
-  <ion-content padding="true">
-    <img ng-src="http://placehold.it/300x150&text=Cauz+Colony+Logo">
-    <p>Donec metus magna, vestibulum ac purus eu, lacinia efficitur elit. Quisque rutrum hendrerit dignissim. Sed pretium odio urna, nec varius ex viverra in.</p>
-    <button class="button button-block button-positive" ng-click="openModal('menu.html')" ng-show="loggedIn">
-      Choose A Project
-    </button>
-    <button class="button button-block button-positive" ng-click="openModal('login.html')" ng-show="!loggedIn">
-      Log In
-    </button>
-  </ion-content>
-</ion-view>
+<ion-content class="cauz-panel home blue" padding="true" scroll="false">
+  <h1>This is Cauz Colony.<br>A place for doing good.</h1>
+  <p>What do we want you to do?<br>It's pretty easy. For one thing,<br>we don't want your money. Just<br>a fraction of your time. Sign up, take a few minutes to complete the project and you'll help earn thousands of dollars for your favorite charity.</p>
+  <button ng-click="navigate('login')">
+    <span>Get Started</span>
+  </button>
+</ion-content>

@@ -1,0 +1,28 @@
+.home {
+  min-height: 100%;
+  h1 {
+    font-size: 26px;
+    margin: 33px 0 0;
+    line-height: 1.2;
+  }
+  p {
+    margin: 13px 0 0;
+    font-size: 18.5px;
+    line-height: 1.5;
+  }
+
+  button {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    margin-left: -39px;
+    border: none;
+    color: $teal-dk;
+    background: transparent url("../assets/images/rocket@2x.png") no-repeat 14px 0px;
+    background-size: 55px 38px;
+    span {
+      display: block;
+      margin-top: 42px;
+    }
+  }
+}

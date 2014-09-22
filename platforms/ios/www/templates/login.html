@@ -1,34 +1,14 @@
-<div class="modal login">
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeModal()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Email</span>
-          <input type="email" ng-model="loginData.email">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item item-checkbox">
-          <label class="checkbox">
-            <input type="checkbox" ng-model="loginData.agree">
-          </label>
-          Keep me logged in
-        </label>
-        <label class="item no-bottom">
-          <button class="button button-block button-positive" type="submit">Log In</button>
-        </label>
+<ion-content class="cauz-panel login" padding="true" scroll="false">
+  <input type="email" ng-model="loginData.email" placeholder="Email">
+  <ion-slide-box does-continue="true" show-pager="false" active-slide="loginData.projectId">
+    <ion-slide ng-repeat="project in projects" >
+      <div class="slide-container">
+        <img ng-src="{{project.image}}">
       </div>
-    </form>
-    <button class="button button-block button-positive button-clear no-padding small" ng-click="openModal('register.html')" class="positive">
-      Don't have an account? Register here. <i class="icon ion-chevron-right"></i>
-    </button>
-  </ion-content>
-</div> 
+    </ion-slide>
+  </ion-slide-box>
+  <i class="icon arrow left" ng-click="slide(-1)"></i>
+  <i class="icon arrow right" ng-click="slide(1)"></i>
+  <h3>Choose your charity and start earning big bucks for good.</h3>
+  <button class="button button-positive button-round button-bottom" type="submit" ng-click="login()" ng-show="showButton()">GO!</button>
+</ion-content>

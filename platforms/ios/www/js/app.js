@@ -5,11 +5,11 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      //cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.hide();
     }
   });
 })
@@ -20,11 +20,19 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
       url: '/home',
       templateUrl: 'templates/home.html'
     })
-
-    .state('project', {
-      url: '/project/:pid',
-      templateUrl: 'templates/project.html',
-      controller: 'ProjectCtrl'
+    .state('login', {
+      url: '/home',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl',
+      resolve: {
+        projects: function(ProjectModels)
+        {
+          return ProjectModels.getProjects().then(function(data)
+          {
+            return data;
+          })
+        }
+      }
     })
 
     .state('video', {
@@ -39,10 +47,9 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
       templateUrl: 'templates/survey.html',
       controller: 'SurveyCtrl'
     })
-      .state('survey.multiple-choice', {
-        url: '/multiple-choice',
-        templateUrl: 'templates/survey.multiple-choice.html',
-        controller: 'SurveyMultipleChoiceCtrl'
+      .state('survey.rating', {
+        url: '/rating',
+        templateUrl: 'templates/survey.rating.html'
       })
       .state('survey.check-all', {
         url: '/check-all',
@@ -61,28 +68,9 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
       })
 
     .state('thankyou', {
-      url: '/thankyou',
+      url: '/thankyou/:pid',
       templateUrl: 'templates/thankyou.html',
       controller: 'ThankYouCtrl'
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-    .state('app.single', {
-      url: '/playlists/:playlistId',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/playlist.html',
-          controller: 'PlaylistCtrl'
-        }
-      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');

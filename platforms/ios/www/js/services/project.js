@@ -1,16 +1,63 @@
 .factory('ProjectModels', function($q){
   var projects = [
-    {
-      title: 'Survey Only Project',
-      id: '1',
-      image: 'http://placehold.it/300x100&text=project+logo',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac venenatis enim. Nunc laoreet pulvinar purus, at aliquam erat convallis eu. Pellentesque tincidunt felis eros, at porttitor turpis viverra ac.',
-      steps: [
         {
-          type: 'survey',
-          questions: [
+          title: 'Powerbeats',
+          offer: {
+            link: 'http://www.beatsbydre.com/earphones/powerbeats/beats-powerbeats.html',
+            text: 'You’ve earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
+            image: 'assets/images/powerbeats@2x.png',
+            style: 'margin: 70px 0 0 115px; display:block; line-height:1.2; font-size: 16px;'
+          },
+          charityId: 0,
+          id: '0',
+          image: 'assets/images/logos/sf-martin@2x.png',
+          steps: [
             {
-              type: 'multiple-choice',
+              type: 'video',
+              copy: 'Learn more about Powerbeats. <br>Earbuds created by LeBron James<br>and Dr. Dre: designed to deliver<br>premium sound on the court, in the<br>gym, or on the streets.',
+              id: '7qraNrqA2pw'
+            },
+            {
+              type: 'rating',
+              text: '<span>MADE FOR ATHLETES.</span><br>Flexible earclips are designed to<br>secure Powerbeats earphones in<br>your ears no matter how rigorous<br>your workout.',
+              options: [ 1, 2, 3, 4]
+            },
+            {
+              type: 'rating',
+              text: '<span>CLEARER SOUND. DEEPER BASS.</span><br>Powerbeats earphones are the<br>only Beats by Dr. Dre earbuds<br>that come with two speakers<br>inside each bud. That means you<br>get crystal clear highs and deep,<br>rumbling lows',
+              options: [ 1, 2, 3, 4]
+            },
+            {
+              type: 'rating',
+              text: '<span>SAFETY FIRST.</span><br>Powerbeats earphones are<br>specially designed to pump<br>clear bass at any volume while<br>letting in ambient noise – making<br>sure athletes stay safe while<br>running on the road.',
+              options: [ 1, 2, 3, 4]
+            },
+            {
+              type: 'rating',
+              text: '<span>REMOTE CONTROL CORD.</span><br>You can adjust your music to<br>find your power song right from<br>the cord. No need to fumble<br>with your MP3 player during<br>your workout.',
+              options: [ 1, 2, 3, 4]
+            }
+          ]
+        },
+        {
+          title: 'Powerbeats',
+          offer: {
+            link: 'http://www.beatsbydre.com/earphones/powerbeats/beats-powerbeats.html',
+            text: 'You’ve earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
+            image: 'assets/images/powerbeats@2x.png',
+            style: 'margin: 70px 0 0 115px; display:block; line-height:1.2; font-size: 16px;'
+          },
+          charityId: 1,
+          id: '0',
+          image: 'assets/images/logos/sf-af@2x.png',
+          steps: [
+            {
+              type: 'video',
+              copy: 'Learn more about Powerbeats. <br>Earbuds created by LeBron James<br>and Dr. Dre: designed to deliver<br>premium sound on the court, in the<br>gym, or on the streets.',
+              id: '7qraNrqA2pw'
+            },
+            {
+              type: 'rating',
               text: 'How many licks does it take to get to the center of a Tootsie Roll Tottsie Pop?',
               options: [
                 {
@@ -26,238 +73,13 @@
                   value: '3'
                 }
               ]
-            },
-            {
-              text: 'How much wood would a woodchuck chuck if a woodchuck could chuck wood?',
-              type: 'check-all',
-              options: [
-                {
-                  text: '1 bundle',
-                  value: '1'
-                },
-                {
-                  text: '2 bundles',
-                  value: '2'
-                },
-                {
-                  text: 'As much wood as a woodchuck could chuck if a woodchuck could chuck wood!',
-                  value: '3'
-                }
-              ]
-            },
-            {
-              text: 'How old are you?',
-              type: 'select',
-              options: [
-                {
-                  text: '18 - 29',
-                  value: '1'
-                },
-                {
-                  text: '29 - 40',
-                  value: '2'
-                },
-                {
-                  text: '40+',
-                  value: '3'
-                }
-              ]
-            },
-            {
-              text: 'Anything you\'d like to say?',
-              type: 'open',
-              optional: true
             }
           ]
         }
-      ]
-    },
-    {
-      title: 'Video Only Project',
-      id: '2',
-      image: 'http://placehold.it/300x100&text=project+logo',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac venenatis enim. Nunc laoreet pulvinar purus, at aliquam erat convallis eu. Pellentesque tincidunt felis eros, at porttitor turpis viverra ac.',
-      steps: [
-        {
-          type: 'video',
-          title: 'Red Cross Stories',
-          id: '289sNNEhDwg'
-        }
-      ]
-    },
-    {
-      title: 'Video then Survey Project',
-      id: '3',
-      image: 'http://placehold.it/300x100&text=project+logo',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac venenatis enim. Nunc laoreet pulvinar purus, at aliquam erat convallis eu. Pellentesque tincidunt felis eros, at porttitor turpis viverra ac.',
-      steps: [
-        {
-          type: 'video',
-          title: 'Red Cross Stories',
-          id: '289sNNEhDwg'
-        },
-        {
-          type: 'survey',
-          questions: [
-            {
-              type: 'multiple-choice',
-              text: 'How many licks does it take to get to the center of a Tootsie Roll Tottsie Pop?',
-              options: [
-                {
-                  text: '1',
-                  value: '1'
-                },
-                {
-                  text: '2',
-                  value: '2'
-                },
-                {
-                  text: '3',
-                  value: '3'
-                }
-              ]
-            },
-            {
-              text: 'How much wood would a woodchuck chuck if a woodchuck could chuck wood?',
-              type: 'check-all',
-              options: [
-                {
-                  text: '1 bundle',
-                  value: '1'
-                },
-                {
-                  text: '2 bundles',
-                  value: '2'
-                },
-                {
-                  text: 'As much wood as a woodchuck could chuck if a woodchuck could chuck wood!',
-                  value: '3'
-                }
-              ]
-            },
-            {
-              text: 'How old are you?',
-              type: 'select',
-              options: [
-                {
-                  text: '18 - 29',
-                  value: '1'
-                },
-                {
-                  text: '29 - 40',
-                  value: '2'
-                },
-                {
-                  text: '40+',
-                  value: '3'
-                }
-              ]
-            },
-            {
-              text: 'Anything you\'d like to say?',
-              type: 'open'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      title: 'Two Video Project',
-      id: '4',
-      image: 'http://placehold.it/300x100&text=project+logo',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac venenatis enim. Nunc laoreet pulvinar purus, at aliquam erat convallis eu. Pellentesque tincidunt felis eros, at porttitor turpis viverra ac.',
-      steps: [
-        {
-          type: 'video',
-          title: 'Red Cross Stories',
-          id: '289sNNEhDwg'
-        },
-        {
-          type: 'video',
-          title: 'Red Cross Stories',
-          id: '0GajJYKGYUo'
-        }
-      ]
-    },
-    {
-      title: 'Survey then Video Project',
-      id: '5',
-      image: 'http://placehold.it/300x100&text=project+logo',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac venenatis enim. Nunc laoreet pulvinar purus, at aliquam erat convallis eu. Pellentesque tincidunt felis eros, at porttitor turpis viverra ac.',
-      steps: [
-        {
-          type: 'survey',
-          questions: [
-            {
-              type: 'multiple-choice',
-              text: 'How many licks does it take to get to the center of a Tootsie Roll Tottsie Pop?',
-              options: [
-                {
-                  text: '1',
-                  value: '1'
-                },
-                {
-                  text: '2',
-                  value: '2'
-                },
-                {
-                  text: '3',
-                  value: '3'
-                }
-              ]
-            },
-            {
-              text: 'How much wood would a woodchuck chuck if a woodchuck could chuck wood?',
-              type: 'check-all',
-              options: [
-                {
-                  text: '1 bundle',
-                  value: '1'
-                },
-                {
-                  text: '2 bundles',
-                  value: '2'
-                },
-                {
-                  text: 'As much wood as a woodchuck could chuck if a woodchuck could chuck wood!',
-                  value: '3'
-                }
-              ]
-            },
-            {
-              text: 'How old are you?',
-              type: 'select',
-              options: [
-                {
-                  text: '18 - 29',
-                  value: '1'
-                },
-                {
-                  text: '29 - 40',
-                  value: '2'
-                },
-                {
-                  text: '40+',
-                  value: '3'
-                }
-              ]
-            },
-            {
-              text: 'Anything you\'d like to say?',
-              type: 'open'
-            }
-          ]
-        },
-        {
-          type: 'video',
-          title: 'Red Cross Stories',
-          id: '289sNNEhDwg'
-        }
-      ]
-    }
-  ],
+      ],
       current = null,
-      step;
+      step,
+      answers;
 
   return {
     getProjects: function()
@@ -275,6 +97,7 @@
       var deferred = $q.defer();
       current = _.find(projects, {id: id});
       step = 0;
+      answers = [];
       deferred.resolve(current);
       return deferred.promise;
     },
@@ -305,6 +128,19 @@
     {
       step++;
       return current.steps.length > step;
+    },
+    setAnswer: function(answer)
+    {
+      var deferred = $q.defer();
+      step++;
+      answers.push(answer);
+      
+      deferred.resolve({
+        project: current,
+        step: step
+      });
+
+      return deferred.promise;
     }
   };
 })

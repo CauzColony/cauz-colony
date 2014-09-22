@@ -19,20 +19,18 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic",
+@import "colors",
+        "www/lib/ionic/scss/ionic",
+        "header",
+        "base",
+        "buttons",
+        "panel",
+        "home",
         "project",
         "menu",
-        "header",
         "video",
         "thanks",
         "login",
-        "survey";
-
-.header {
-  button{
-    &.ng-hide-add, &.ng-hide-remove {
-      transition:0s linear all;
-    }
-  }
-}
+        "survey",
+        "typography";
 

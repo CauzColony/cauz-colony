@@ -1,6 +1,4 @@
-<ion-view title="{{title}}" class="survey">
-  <ion-content padding="true">
-    <h5>Question {{step + 1}} of {{total}}</h5>
-    <div ui-view></div>
-  </ion-content>
-</ion-view>
+<ion-content class="cauz-panel survey step" padding="true" scroll="false">
+  <h1>Project: {{title}}, Step {{currentStep + 1}}/{{steps}}</h1>
+  <div ui-view></div>
+</ion-content>

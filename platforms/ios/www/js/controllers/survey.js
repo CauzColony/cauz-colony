@@ -1,46 +1,22 @@
-.controller('SurveyCtrl', function($scope, $stateParams, SurveyModels, ProjectModels) {
+.controller('SurveyCtrl', function($scope, $stateParams, $sce, ProjectModels) {
   console.log('SurveyCtrl');
   $scope.pid = $stateParams.pid;
-  SurveyModels.setProject($scope.pid).then(function(data)
+  ProjectModels.getCurrent($scope.pid).then(function(data)
   {
-    $scope.title = data.title;
-    $scope.step = data.step;
-    $scope.total = data.total;
-    $scope.setQuestion(data.question);
-
-    console.log($scope.question);
+    setQuestion(data);
   });
-
-  $scope.setQuestion = function(question)
-  {
-    $scope.question = question;
-    $scope.placeholder = ($scope.question.optional)? 'Optional':'Enter answer';
-    
-  }
 
   $scope.setAnswer = function(answer)
   {
-    SurveyModels.setAnswer(answer).then(function(data)
+    ProjectModels.setAnswer(answer).then(function(data)
     {
-      if(data.question)
+      if(data.step < data.project.steps.length)
       {
-        $scope.step = data.step;
-        $scope.setQuestion(data.question);
-        $scope.navigate('survey.' + $scope.question.type, $scope.pid);
+        setQuestion(data);
       }else
       {
         alert('Jon\'s TODO: submit data to backend');
-
-        if(ProjectModels.incrementProjectStep())
-        {
-          ProjectModels.getCurrent($scope.pid).then(function(data)
-          {
-            $scope.navigate('video', $scope.pid);
-          });
-        }else
-        {
-          $scope.navigate('thankyou', $scope.pid);
-        }
+        $scope.navigate('thankyou', $scope.pid);
       }
     });
   }
@@ -52,8 +28,22 @@
 
   $scope.submit = function(answer)
   {
-    console.log('submit', answer);
     $scope.setAnswer(answer);
+  }
+
+  function setQuestion(data)
+  {
+    $scope.currentStep = data.step;
+    $scope.title = data.project.title;
+    $scope.steps = data.project.steps;
+    $scope.question = data.project.steps[$scope.currentStep];
+    $scope.steps = data.project.steps.length;
+    $scope.placeholder = (data.project.optional)? 'Optional':'Enter answer';
+    $scope.qText = $scope.question.text;
+    $scope.qText = $sce.trustAsHtml($scope.qText);
+    $scope.answer = null;
+
+    $scope.navigate('survey.' + $scope.question.type, $scope.pid);
   }
 })
 .controller('SurveyMultipleChoiceCtrl', function($scope) {
