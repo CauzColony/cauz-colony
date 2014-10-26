@@ -220,10 +220,15 @@ angular.module('cauz.controllers', [])
 
   $scope.$on('youtube.player.ended', function ($event, player) {
     $scope.videoWatched = true;
+    $scope.videoPlaying = false;
     if(screen && screen.lockOrientation)
     {
       screen.lockOrientation('portrait');
     }
+  });
+
+  $scope.$on('youtube.player.playing', function ($event, player) {
+    $scope.videoPlaying = true;
   });
 
   $scope.next = function()
