@@ -1,7 +1,10 @@
 angular.module('cauz.controllers', [])
 .controller('LoginCtrl', function($scope, $ionicLoading, UserModels, ProjectModels, projects) {
+  var user = UserModels.getUser();
+  ProjectModels.resetAll();
+
   $scope.loginData = {
-    email: '',
+    email: (user)? user.email:'',
     projectId: 0
   };
   $scope.projects = projects;
@@ -31,7 +34,6 @@ angular.module('cauz.controllers', [])
       {
         cur -= $scope.projects.length;
       }
-
       p = $scope.projects[cur];
       $scope.navigate(p.steps[0].type, p.id);
     });
@@ -42,8 +44,6 @@ angular.module('cauz.controllers', [])
     var i = parseInt(i);
 
     $scope.loginData.projectId += i;
-
-    console.log($scope.loginData.projectId);
   }
 
 
@@ -85,23 +85,29 @@ angular.module('cauz.controllers', [])
   }
 })
 .controller('QuestionCtrl', function($scope) {
-
+	
 })
 .controller('RootCtrl', function($scope, $q, $ionicModal, $state, $ionicLoading, $timeout, UserModels)
 {
   $scope.loggedIn = false;
   $scope.user = UserModels.getUser();
+  $scope.complete = false;
 
   $timeout(function()
   {
     if($scope.user == undefined)
     {
-      $scope.navigate('home');
+      $scope.navigate('home', 'home');
     }
   }, 250)
 
   $scope.navigate =function(state, id)
   {
+    if(screen && screen.lockOrientation)
+    {
+      console.log(screen)
+      screen.lockOrientation('portrait');
+    }
     $state.go(state, {pid: id});
   }
 })
@@ -123,7 +129,7 @@ angular.module('cauz.controllers', [])
         setQuestion(data);
       }else
       {
-        alert('Jon\'s TODO: submit data to backend');
+        //alert('Jon\'s TODO: submit data to backend');
         $scope.navigate('thankyou', $scope.pid);
       }
     });
@@ -185,6 +191,7 @@ angular.module('cauz.controllers', [])
   ProjectModels.getCurrent($stateParams.pid).then(function(data)
   {
     $scope.offer = data.project.offer;
+    $scope.charityName = data.project.charityName;
     $scope.offerText = $scope.offer.text;
     $scope.offerText = $sce.trustAsHtml($scope.offerText);
   });
@@ -197,18 +204,26 @@ angular.module('cauz.controllers', [])
 })
 .controller('VideoCtrl', function($scope, $stateParams, $sce, $q, ProjectModels)
 {
+  if(screen && screen.unlockOrientation)
+  {
+    screen.unlockOrientation();
+  }
+
   $scope.pid = $stateParams.pid;
   $scope.playerVars = {
     modestbranding: 1,
     showinfo: 0,
-    rel: 0
+    rel: 0,
+    playsinline: 1
   };
   $scope.videoWatched = false;
 
   $scope.$on('youtube.player.ended', function ($event, player) {
-    player.seekTo(0);
-    player.stopVideo();
     $scope.videoWatched = true;
+    if(screen && screen.lockOrientation)
+    {
+      screen.lockOrientation('portrait');
+    }
   });
 
   $scope.next = function()

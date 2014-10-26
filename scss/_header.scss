@@ -6,13 +6,25 @@
   z-index: 999;
   text-align: center;
   .logo {
-    background: url("../assets/images/cc-logo@2x.png");
-    background-size: 70px 72px;
+    background: url("../assets/images/cc-logo-lrg@2x.png");
+    background-size: 100% 100%;
     width: 70px;
     height: 72px;
     margin: -43px auto;
+    transition:margin .25s, width .25s, height .25s;
+    &.big {
+      background: url("../assets/images/cc-logo-lrg@2x.png");
+      background-size: 100% 100%;
+      width: 95px;
+      height: 98px;
+      margin: 40px auto;
+    }
   }
   hr {
     margin-top: 44px;
+  }
+
+  @media all and (orientation: landscape) {
+    display: none;
   }
 }

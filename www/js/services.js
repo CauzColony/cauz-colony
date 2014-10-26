@@ -5,11 +5,12 @@ angular.module('cauz.services', [])
           title: 'Powerbeats',
           offer: {
             link: 'http://www.beatsbydre.com/earphones/powerbeats/beats-powerbeats.html',
-            text: 'You’ve earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
+            text: 'You’ve also earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
             image: 'assets/images/powerbeats@2x.png',
             style: 'margin: 70px 0 0 115px; display:block; line-height:1.2; font-size: 16px;'
           },
           charityId: 0,
+          charityName: 'SF-MARIN FOOD BANK',
           id: '0',
           image: 'assets/images/logos/sf-martin@2x.png',
           steps: [
@@ -44,11 +45,12 @@ angular.module('cauz.services', [])
           title: 'Powerbeats',
           offer: {
             link: 'http://www.beatsbydre.com/earphones/powerbeats/beats-powerbeats.html',
-            text: 'You’ve earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
+            text: 'You’ve also earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
             image: 'assets/images/powerbeats@2x.png',
             style: 'margin: 70px 0 0 115px; display:block; line-height:1.2; font-size: 16px;'
           },
           charityId: 1,
+          charityName: 'San Francisco AIDS Foundation',
           id: '0',
           image: 'assets/images/logos/sf-af@2x.png',
           steps: [
@@ -142,6 +144,11 @@ angular.module('cauz.services', [])
       });
 
       return deferred.promise;
+    },
+    resetAll: function()
+    {
+      current = null;
+      step = 0;
     }
   };
 })
@@ -156,7 +163,7 @@ angular.module('cauz.services', [])
     login: function(d)
     {
       var deferred = $q.defer();
-      alert('Jon\' TODO: Check login against backend');
+      //alert('Jon\' TODO: Check login against backend');
       user = d;
 
       setTimeout(function()

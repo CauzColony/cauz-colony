@@ -15,7 +15,7 @@
         setQuestion(data);
       }else
       {
-        alert('Jon\'s TODO: submit data to backend');
+        //alert('Jon\'s TODO: submit data to backend');
         $scope.navigate('thankyou', $scope.pid);
       }
     });

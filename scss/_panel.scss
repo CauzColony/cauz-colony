@@ -11,6 +11,10 @@
   }
   &.padding {
     padding: 70px 16px 16px;
+
+    @media all and (orientation: landscape) {
+      padding: 1px 0;
+    }
   }
   
   &.step {

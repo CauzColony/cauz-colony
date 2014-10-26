@@ -9,7 +9,7 @@
     login: function(d)
     {
       var deferred = $q.defer();
-      alert('Jon\' TODO: Check login against backend');
+      //alert('Jon\' TODO: Check login against backend');
       user = d;
 
       setTimeout(function()

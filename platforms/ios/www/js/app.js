@@ -21,7 +21,7 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
       templateUrl: 'templates/home.html'
     })
     .state('login', {
-      url: '/home',
+      url: '/login',
       templateUrl: 'templates/login.html',
       controller: 'LoginCtrl',
       resolve: {

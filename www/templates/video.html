@@ -1,10 +1,11 @@
 <ion-content class="cauz-panel video step" padding="true" scroll="false">
   <h1>Project: {{title}}, Step {{currentStep + 1}}/{{steps}}</h1>
   <p ng-bind-html="copy"></p>
-  <h2 ng-hide="videoWatched">Get started by pushing play.</h2>
   <div class="video-container" ng-hide="videoWatched">
       <youtube-video id="best-vid" video-id="video.id" player-vars="playerVars"></youtube-video>
   </div>
+  <h2 ng-hide="videoWatched || videoPlaying">Play Now</h2>
+  <h2 ng-show="videoPlaying">Rotate for full screen</h2>
   <button class="button button-round button-positive button-bottom" ng-click="next()" ng-show="videoWatched">
     Next
   </button>

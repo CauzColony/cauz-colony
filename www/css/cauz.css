@@ -7661,13 +7661,23 @@ a.button {
   z-index: 999;
   text-align: center; }
   .header .logo {
-    background: url("../assets/images/cc-logo@2x.png");
-    background-size: 70px 72px;
+    background: url("../assets/images/cc-logo-lrg@2x.png");
+    background-size: 100% 100%;
     width: 70px;
     height: 72px;
-    margin: -43px auto; }
+    margin: -43px auto;
+    transition: margin 0.25s, width 0.25s, height 0.25s; }
+    .header .logo.big {
+      background: url("../assets/images/cc-logo-lrg@2x.png");
+      background-size: 100% 100%;
+      width: 95px;
+      height: 98px;
+      margin: 40px auto; }
   .header hr {
     margin-top: 44px; }
+  @media all and (orientation: landscape) {
+    .header {
+      display: none; } }
 
 hr {
   width: 100%;
@@ -7694,6 +7704,10 @@ hr {
     border-style: 1px solid; }
     .button.button-round.button-outline.button-gray {
       border-color: #CCC; }
+    .button.button-round.button-outline.button-energized {
+      border-color: #3EBBCE;
+      background-color: #3EBBCE;
+      color: white; }
     .button.button-round.button-outline.button-small {
       font-size: 35px;
       width: 55px;
@@ -7713,6 +7727,9 @@ hr {
       color: white; }
   .cauz-panel.padding {
     padding: 70px 16px 16px; }
+    @media all and (orientation: landscape) {
+      .cauz-panel.padding {
+        padding: 1px 0; } }
   .cauz-panel.step h1 {
     color: #3EBBCE;
     font-size: 20px;
@@ -7721,13 +7738,20 @@ hr {
 .home {
   min-height: 100%; }
   .home h1 {
-    font-size: 26px;
+    font-size: 31px;
     margin: 33px 0 0;
     line-height: 1.2; }
+    .home h1 span {
+      display: block;
+      font-size: 21px;
+      margin-top: -6px; }
   .home p {
     margin: 13px 0 0;
     font-size: 18.5px;
     line-height: 1.5; }
+  .home ol {
+    list-style: decimal;
+    margin-left: 20px; }
   .home button {
     position: absolute;
     left: 50%;
@@ -7740,6 +7764,19 @@ hr {
     .home button span {
       display: block;
       margin-top: 42px; }
+  .home .centered {
+    text-align: center; }
+    .home .centered img.lockup {
+      margin: 125px auto 0px;
+      width: 186px;
+      height: 88px; }
+    .home .centered img.medal {
+      width: 55px;
+      height: 64px; }
+    .home .centered p {
+      text-align: left;
+      width: 230px;
+      margin: 30px auto; }
 
 .menu .item img {
   max-width: 290px; }
@@ -7759,10 +7796,19 @@ hr {
   margin: 14px 0;
   font-size: 17px;
   color: #888; }
+  @media all and (orientation: landscape) {
+    .video p {
+      display: none; } }
 .video h2 {
   color: #3EBBCE;
   font-size: 17px;
-  margin: 30px 0 10px; }
+  margin: 5px 0 10px; }
+  @media all and (orientation: landscape) {
+    .video h2 {
+      display: none; } }
+@media all and (orientation: landscape) {
+  .video h1 {
+    display: none; } }
 
 .thank-you h1 {
   font-size: 47px;
@@ -7794,35 +7840,44 @@ hr {
     text-align: center;
     padding: 0 0 0 2px; }
 
-.login input[type="email"] {
-  margin: 20px 0;
-  border: 1px solid #CCC;
-  padding: 12px;
-  height: inherit;
-  font-family: AvenirNext;
-  font-size: 12px;
-  color: #888; }
-.login ::-webkit-input-placeholder {
-  color: #888;
-  font-size: 17px;
-  margin-top: 2px; }
-.login img {
-  max-width: 300px; }
-.login i.arrow {
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  border-right: 16px solid #DDD;
-  position: absolute;
-  top: 199px; }
-  .login i.arrow.right {
-    left: 284px;
+.login {
+  text-align: center; }
+  .login input[type="email"] {
+    margin: 20px 0;
+    border: 1px solid #CCC;
+    padding: 12px;
+    height: inherit;
+    font-family: AvenirNext;
+    font-size: 12px;
+    color: #888; }
+  .login h3 {
+    font-size: 24px; }
+  .login p {
+    font-size: 19px;
+    margin-top: 20px; }
+  .login .slider {
+    margin-top: 20px; }
+  .login ::-webkit-input-placeholder {
+    color: #888;
+    font-size: 17px;
+    margin-top: 2px; }
+  .login img {
+    max-width: 300px; }
+  .login i.arrow {
+    display: block;
+    width: 0;
+    height: 0;
     border-top: 18px solid transparent;
     border-bottom: 18px solid transparent;
-    border-left: 16px solid #DDD;
-    border-right: none; }
+    border-right: 16px solid #DDD;
+    position: absolute;
+    top: 275px; }
+    .login i.arrow.right {
+      left: 284px;
+      border-top: 18px solid transparent;
+      border-bottom: 18px solid transparent;
+      border-left: 16px solid #DDD;
+      border-right: none; }
 
 .survey .item-select select {
   max-width: 100%;

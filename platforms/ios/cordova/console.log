@@ -81,3 +81,24 @@ Terminating in response to SpringBoard's termination.
 2014-09-09 08:56:08.236 Cauz Colony[25643:70b] [0,[0],"0"]
 2014-09-09 08:56:16.934 Cauz Colony[25643:70b] submit sdfg
 2014-09-09 08:56:16.934 Cauz Colony[25643:70b] [0,[0],"0","sdfg"]
+2014-10-26 17:21:31.758 Cauz Colony[16299:7009007] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Data/Application/B72C1968-1AB1-4F0B-A863-5A42AD817675/Library/Cookies/Cookies.binarycookies
+2014-10-26 17:21:31.854 Cauz Colony[16299:7009007] Multi-tasking -> Device: YES, App: YES
+2014-10-26 17:21:31.878 Cauz Colony[16299:7009007] Unlimited access to network resources
+2014-10-26 17:21:32.451 Cauz Colony[16299:7009007] [CDVTimer][keyboard] 0.090003ms
+2014-10-26 17:21:32.563 Cauz Colony[16299:7009007] [CDVTimer][statusbar] 111.155987ms
+2014-10-26 17:21:32.563 Cauz Colony[16299:7009007] [CDVTimer][TotalPluginStartup] 111.700952ms
+2014-10-26 17:21:33.697 Cauz Colony[16299:7009007] Resetting plugins due to page load.
+2014-10-26 17:21:33.973 Cauz Colony[16299:7009007] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Bundle/Application/0E4A8A28-82C9-48A4-B4AA-DAE97E7E6490/Cauz%20Colony.app/www/index.html#/home
+2014-10-26 17:22:40.189 Cauz Colony[16685:7010894] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Data/Application/7F025858-93ED-402F-B7F4-06C32C1F5DB3/Library/Cookies/Cookies.binarycookies
+2014-10-26 17:22:40.288 Cauz Colony[16685:7010894] Multi-tasking -> Device: YES, App: YES
+2014-10-26 17:22:40.295 Cauz Colony[16685:7010894] Unlimited access to network resources
+2014-10-26 17:22:40.510 Cauz Colony[16685:7010894] [CDVTimer][keyboard] 0.052035ms
+2014-10-26 17:22:40.524 Cauz Colony[16685:7010894] [CDVTimer][statusbar] 14.024019ms
+2014-10-26 17:22:40.524 Cauz Colony[16685:7010894] [CDVTimer][TotalPluginStartup] 14.346957ms
+2014-10-26 17:22:40.589 Cauz Colony[16685:7010894] Resetting plugins due to page load.
+2014-10-26 17:22:40.734 Cauz Colony[16685:7010894] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Bundle/Application/FFF90DCB-39BF-42FD-9FBE-688ED57AA294/Cauz%20Colony.app/www/index.html#/home
+Oct 26 17:22:54 LittleMama rtcreporting[16685] <Info>: logging starts...
+Oct 26 17:22:54 LittleMama rtcreporting[16685] <Debug>: setMessageLoggingBlock: called
+2014-10-26 17:23:08.566 Cauz Colony[16685:7010894] no thanks
+2014-10-26 17:23:08.584 Cauz Colony[16685:7010894] SurveyCtrl
+Oct 26 17:23:16 LittleMama rtcreporting[16685] <Debug>: initWithSessionInfo: XPC connection interrupted

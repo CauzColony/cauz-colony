@@ -41,6 +41,20 @@ module.exports = [
         "clobbers": [
             "window.open"
         ]
+    },
+    {
+        "file": "plugins/net.yoik.cordova.plugins.screenorientation/www/screenorientation.js",
+        "id": "net.yoik.cordova.plugins.screenorientation.screenorientation",
+        "clobbers": [
+            "cordova.plugins.screenorientation"
+        ]
+    },
+    {
+        "file": "plugins/net.yoik.cordova.plugins.screenorientation/www/screenorientation.ios.js",
+        "id": "net.yoik.cordova.plugins.screenorientation.screenorientation.ios",
+        "merges": [
+            "cordova.plugins.screenorientation"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -50,7 +64,8 @@ module.exports.metadata =
     "org.apache.cordova.console": "0.2.10",
     "org.apache.cordova.device": "0.2.11",
     "org.apache.cordova.statusbar": "0.1.7",
-    "org.apache.cordova.inappbrowser": "0.5.1"
+    "org.apache.cordova.inappbrowser": "0.5.1",
+    "net.yoik.cordova.plugins.screenorientation": "1.3.0"
 }
 // BOTTOM OF METADATA
 });

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1B0A034E93C946E8999470D6 /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F97FC3A42640829A875DC1 /* UIWebViewExtension.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -45,6 +44,7 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		8D4EE11FDA764D50BF65F723 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD3A079E1742F2960E8751 /* CDVInAppBrowser.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		268EECE97B494CDFBC156E23 /* YoikScreenOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DDFCE9D202418F90D3AAC1 /* YoikScreenOrientation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +121,8 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F6F97FC3A42640829A875DC1 /* UIWebViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIWebViewExtension.m; path = com.ionic.keyboard/UIWebViewExtension.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Cauz Colony/config.xml"; sourceTree = "<group>"; };
+		76DDFCE9D202418F90D3AAC1 /* YoikScreenOrientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "YoikScreenOrientation.m"; path = "net.yoik.cordova.plugins.screenorientation/YoikScreenOrientation.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		0A69879B0110484282AF23D6 /* YoikScreenOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "YoikScreenOrientation.h"; path = "net.yoik.cordova.plugins.screenorientation/YoikScreenOrientation.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,8 @@
 				732F65D813F3477D83DA4E0E /* CDVStatusBar.h */,
 				59CD3A079E1742F2960E8751 /* CDVInAppBrowser.m */,
 				C768CA5816AD497894EF0F76 /* CDVInAppBrowser.h */,
+				76DDFCE9D202418F90D3AAC1 /* YoikScreenOrientation.m */,
+				0A69879B0110484282AF23D6 /* YoikScreenOrientation.h */,
 			);
 			name = Plugins;
 			path = "Cauz Colony/Plugins";
@@ -458,6 +462,7 @@
 				6D80F205128040A99B77CDE3 /* CDVDevice.m in Sources */,
 				3FC9C29EE2ED419E96CE022F /* CDVStatusBar.m in Sources */,
 				8D4EE11FDA764D50BF65F723 /* CDVInAppBrowser.m in Sources */,
+				268EECE97B494CDFBC156E23 /* YoikScreenOrientation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +553,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

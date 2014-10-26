@@ -3,6 +3,7 @@
   ProjectModels.getCurrent($stateParams.pid).then(function(data)
   {
     $scope.offer = data.project.offer;
+    $scope.charityName = data.project.charityName;
     $scope.offerText = $scope.offer.text;
     $scope.offerText = $sce.trustAsHtml($scope.offerText);
   });

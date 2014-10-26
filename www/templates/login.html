@@ -1,5 +1,6 @@
 <ion-content class="cauz-panel login" padding="true" scroll="false">
   <input type="email" ng-model="loginData.email" placeholder="Email">
+  <h3>Choose a charity<br>to start your project:</h3>
   <ion-slide-box does-continue="true" show-pager="false" active-slide="loginData.projectId">
     <ion-slide ng-repeat="project in projects" >
       <div class="slide-container">
@@ -9,6 +10,6 @@
   </ion-slide-box>
   <i class="icon arrow left" ng-click="slide(-1)"></i>
   <i class="icon arrow right" ng-click="slide(1)"></i>
-  <h3>Choose your charity and start earning big bucks for good.</h3>
+  <p>In only takes a few minutes<br>to be a hero to your cauz.</p>
   <button class="button button-positive button-round button-bottom" type="submit" ng-click="login()" ng-show="showButton()">GO!</button>
 </ion-content>

@@ -1,14 +1,30 @@
 .home {
   min-height: 100%;
+
   h1 {
-    font-size: 26px;
+    font-size: 31px;
     margin: 33px 0 0;
     line-height: 1.2;
+    span {
+      display: block;
+      font-size: 21px;
+      margin-top: -6px;
+    }
   }
+
   p {
     margin: 13px 0 0;
     font-size: 18.5px;
     line-height: 1.5;
+
+    .small {
+
+    }
+  }
+
+  ol {
+    list-style: decimal;
+    margin-left: 20px;
   }
 
   button {
@@ -23,6 +39,27 @@
     span {
       display: block;
       margin-top: 42px;
+    }
+  }
+
+  .centered {
+    text-align: center;
+    img {
+      &.lockup {
+        margin: 125px auto 0px;
+        width: 186px;
+        height: 88px;
+      }
+      &.medal {
+        width: 55px;
+        height: 64px;
+      }
+    }
+
+    p {
+      text-align: left;
+      width: 230px;
+      margin: 30px auto;
     }
   }
 }

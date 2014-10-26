@@ -1,17 +1,30 @@
 .controller('VideoCtrl', function($scope, $stateParams, $sce, $q, ProjectModels)
 {
+  if(screen && screen.unlockOrientation)
+  {
+    screen.unlockOrientation();
+  }
+
   $scope.pid = $stateParams.pid;
   $scope.playerVars = {
     modestbranding: 1,
     showinfo: 0,
-    rel: 0
+    rel: 0,
+    playsinline: 1
   };
   $scope.videoWatched = false;
 
   $scope.$on('youtube.player.ended', function ($event, player) {
-    player.seekTo(0);
-    player.stopVideo();
     $scope.videoWatched = true;
+    $scope.videoPlaying = false;
+    if(screen && screen.lockOrientation)
+    {
+      screen.lockOrientation('portrait');
+    }
+  });
+
+  $scope.$on('youtube.player.playing', function ($event, player) {
+    $scope.videoPlaying = true;
   });
 
   $scope.next = function()

@@ -22,6 +22,11 @@
       &.button-gray {
         border-color: $gray-lt;
       }
+      &.button-energized {
+        border-color: $teal-md;
+        background-color: $teal-md;
+        color: white;
+      }
       &.button-small {
         font-size: 35px;
         width: 55px;

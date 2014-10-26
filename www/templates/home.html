@@ -1,7 +1,21 @@
 <ion-content class="cauz-panel home blue" padding="true" scroll="false">
-  <h1>This is Cauz Colony.<br>A place for doing good.</h1>
-  <p>What do we want you to do?<br>It's pretty easy. For one thing,<br>we don't want your money. Just<br>a fraction of your time. Sign up, take a few minutes to complete the project and you'll help earn thousands of dollars for your favorite charity.</p>
-  <button ng-click="navigate('login')">
-    <span>Get Started</span>
-  </button>
+  <div><!-- ng-hide="complete"> -->
+  	<h1>This is Cauz Colony.<span>A place for doing good.</span></h1>
+    <p class="small">We don't want your money. We just want a few minutes.</p>
+  	<p>Easy steps to earn thousands for your favorite charity:</p>
+    <ol>
+      <li>Sign up</li>
+      <li>Complete the project</li>
+      <li>Help your cauz</li>
+    </ol>
+    <p>BTW, we will <strong>NEVER, EVER</strong> share your email address.</p>
+  	<button ng-click="navigate('login')">
+  	  <span>Get Started</span>
+  	</button>
+  </div>
+  <!-- <div class="centered" ng-show="complete">
+  	<img src="assets/images/type-lockup@2x.png" class="lockup">
+  	<p>Look for alerts on this app<br>for results on your project<br>and thanks again for being<br>a hero to the Cauz.</p>
+  	<img src="assets/images/medal@2x.png" class="medal">
+  </div> -->
 </ion-content>

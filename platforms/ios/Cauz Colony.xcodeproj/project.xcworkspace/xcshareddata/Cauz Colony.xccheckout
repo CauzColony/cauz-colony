@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6F0C9CCB1EE7EBAABA36A9F8775E64C9516B3E7C</key>
-		<string>ssh://github.com/drmunklung/cauz-colony.git</string>
+		<string>github.com:drmunklung/cauz-colony.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/Cauz Colony.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/Cauz Colony.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6F0C9CCB1EE7EBAABA36A9F8775E64C9516B3E7C</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/drmunklung/cauz-colony.git</string>
+	<string>github.com:drmunklung/cauz-colony.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

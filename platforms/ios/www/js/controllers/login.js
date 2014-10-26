@@ -1,6 +1,9 @@
 .controller('LoginCtrl', function($scope, $ionicLoading, UserModels, ProjectModels, projects) {
+  var user = UserModels.getUser();
+  ProjectModels.resetAll();
+
   $scope.loginData = {
-    email: '',
+    email: (user)? user.email:'',
     projectId: 0
   };
   $scope.projects = projects;
@@ -30,7 +33,6 @@
       {
         cur -= $scope.projects.length;
       }
-
       p = $scope.projects[cur];
       $scope.navigate(p.steps[0].type, p.id);
     });
@@ -41,8 +43,6 @@
     var i = parseInt(i);
 
     $scope.loginData.projectId += i;
-
-    console.log($scope.loginData.projectId);
   }
 
 
