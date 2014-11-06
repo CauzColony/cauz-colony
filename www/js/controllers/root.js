@@ -1,4 +1,4 @@
-.controller('RootCtrl', function($scope, $q, $ionicModal, $state, $ionicLoading, $timeout, UserModels)
+.controller('RootCtrl', function($scope, $q, $ionicModal, $state, $ionicLoading, $timeout, UserModels, $ionicSideMenuDelegate)
 {
   $scope.loggedIn = false;
   $scope.user = UserModels.getUser();
@@ -12,8 +12,9 @@
     }
   }, 250)
 
-  $scope.navigate =function(state, id)
+  $scope.navigate = function(state, id)
   {
+    console.log(state, id);
     if(screen && screen.lockOrientation)
     {
       console.log(screen)
@@ -21,4 +22,9 @@
     }
     $state.go(state, {pid: id});
   }
+
+  $scope.toggleLeft = function()
+  {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
 })

@@ -5,6 +5,13 @@
   position: absolute;
   z-index: 999;
   text-align: center;
+  i {
+    position: absolute;
+    color: white;
+    font-size: 29px;
+    left: 15px;
+    top: 8px;
+  }
   .logo {
     background: url("../assets/images/cc-logo-lrg@2x.png");
     background-size: 100% 100%;

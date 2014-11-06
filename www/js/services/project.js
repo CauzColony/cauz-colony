@@ -15,7 +15,7 @@
           steps: [
             {
               type: 'video',
-              copy: 'Learn more about Powerbeats. <br>Earbuds created by LeBron James<br>and Dr. Dre: designed to deliver<br>premium sound on the court, in the<br>gym, or on the streets.',
+              copy: 'Powerbeats. Earbuds designed for athletes by LeBron James and Dr. Dre. Learn more below. Press play.',
               id: '7qraNrqA2pw'
             },
             {
@@ -55,7 +55,7 @@
           steps: [
             {
               type: 'video',
-              copy: 'Learn more about Powerbeats. <br>Earbuds created by LeBron James<br>and Dr. Dre: designed to deliver<br>premium sound on the court, in the<br>gym, or on the streets.',
+              copy: 'Powerbeats. Earbuds designed for athletes by LeBron James and Dr. Dre. Learn more below. Press play.',
               id: '7qraNrqA2pw'
             },
             {

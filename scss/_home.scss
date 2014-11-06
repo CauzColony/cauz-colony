@@ -14,24 +14,61 @@
 
   p {
     margin: 13px 0 0;
-    font-size: 18.5px;
+    font-size: 16px;
     line-height: 1.5;
+    clear: both;
 
-    .small {
-
+    &.large {
+      font-size: 20.5px;
+      line-height: 1.2;
+    }
+    &.blue {
+      color: $teal-dk;
+    }
+    &.space-top {
+      margin-top: 50px;
+    }
+    &.align-bottom {
+      text-align: center;
+      position: absolute;
+      bottom: 9px;
+      width: 100%;
+      left: 0;
+      line-height: 1.2;
     }
   }
 
-  ol {
-    list-style: decimal;
-    margin-left: 20px;
+  hr {
+    border-top: 2px solid white;
+    margin-top: 50px;
+  }
+
+  ul {
+    margin: 0;
+    li {
+      float: left;
+      display: block;
+      width: 30%;
+      border-radius: 50px;
+      background: white;
+      color: $teal-dk;
+      text-align: center;
+      padding: 11px;
+      margin: -50px 0 0 5%;
+      strong {
+        font-size: 20px;
+      }
+      &:first-child {
+        margin: -50px 0 0;
+      }
+    }
   }
 
   button {
-    position: absolute;
+    position: relative;
     left: 50%;
     bottom: 20px;
-    margin-left: -39px;
+    margin: 50px 0 0 -39px;
     border: none;
     color: $teal-dk;
     background: transparent url("../assets/images/rocket@2x.png") no-repeat 14px 0px;

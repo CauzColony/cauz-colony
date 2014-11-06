@@ -7660,6 +7660,12 @@ a.button {
   position: absolute;
   z-index: 999;
   text-align: center; }
+  .header i {
+    position: absolute;
+    color: white;
+    font-size: 29px;
+    left: 15px;
+    top: 8px; }
   .header .logo {
     background: url("../assets/images/cc-logo-lrg@2x.png");
     background-size: 100% 100%;
@@ -7686,6 +7692,9 @@ hr {
   border-bottom: none;
   border-left: none;
   border-right: none; }
+
+.list .item {
+  text-transform: uppercase; }
 
 .button.button-round {
   border-radius: 200px;
@@ -7747,16 +7756,47 @@ hr {
       margin-top: -6px; }
   .home p {
     margin: 13px 0 0;
-    font-size: 18.5px;
-    line-height: 1.5; }
-  .home ol {
-    list-style: decimal;
-    margin-left: 20px; }
+    font-size: 16px;
+    line-height: 1.5;
+    clear: both; }
+    .home p.large {
+      font-size: 20.5px;
+      line-height: 1.2; }
+    .home p.blue {
+      color: #23576B; }
+    .home p.space-top {
+      margin-top: 50px; }
+    .home p.align-bottom {
+      text-align: center;
+      position: absolute;
+      bottom: 9px;
+      width: 100%;
+      left: 0;
+      line-height: 1.2; }
+  .home hr {
+    border-top: 2px solid white;
+    margin-top: 50px; }
+  .home ul {
+    margin: 0; }
+    .home ul li {
+      float: left;
+      display: block;
+      width: 30%;
+      border-radius: 50px;
+      background: white;
+      color: #23576B;
+      text-align: center;
+      padding: 11px;
+      margin: -50px 0 0 5%; }
+      .home ul li strong {
+        font-size: 20px; }
+      .home ul li:first-child {
+        margin: -50px 0 0; }
   .home button {
-    position: absolute;
+    position: relative;
     left: 50%;
     bottom: 20px;
-    margin-left: -39px;
+    margin: 50px 0 0 -39px;
     border: none;
     color: #23576B;
     background: transparent url("../assets/images/rocket@2x.png") no-repeat 14px 0px;
@@ -7906,6 +7946,9 @@ hr {
   border-top: 1px solid #CCC;
   margin: 15px 0 0 -17px;
   width: 98%; }
+.survey .btn-group {
+  position: absolute;
+  bottom: 100px; }
 
 @font-face {
   font-family: AvenirNext;

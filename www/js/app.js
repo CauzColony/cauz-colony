@@ -34,6 +34,14 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
         }
       }
     })
+    .state('about', {
+      url: '/about',
+      templateUrl: 'templates/about.html'
+    })
+    .state('privacy', {
+      url: '/privacy',
+      templateUrl: 'templates/privacy.html'
+    })
 
     .state('video', {
       url: '/video/:pid',

@@ -15,12 +15,12 @@
   $scope.videoWatched = false;
 
   $scope.$on('youtube.player.ended', function ($event, player) {
-    $scope.videoWatched = true;
     $scope.videoPlaying = false;
     if(screen && screen.lockOrientation)
     {
       screen.lockOrientation('portrait');
     }
+    $scope.next();
   });
 
   $scope.$on('youtube.player.playing', function ($event, player) {

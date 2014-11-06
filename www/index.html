@@ -26,12 +26,34 @@
   </head>
 
   <body ng-app="cauz">
-    <div ng-controller="RootCtrl"> 
+    <ion-side-menus>
+      <!-- Center content -->
+      <ion-side-menu-content ng-controller="RootCtrl">
         <div class="header">
+            <a ng-click="toggleLeft()"><i class="ion-navicon"></i></a>
             <hr>
             <div class="logo" ng-class="{big: complete}"></div>
         </div>
         <ion-nav-view></ion-nav-view>
-    </div>
+      </ion-side-menu-content>
+
+      <!-- Left menu -->
+      <ion-side-menu side="left">
+        <div class="list">
+          <a menu-close class="item item-icon-left" href="#/home">
+            <i class="icon ion-home"></i>
+            Home
+          </a>
+          <a menu-close class="item item-icon-left" href="#/about">
+            <i class="icon ion-play"></i>
+            About Cauz Colony
+          </a>
+          <a menu-close class="item item-icon-left" href="#/privacy">
+            <i class="icon ion-locked"></i>
+            Our privacy promise
+          </a>
+        </div>
+      </ion-side-menu>
+    </ion-side-menus>
   </body>
 </html>
