@@ -12,6 +12,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F766FE113BBADB100FB74C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F766FDC13BBADB100FB74C0 /* Localizable.strings */; };
 		268EECE97B494CDFBC156E23 /* YoikScreenOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DDFCE9D202418F90D3AAC1 /* YoikScreenOrientation.m */; };
+		26AFCAB2ED614F3D95E70811 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1A194AB5246668E466614 /* CDVSplashScreen.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		051337CBEF7A4DCFB32D43E0 /* CDVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = org.apache.cordova.device/CDVDevice.h; sourceTree = "<group>"; };
+		09E1A194AB5246668E466614 /* CDVSplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = org.apache.cordova.splashscreen/CDVSplashScreen.m; sourceTree = "<group>"; };
 		0A69879B0110484282AF23D6 /* YoikScreenOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YoikScreenOrientation.h; path = net.yoik.cordova.plugins.screenorientation/YoikScreenOrientation.h; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		EB87FDF21871DA7A0020F90C /* merges */ = {isa = PBXFileReference; lastKnownFileType = folder; name = merges; path = ../../merges; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
+		F3857ABDF4614DABAB595505 /* CDVSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = org.apache.cordova.splashscreen/CDVSplashScreen.h; sourceTree = "<group>"; };
 		F6F97FC3A42640829A875DC1 /* UIWebViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIWebViewExtension.m; path = com.ionic.keyboard/UIWebViewExtension.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Cauz Colony/config.xml"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +261,8 @@
 				C768CA5816AD497894EF0F76 /* CDVInAppBrowser.h */,
 				76DDFCE9D202418F90D3AAC1 /* YoikScreenOrientation.m */,
 				0A69879B0110484282AF23D6 /* YoikScreenOrientation.h */,
+				09E1A194AB5246668E466614 /* CDVSplashScreen.m */,
+				F3857ABDF4614DABAB595505 /* CDVSplashScreen.h */,
 			);
 			name = Plugins;
 			path = "Cauz Colony/Plugins";
@@ -464,6 +469,7 @@
 				3FC9C29EE2ED419E96CE022F /* CDVStatusBar.m in Sources */,
 				8D4EE11FDA764D50BF65F723 /* CDVInAppBrowser.m in Sources */,
 				268EECE97B494CDFBC156E23 /* YoikScreenOrientation.m in Sources */,
+				26AFCAB2ED614F3D95E70811 /* CDVSplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

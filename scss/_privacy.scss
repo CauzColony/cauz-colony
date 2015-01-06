@@ -1,0 +1,37 @@
+.privacy {
+	i {
+		position: absolute;
+		display: block;
+		width: 100%;
+		left: 0px;
+		&.zipper {
+			height: 77px;
+			bottom: 50px;
+			border: none;
+			color: $teal-dk;
+			background: transparent url("../assets/images/zipper@2x.png") no-repeat center top;
+			background-size: 288px auto;
+
+			@media only screen 
+			and (min-device-width : 375px) 
+			and (max-device-width : 667px) {
+			  background-size: 343px auto;
+			}
+		}
+		&.lock {
+			height: 126px;
+			bottom: 25px;
+			border: none;
+			color: $teal-dk;
+			background: transparent url("../assets/images/lock@2x.png") no-repeat center top;
+			background-size: 45px auto;
+
+			@media only screen 
+			and (min-device-width : 375px) 
+			and (max-device-width : 667px) {
+			  background-size: 90px auto;
+			  bottom: 75px;
+			}
+		}
+	}
+}

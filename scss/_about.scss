@@ -1,0 +1,64 @@
+.about {
+	margin-top: 10px;
+
+	@media only screen 
+	and (min-device-width : 375px) 
+	and (max-device-width : 667px) {
+	  margin-top: 30px;
+	}
+
+	p {
+		font-size: 15px;
+		line-height: 1.2;
+		margin-top: 8px;
+
+		@media only screen 
+		and (min-device-width : 375px) 
+		and (max-device-width : 667px) {
+		  font-size: 18px;
+		}
+	}
+
+	button {
+	    position: relative;
+	    left: 50%;
+	    bottom: 20px;
+	    margin: 40px 0 0 -65px;
+	    border: none;
+	    color: $teal-dk;
+	    background: transparent url("../assets/images/eye@2x.png") no-repeat 31px 0px;
+	    background-size: 64px auto;
+	    span {
+	      display: block;
+	      margin: 50px 0 0 0;
+	      color: #fff;
+	    }
+
+	    @media only screen 
+	    and (min-device-width : 375px) 
+	    and (max-device-width : 667px) {
+				margin: 48px 0 0 -65px;
+	    }
+	  }
+
+	  .centered {
+	    text-align: center;
+	    img {
+	      &.lockup {
+	        margin: 125px auto 0px;
+	        width: 186px;
+	        height: 88px;
+	      }
+	      &.medal {
+	        width: 55px;
+	        height: 64px;
+	      }
+	    }
+
+	    p {
+	      text-align: left;
+	      width: 230px;
+	      margin: 30px auto;
+	    }
+	  }
+}

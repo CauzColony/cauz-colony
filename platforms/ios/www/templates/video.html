@@ -4,7 +4,6 @@
   <div class="video-container" ng-hide="videoWatched">
       <youtube-video id="best-vid" video-id="video.id" player-vars="playerVars"></youtube-video>
   </div>
-  <h2 ng-hide="videoWatched || videoPlaying">Play Now</h2>
   <h2 ng-show="videoPlaying">Rotate for full screen</h2>
   <button class="button button-round button-positive button-bottom" ng-click="next()" ng-show="videoWatched">
     Next

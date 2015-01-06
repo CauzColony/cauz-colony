@@ -1,4 +1,30 @@
 angular.module('cauz.controllers', [])
+.controller('AboutVideoCtrl', function($scope, aboutVideo)
+{
+  if(screen && screen.unlockOrientation)
+  {
+    screen.unlockOrientation();
+  }
+
+  $scope.playerVars = {
+    modestbranding: 1,
+    showinfo: 0,
+    rel: 0,
+    playsinline: 1
+  };
+
+  $scope.video = aboutVideo;
+
+  $scope.$on('youtube.player.ended', function ($event, player) {
+    $scope.navigate('about');
+    
+    screen.lockOrientation('portrait');
+  });
+
+  $scope.$on('youtube.player.playing', function ($event, player) {
+    $scope.videoPlaying = true;
+  });
+})
 .controller('LoginCtrl', function($scope, $ionicLoading, UserModels, ProjectModels, projects) {
   var user = UserModels.getUser();
   ProjectModels.resetAll();
@@ -87,7 +113,7 @@ angular.module('cauz.controllers', [])
 .controller('QuestionCtrl', function($scope) {
 	
 })
-.controller('RootCtrl', function($scope, $q, $ionicModal, $state, $ionicLoading, $timeout, UserModels)
+.controller('RootCtrl', function($scope, $q, $ionicModal, $state, $ionicLoading, $timeout, UserModels, $ionicSideMenuDelegate)
 {
   $scope.loggedIn = false;
   $scope.user = UserModels.getUser();
@@ -101,8 +127,9 @@ angular.module('cauz.controllers', [])
     }
   }, 250)
 
-  $scope.navigate =function(state, id)
+  $scope.navigate = function(state, id)
   {
+    console.log(state, id);
     if(screen && screen.lockOrientation)
     {
       console.log(screen)
@@ -110,6 +137,11 @@ angular.module('cauz.controllers', [])
     }
     $state.go(state, {pid: id});
   }
+
+  $scope.toggleLeft = function()
+  {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
 })
 
 .controller('SurveyCtrl', function($scope, $stateParams, $sce, ProjectModels) {
@@ -219,12 +251,12 @@ angular.module('cauz.controllers', [])
   $scope.videoWatched = false;
 
   $scope.$on('youtube.player.ended', function ($event, player) {
-    $scope.videoWatched = true;
     $scope.videoPlaying = false;
     if(screen && screen.lockOrientation)
     {
       screen.lockOrientation('portrait');
     }
+    $scope.next();
   });
 
   $scope.$on('youtube.player.playing', function ($event, player) {

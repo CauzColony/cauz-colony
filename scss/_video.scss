@@ -14,6 +14,19 @@
       }
   }
 
+  &.about {
+    margin-top: 0px;
+    
+    .video-container {
+      @media all and (orientation: portrait) {
+        margin-top: 30px;
+      }
+      @media all and (orientation: landscape) {
+        margin-top: 0px;
+      }
+    }
+  }
+
   p {
     margin: 14px 0;
     font-size: 17px;

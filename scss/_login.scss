@@ -49,6 +49,12 @@
       border-bottom: 18px solid transparent;
       border-left: 16px solid $gray-ltr;
       border-right: none;
+      
+      @media only screen 
+      and (min-device-width : 375px) 
+      and (max-device-width : 667px) {
+        left: 340px;
+      }
     }
   }
 }

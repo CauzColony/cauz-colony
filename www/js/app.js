@@ -14,6 +14,8 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
   });
 })
 
+.value('aboutVideo', 'Fv-yov4Snm4')
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
@@ -37,6 +39,11 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
     .state('about', {
       url: '/about',
       templateUrl: 'templates/about.html'
+    })
+    .state('about-video', {
+      url: '/about-video',
+      templateUrl: 'templates/about-video.html',
+      controller: 'AboutVideoCtrl'
     })
     .state('privacy', {
       url: '/privacy',

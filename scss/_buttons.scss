@@ -36,6 +36,14 @@
         &.first {
           margin-left: 0;
         }
+
+        @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) {
+          width: 68px;
+          height: 68px;
+          margin: 0 0 0 22px;
+        }
       }
     }
   }

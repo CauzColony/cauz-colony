@@ -10,6 +10,19 @@
       font-size: 21px;
       margin-top: -6px;
     }
+
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+      font-size: 37px;
+      line-height: 1.3;
+
+      span {
+        display: block;
+        font-size: 29px;
+        margin-top: -4px;
+      }
+    }
   }
 
   p {
@@ -36,6 +49,15 @@
       left: 0;
       line-height: 1.2;
     }
+
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+      &.large {
+        font-size: 22px;
+        line-height: 1.2;
+      }
+    }
   }
 
   hr {
@@ -61,17 +83,24 @@
       &:first-child {
         margin: -50px 0 0;
       }
+
+      @media only screen 
+      and (min-device-width : 375px) 
+      and (max-device-width : 667px) {
+        width: 25%;
+        margin: -50px 0 0 12.5%;
+      }
     }
   }
 
   button {
-    position: relative;
+    position: absolute;
     left: 50%;
-    bottom: 20px;
-    margin: 50px 0 0 -39px;
+    bottom: 50px;
+    margin: 50px 0 0 -51px;
     border: none;
     color: $teal-dk;
-    background: transparent url("../assets/images/rocket@2x.png") no-repeat 14px 0px;
+    background: transparent url("../assets/images/rocket@2x.png") no-repeat 22px 0px;
     background-size: 55px 38px;
     span {
       display: block;
