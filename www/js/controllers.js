@@ -145,8 +145,8 @@ angular.module('cauz.controllers', [])
 })
 
 .controller('SurveyCtrl', function($scope, $stateParams, $sce, ProjectModels) {
-  console.log('SurveyCtrl');
   $scope.pid = $stateParams.pid;
+  $scope.labels = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ];
   ProjectModels.getCurrent($scope.pid).then(function(data)
   {
     setQuestion(data);
@@ -191,8 +191,6 @@ angular.module('cauz.controllers', [])
 
     $scope.navigate('survey.' + $scope.question.type, $scope.pid);
   }
-})
-.controller('SurveyMultipleChoiceCtrl', function($scope) {
 })
 .controller('SurveyCheckAllCtrl', function($scope) {
   $scope.answer = [];
@@ -305,9 +303,10 @@ angular.module('cauz.controllers', [])
     $scope.currentStep = data.step;
     $scope.video = $scope.steps[$scope.currentStep];
     $scope.steps = data.project.steps.length;
-    $scope.copy = $scope.video.copy;
-    $scope.copy = $sce.trustAsHtml($scope.copy);
+    $scope.text = $sce.trustAsHtml($scope.video.text);
     $scope.title = data.project.title;
+
+    setTimeout(function() {$scope.next();}, 10);
   }
 
   fetchData().then(updateScopeVars);

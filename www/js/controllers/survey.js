@@ -1,6 +1,6 @@
 .controller('SurveyCtrl', function($scope, $stateParams, $sce, ProjectModels) {
-  console.log('SurveyCtrl');
   $scope.pid = $stateParams.pid;
+  $scope.labels = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ];
   ProjectModels.getCurrent($scope.pid).then(function(data)
   {
     setQuestion(data);
@@ -45,8 +45,6 @@
 
     $scope.navigate('survey.' + $scope.question.type, $scope.pid);
   }
-})
-.controller('SurveyMultipleChoiceCtrl', function($scope) {
 })
 .controller('SurveyCheckAllCtrl', function($scope) {
   $scope.answer = [];

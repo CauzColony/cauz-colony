@@ -1,14 +1,16 @@
-<p class="instructions">
-  Rate this Powerbeat feature.<br><span>1</span> being not important at all.<br><span>4</span> being very important.
-</p>
-<hr>
 <p class="question">
   {{question.text}}
 </p>
-
-<button class="button button-block button-outline button-positive" ng-repeat="option in question.options" ng-click="select($index)" ng-class="{'button-energized': answer == $index}">
-  {{option}}
-</button>
-<button class="button button-block button-positive" ng-click="submit(answer)" ng-show="answer != null">
-  Submit <i class="icon ion-chevron-right"></i>
+<ul class="options multiple-choice">
+  <li ng-repeat="option in question.options">
+    <button class="button button-outline button-gray button-round button-multi" ng-click="select($index)" ng-class="{'button-energized': answer == $index}">
+      {{labels[$index]}}
+    </button>
+    <div class="option">
+      {{option}}
+    </div>
+  </li>
+</ul>
+<button class="button button-round button-positive button-bottom" ng-click="submit(answer)" ng-show="answer != null">
+  Submit
 </button>

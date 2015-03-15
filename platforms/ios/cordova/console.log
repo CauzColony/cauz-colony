@@ -125,3 +125,40 @@ Oct 26 17:23:16 LittleMama rtcreporting[16685] <Debug>: initWithSessionInfo: XPC
 2015-01-04 18:10:36.153 Cauz Colony[19894:3706933] home home
 2015-01-04 18:10:36.153 Cauz Colony[19894:3706933] {"orientation":"portrait-primary"}
 2015-01-04 18:10:36.185 Cauz Colony[19894:3706933] THREAD WARNING: ['YoikScreenOrientation'] took '32.081787' ms. Plugin should use a background thread.
+2015-03-12 21:09:36.303 Cauz Colony[3358:1194359] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Data/Application/F8A79F91-AAC3-4EE7-B766-E4D7F0439BA8/Library/Cookies/Cookies.binarycookies
+2015-03-12 21:09:36.394 Cauz Colony[3358:1194359] Multi-tasking -> Device: YES, App: YES
+2015-03-12 21:09:36.403 Cauz Colony[3358:1194359] Unlimited access to network resources
+2015-03-12 21:09:36.806 Cauz Colony[3358:1194359] [CDVTimer][keyboard] 0.060976ms
+2015-03-12 21:09:36.930 Cauz Colony[3358:1194359] [CDVTimer][statusbar] 123.565972ms
+2015-03-12 21:09:36.950 Cauz Colony[3358:1194359] [CDVTimer][splashscreen] 20.397007ms
+2015-03-12 21:09:36.951 Cauz Colony[3358:1194359] [CDVTimer][TotalPluginStartup] 144.406021ms
+2015-03-12 21:09:37.153 Cauz Colony[3358:1194359] Resetting plugins due to page load.
+2015-03-12 21:09:37.427 Cauz Colony[3358:1194359] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Bundle/Application/0F561FEF-F334-4141-A644-B5E1184AB5E7/Cauz%20Colony.app/www/index.html#/home
+2015-03-12 21:09:37.638 Cauz Colony[3358:1194359] home home
+2015-03-12 21:09:37.638 Cauz Colony[3358:1194359] {"orientation":"portrait-primary"}
+2015-03-12 21:09:37.676 Cauz Colony[3358:1194359] THREAD WARNING: ['YoikScreenOrientation'] took '37.696045' ms. Plugin should use a background thread.
+2015-03-12 21:10:08.886 Cauz Colony[3750:1195885] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Data/Application/997B2040-3C1F-4B0F-99A7-84BF7751D2F8/Library/Cookies/Cookies.binarycookies
+2015-03-12 21:10:09.045 Cauz Colony[3750:1195885] Multi-tasking -> Device: YES, App: YES
+2015-03-12 21:10:09.051 Cauz Colony[3750:1195885] Unlimited access to network resources
+2015-03-12 21:10:09.244 Cauz Colony[3750:1195885] [CDVTimer][keyboard] 0.059009ms
+2015-03-12 21:10:09.258 Cauz Colony[3750:1195885] [CDVTimer][statusbar] 14.441013ms
+2015-03-12 21:10:09.262 Cauz Colony[3750:1195885] [CDVTimer][splashscreen] 3.478050ms
+2015-03-12 21:10:09.262 Cauz Colony[3750:1195885] [CDVTimer][TotalPluginStartup] 18.401980ms
+2015-03-12 21:10:09.338 Cauz Colony[3750:1195885] Resetting plugins due to page load.
+2015-03-12 21:10:09.481 Cauz Colony[3750:1195885] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Bundle/Application/80225182-DCBC-43C4-9F73-CD6803742575/Cauz%20Colony.app/www/index.html#/home
+2015-03-12 21:10:09.714 Cauz Colony[3750:1195885] home home
+2015-03-12 21:10:09.714 Cauz Colony[3750:1195885] {"orientation":"portrait-primary"}
+2015-03-12 21:10:09.733 Cauz Colony[3750:1195885] THREAD WARNING: ['YoikScreenOrientation'] took '18.864014' ms. Plugin should use a background thread.
+2015-03-12 21:14:44.166 Cauz Colony[4104:1200637] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Data/Application/564059E1-5859-4840-A478-918C210F50F0/Library/Cookies/Cookies.binarycookies
+2015-03-12 21:14:44.234 Cauz Colony[4104:1200637] Multi-tasking -> Device: YES, App: YES
+2015-03-12 21:14:44.238 Cauz Colony[4104:1200637] Unlimited access to network resources
+2015-03-12 21:14:44.388 Cauz Colony[4104:1200637] [CDVTimer][keyboard] 0.059009ms
+2015-03-12 21:14:44.413 Cauz Colony[4104:1200637] [CDVTimer][statusbar] 25.150001ms
+2015-03-12 21:14:44.417 Cauz Colony[4104:1200637] [CDVTimer][splashscreen] 3.495991ms
+2015-03-12 21:14:44.417 Cauz Colony[4104:1200637] [CDVTimer][TotalPluginStartup] 29.100955ms
+2015-03-12 21:14:44.509 Cauz Colony[4104:1200637] Resetting plugins due to page load.
+2015-03-12 21:14:44.648 Cauz Colony[4104:1200637] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F5AB76DF-EC0B-4B43-A30C-9F5269C6807C/data/Containers/Bundle/Application/E4A5EEB9-5010-4BB6-AEC8-F9E155D4738D/Cauz%20Colony.app/www/index.html#/home
+2015-03-12 21:14:44.885 Cauz Colony[4104:1200637] home home
+2015-03-12 21:14:44.885 Cauz Colony[4104:1200637] {"orientation":"portrait-primary"}
+2015-03-12 21:14:44.901 Cauz Colony[4104:1200637] THREAD WARNING: ['YoikScreenOrientation'] took '15.847900' ms. Plugin should use a background thread.
+2015-03-12 21:14:56.963 Cauz Colony[4104:1200670] Terminating since there is no system app.

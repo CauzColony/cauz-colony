@@ -66,6 +66,10 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
         url: '/rating',
         templateUrl: 'templates/survey.rating.html'
       })
+      .state('survey.multiple-choice', {
+        url: '/multiple-choice',
+        templateUrl: 'templates/survey.multiple-choice.html'
+      })
       .state('survey.check-all', {
         url: '/check-all',
         templateUrl: 'templates/survey.check-all.html',

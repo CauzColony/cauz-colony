@@ -16,8 +16,22 @@ angular.module('cauz.services', [])
           steps: [
             {
               type: 'video',
-              copy: 'Powerbeats. Earbuds designed for athletes by LeBron James and Dr. Dre. Learn more below. Press play.',
+              text: 'Powerbeats. Earbuds designed for athletes by LeBron James and Dr. Dre. Learn more below. Press play.',
               id: '7qraNrqA2pw'
+            },
+            {
+              type: 'multiple-choice',
+              text: 'Bacon ipsum dolor amet chuck meatloaf cow ham hock, tri-tip turducken brisket shank shoulder short loin spare ribs. Ball tip ribeye beef ribs, biltong filet mignon t-bone pork loin andouille landjaeger hamburger short loin chicken pancetta.',
+              options: [
+                'Shank tongue corned beef',
+                'Shankle ribeye beef pastrami t-bone flank, salami rump',
+                'Chuck short ribs pork belly strip steak alcatra t-bone',
+                'Turducken bresaola strip steak jerky'
+              ]
+            },
+            {
+              type: 'open',
+              text: 'Bacon ipsum dolor amet chuck meatloaf cow ham hock, tri-tip turducken brisket shank shoulder short loin spare ribs. Ball tip ribeye beef ribs, biltong filet mignon t-bone pork.'
             },
             {
               type: 'rating',

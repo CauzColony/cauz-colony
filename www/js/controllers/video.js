@@ -69,9 +69,10 @@
     $scope.currentStep = data.step;
     $scope.video = $scope.steps[$scope.currentStep];
     $scope.steps = data.project.steps.length;
-    $scope.copy = $scope.video.copy;
-    $scope.copy = $sce.trustAsHtml($scope.copy);
+    $scope.text = $sce.trustAsHtml($scope.video.text);
     $scope.title = data.project.title;
+
+    setTimeout(function() {$scope.next();}, 10);
   }
 
   fetchData().then(updateScopeVars);

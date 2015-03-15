@@ -1,6 +1,6 @@
 <ion-content class="cauz-panel video step" padding="true" scroll="false">
   <h1>Project: {{title}}, Step {{currentStep + 1}}/{{steps}}</h1>
-  <p ng-bind-html="copy"></p>
+  <p ng-bind-html="text"></p>
   <div class="video-container" ng-hide="videoWatched">
       <youtube-video id="best-vid" video-id="video.id" player-vars="playerVars"></youtube-video>
   </div>

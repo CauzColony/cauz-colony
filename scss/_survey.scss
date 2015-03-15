@@ -7,6 +7,13 @@
     }
   }
 
+  textarea {
+    border: 1px solid $teal-lt;
+    padding: 5px;
+    resize: none;
+    height: 170px;
+  }
+
   p {
     color: $gray-dk;
     &.instructions {
@@ -42,7 +49,7 @@
         display: inline-block;
         margin-bottom: 10px;
       }
-      font-size: 17px;
+      font-size: 16px;
       margin-top: 12px;
 
       @media only screen 
@@ -70,6 +77,28 @@
     and (min-device-width : 375px) 
     and (max-device-width : 667px) {
       bottom: 140px;
+    }
+  }
+
+  .multiple-choice {
+    li {
+      display: table;
+      margin-bottom: 7px;
+
+
+      .option {
+        line-height: 16px;
+        font-size: 16px;
+        display: table-cell; 
+        vertical-align: middle;
+
+        @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) {
+          font-size: 20px;
+          line-height: 1.1;
+        }
+      }
     }
   }
 }
