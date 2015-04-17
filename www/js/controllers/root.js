@@ -4,20 +4,17 @@
   $scope.user = UserModels.getUser();
   $scope.complete = false;
 
-  $timeout(function()
-  {
-    if($scope.user == undefined)
-    {
-      $scope.navigate('home', 'home');
-    }
-  }, 250)
-
   $scope.navigate = function(state, id)
   {
-    console.log(state, id);
+    if(state === 'login')
+    {
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+    }
+
     if(screen && screen.lockOrientation)
     {
-      console.log(screen)
       screen.lockOrientation('portrait');
     }
     $state.go(state, {pid: id});

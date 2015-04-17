@@ -1,6 +1,7 @@
 .controller('LoginCtrl', function($scope, $ionicLoading, UserModels, ProjectModels, projects) {
   var user = UserModels.getUser();
   ProjectModels.resetAll();
+  $ionicLoading.hide();
 
   $scope.loginData = {
     email: (user)? user.email:'',
@@ -15,8 +16,6 @@
 
   $scope.login = function()
   {
-    showLoader();
-
     UserModels.login($scope.loginData).then(function(user)
     {
       $ionicLoading.hide();

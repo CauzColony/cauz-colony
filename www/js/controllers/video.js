@@ -41,7 +41,7 @@
         }else
         {
           //go to survey page
-          $scope.navigate('survey.'+data.project.steps[data.step].type, $scope.pid);
+          $scope.navigate(data.project.steps[data.step].type, $scope.pid);
         }
       });
     }else
@@ -71,8 +71,6 @@
     $scope.steps = data.project.steps.length;
     $scope.text = $sce.trustAsHtml($scope.video.text);
     $scope.title = data.project.title;
-
-    setTimeout(function() {$scope.next();}, 10);
   }
 
   fetchData().then(updateScopeVars);

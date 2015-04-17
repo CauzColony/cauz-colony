@@ -1,111 +1,32 @@
-.factory('ProjectModels', function($q){
-  var projects = [
-        {
-          title: 'Powerbeats',
-          offer: {
-            link: 'http://www.beatsbydre.com/earphones/powerbeats/beats-powerbeats.html',
-            text: 'You’ve also earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
-            image: 'assets/images/powerbeats@2x.png',
-            style: 'margin: 70px 0 0 115px; display:block; line-height:1.2; font-size: 16px;'
-          },
-          charityId: 0,
-          charityName: 'SF-MARIN FOOD BANK',
-          id: '0',
-          image: 'assets/images/logos/sf-martin@2x.png',
-          steps: [
-            {
-              type: 'video',
-              text: 'Powerbeats. Earbuds designed for athletes by LeBron James and Dr. Dre. Learn more below. Press play.',
-              id: '7qraNrqA2pw'
-            },
-            {
-              type: 'multiple-choice',
-              text: 'Bacon ipsum dolor amet chuck meatloaf cow ham hock, tri-tip turducken brisket shank shoulder short loin spare ribs. Ball tip ribeye beef ribs, biltong filet mignon t-bone pork loin andouille landjaeger hamburger short loin chicken pancetta.',
-              options: [
-                'Shank tongue corned beef',
-                'Shankle ribeye beef pastrami t-bone flank, salami rump',
-                'Chuck short ribs pork belly strip steak alcatra t-bone',
-                'Turducken bresaola strip steak jerky'
-              ]
-            },
-            {
-              type: 'open',
-              text: 'Bacon ipsum dolor amet chuck meatloaf cow ham hock, tri-tip turducken brisket shank shoulder short loin spare ribs. Ball tip ribeye beef ribs, biltong filet mignon t-bone pork.'
-            },
-            {
-              type: 'rating',
-              text: '<span>MADE FOR ATHLETES.</span><br>Flexible earclips are designed to<br>secure Powerbeats earphones in<br>your ears no matter how rigorous<br>your workout.',
-              options: [ 1, 2, 3, 4]
-            },
-            {
-              type: 'rating',
-              text: '<span>CLEARER SOUND. DEEPER BASS.</span><br>Powerbeats earphones are the<br>only Beats by Dr. Dre earbuds<br>that come with two speakers<br>inside each bud. That means you<br>get crystal clear highs and deep,<br>rumbling lows',
-              options: [ 1, 2, 3, 4]
-            },
-            {
-              type: 'rating',
-              text: '<span>SAFETY FIRST.</span><br>Powerbeats earphones are<br>specially designed to pump<br>clear bass at any volume while<br>letting in ambient noise – making<br>sure athletes stay safe while<br>running on the road.',
-              options: [ 1, 2, 3, 4]
-            },
-            {
-              type: 'rating',
-              text: '<span>REMOTE CONTROL CORD.</span><br>You can adjust your music to<br>find your power song right from<br>the cord. No need to fumble<br>with your MP3 player during<br>your workout.',
-              options: [ 1, 2, 3, 4]
-            }
-          ]
-        },
-        {
-          title: 'Powerbeats',
-          offer: {
-            link: 'http://www.beatsbydre.com/earphones/powerbeats/beats-powerbeats.html',
-            text: 'You’ve also earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
-            image: 'assets/images/powerbeats@2x.png',
-            style: 'margin: 70px 0 0 115px; display:block; line-height:1.2; font-size: 16px;'
-          },
-          charityId: 1,
-          charityName: 'San Francisco AIDS Foundation',
-          id: '0',
-          image: 'assets/images/logos/sf-af@2x.png',
-          steps: [
-            {
-              type: 'video',
-              copy: 'Powerbeats. Earbuds designed for athletes by LeBron James and Dr. Dre. Learn more below. Press play.',
-              id: '7qraNrqA2pw'
-            },
-            {
-              type: 'rating',
-              text: 'How many licks does it take to get to the center of a Tootsie Roll Tottsie Pop?',
-              options: [
-                {
-                  text: '1',
-                  value: '1'
-                },
-                {
-                  text: '2',
-                  value: '2'
-                },
-                {
-                  text: '3',
-                  value: '3'
-                }
-              ]
-            }
-          ]
-        }
-      ],
+.factory('ProjectModels', function($q, $http){
+  var projects = null,
       current = null,
-      step,
-      answers;
+      step = 0,
+      answers = [];
 
   return {
     getProjects: function()
     {
+      console.log('getProjects');
+
       var deferred = $q.defer();
-      setTimeout(function()
-      {
-        //hack to show loader
-        deferred.resolve(projects);
-      }, 500)
+      $http({
+          url: 'http://jsonstub.com/projects',
+          method: 'GET',
+          dataType: 'json', 
+          data: '',         
+          headers: {
+              'Content-Type': 'application/json',
+              'JsonStub-User-Key': '7221dec9-6763-4f8a-86fc-41d361311c0a',
+              'JsonStub-Project-Key': '838d6804-623d-4f01-97cf-020b075b8453'
+          }
+      }).success(function (data, status, headers, config) {
+          projects = data;
+          deferred.resolve(projects);
+      }).error(function(data, status, headers, config) {
+        //TODO Error handling
+      });
+
       return deferred.promise;
     },
     getProjectById: function(id)
@@ -156,12 +77,18 @@
         step: step
       });
 
+      console.log(answers);
+
       return deferred.promise;
     },
     resetAll: function()
     {
       current = null;
       step = 0;
+    },
+    getAnswers: function()
+    {
+      return answers;
     }
   };
 })

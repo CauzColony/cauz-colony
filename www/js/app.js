@@ -62,30 +62,30 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
       templateUrl: 'templates/survey.html',
       controller: 'SurveyCtrl'
     })
-      .state('survey.rating', {
-        url: '/rating',
-        templateUrl: 'templates/survey.rating.html'
-      })
-      .state('survey.multiple-choice', {
-        url: '/multiple-choice',
-        templateUrl: 'templates/survey.multiple-choice.html'
-      })
-      .state('survey.check-all', {
-        url: '/check-all',
-        templateUrl: 'templates/survey.check-all.html',
-        controller: 'SurveyCheckAllCtrl'
-      })
-      .state('survey.select', {
-        url: '/select',
-        templateUrl: 'templates/survey.select.html',
-        controller: 'SurveySelectCtrl'
-      })
-      .state('survey.open', {
-        url: '/open',
-        templateUrl: 'templates/survey.open.html',
-        controller: 'SurveyOpenCtrl'
-      })
-
+    .state('survey.rating', {
+      url: '/rating',
+      templateUrl: 'templates/survey.rating.html'
+    })
+    .state('survey.multiple-choice', {
+      url: '/multiple-choice',
+      templateUrl: 'templates/survey.multiple-choice.html',
+      controller: 'SurveyMultipleChoiceCtrl'
+    })
+    .state('survey.check-all', {
+      url: '/check-all',
+      templateUrl: 'templates/survey.check-all.html',
+      controller: 'SurveyCheckAllCtrl'
+    })
+    .state('survey.select', {
+      url: '/select',
+      templateUrl: 'templates/survey.select.html',
+      controller: 'SurveySelectCtrl'
+    })
+    .state('survey.open', {
+      url: '/open',
+      templateUrl: 'templates/survey.open.html',
+      controller: 'SurveyOpenCtrl'
+    })
     .state('thankyou', {
       url: '/thankyou/:pid',
       templateUrl: 'templates/thankyou.html',
