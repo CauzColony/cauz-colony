@@ -25,42 +25,26 @@ angular.module('cauz.controllers', [])
     $scope.videoPlaying = true;
   });
 })
-.controller('LoginCtrl', function($scope, $ionicLoading, UserModels, ProjectModels, projects) {
-  var user = UserModels.getUser();
+.controller('LoginCtrl', function($scope, $ionicLoading, $ionicSlideBoxDelegate, ProjectModels) {
+  $scope.projects;
   ProjectModels.resetAll();
+  showLoader();
 
-  $scope.loginData = {
-    email: (user)? user.email:'',
-    projectId: 0
-  };
-  $scope.projects = projects;
+  ProjectModels.getProjects().then(function(projects){
+    $scope.projects = projects;
+    $scope.projectId = 0;
 
-  $scope.showButton = function()
-  {
-    return $scope.loginData.email != undefined && $scope.loginData.email.length > 0;
-  }
+    $ionicLoading.hide();
+    $ionicSlideBoxDelegate.update();
+  })
 
   $scope.login = function()
   {
     showLoader();
 
-    UserModels.login($scope.loginData).then(function(user)
+    ProjectModels.getProjectById($scope.projects[$scope.projectId].id).then(function(p)
     {
       $ionicLoading.hide();
-      $scope.user = user;
-    })
-    .then(function()
-    {
-      var cur = $scope.loginData.projectId,
-          p;
-      if(cur < 0)
-      {
-        cur = $scope.projects.length - 1;
-      }else if(cur >= $scope.projects.length)
-      {
-        cur -= $scope.projects.length;
-      }
-      p = $scope.projects[cur];
       $scope.navigate(p.steps[0].type, p.id);
     });
   }
@@ -69,7 +53,15 @@ angular.module('cauz.controllers', [])
   {
     var i = parseInt(i);
 
-    $scope.loginData.projectId += i;
+    $scope.projectId += i;
+
+    if($scope.projectId >= $scope.projects.length)
+    {
+      $scope.projectId -= $scope.projects.length;
+    }else if($scope.projectId < 0)
+    {
+      $scope.projectId = $scope.projects.length - 1
+    }
   }
 
 
@@ -119,20 +111,17 @@ angular.module('cauz.controllers', [])
   $scope.user = UserModels.getUser();
   $scope.complete = false;
 
-  $timeout(function()
-  {
-    if($scope.user == undefined)
-    {
-      $scope.navigate('home', 'home');
-    }
-  }, 250)
-
   $scope.navigate = function(state, id)
   {
-    console.log(state, id);
+    if(state === 'login')
+    {
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+    }
+
     if(screen && screen.lockOrientation)
     {
-      console.log(screen)
       screen.lockOrientation('portrait');
     }
     $state.go(state, {pid: id});
@@ -145,7 +134,6 @@ angular.module('cauz.controllers', [])
 })
 
 .controller('SurveyCtrl', function($scope, $stateParams, $sce, ProjectModels) {
-  console.log('SurveyCtrl');
   $scope.pid = $stateParams.pid;
   ProjectModels.getCurrent($scope.pid).then(function(data)
   {
@@ -161,8 +149,10 @@ angular.module('cauz.controllers', [])
         setQuestion(data);
       }else
       {
-        //alert('Jon\'s TODO: submit data to backend');
-        $scope.navigate('thankyou', $scope.pid);
+        ProjectModels.submitAnswers().then(function()
+        {
+          $scope.navigate('thankyou', $scope.pid);
+        })
       }
     });
   }
@@ -174,7 +164,10 @@ angular.module('cauz.controllers', [])
 
   $scope.submit = function(answer)
   {
-    $scope.setAnswer(answer);
+    $scope.setAnswer({
+      questionId: $scope.question._id,
+      answer: answer + 1
+    });
   }
 
   function setQuestion(data)
@@ -189,10 +182,8 @@ angular.module('cauz.controllers', [])
     $scope.qText = $sce.trustAsHtml($scope.qText);
     $scope.answer = null;
 
-    $scope.navigate('survey.' + $scope.question.type, $scope.pid);
+    $scope.navigate($scope.question.type, $scope.pid);
   }
-})
-.controller('SurveyMultipleChoiceCtrl', function($scope) {
 })
 .controller('SurveyCheckAllCtrl', function($scope) {
   $scope.answer = [];
@@ -208,6 +199,17 @@ angular.module('cauz.controllers', [])
     }
   }
 })
+.controller('SurveyMultipleChoiceCtrl', function($scope) {
+  $scope.labels = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ];
+
+  $scope.submit = function(answer)
+  {
+    $scope.setAnswer({
+      questionId: $scope.question._id,
+      answer: $scope.labels[answer]
+    });
+  }
+})
 .controller('SurveySelectCtrl', function($scope) {
   $scope.answer = 'Select One';
 })
@@ -216,6 +218,14 @@ angular.module('cauz.controllers', [])
   $scope.showSubmit = function()
   {
     return ($scope.question.optional || $scope.answer != '')
+  }
+
+  $scope.submit = function(answer)
+  {
+    $scope.setAnswer({
+      questionId: $scope.question._id,
+      answer: answer
+    });
   }
 })
 .controller('ThankYouCtrl', function($scope, $stateParams, $sce, ProjectModels) {
@@ -277,7 +287,7 @@ angular.module('cauz.controllers', [])
         }else
         {
           //go to survey page
-          $scope.navigate('survey.'+data.project.steps[data.step].type, $scope.pid);
+          $scope.navigate(data.project.steps[data.step].type, $scope.pid);
         }
       });
     }else
@@ -291,8 +301,9 @@ angular.module('cauz.controllers', [])
   function fetchData()
   {
     var deferred = $q.defer();
-    ProjectModels.getCurrent($scope.pid).then(function(data)
+    ProjectModels.getCurrent().then(function(data)
     {
+      console.log(data);
       deferred.resolve(data);
     })
     return deferred.promise;
@@ -305,8 +316,7 @@ angular.module('cauz.controllers', [])
     $scope.currentStep = data.step;
     $scope.video = $scope.steps[$scope.currentStep];
     $scope.steps = data.project.steps.length;
-    $scope.copy = $scope.video.copy;
-    $scope.copy = $sce.trustAsHtml($scope.copy);
+    $scope.text = $sce.trustAsHtml($scope.video.text);
     $scope.title = data.project.title;
   }
 

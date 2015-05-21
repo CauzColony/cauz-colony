@@ -1,5 +1,4 @@
-<p class="question">
-  {{question.text}}
+<p class="question" ng-bind-html="qText">
 </p>
 <ul class="options multiple-choice">
   <li ng-repeat="option in question.options">

@@ -1,111 +1,53 @@
 angular.module('cauz.services', [])
-.factory('ProjectModels', function($q){
-  var projects = [
-        {
-          title: 'Powerbeats',
-          offer: {
-            link: 'http://www.beatsbydre.com/earphones/powerbeats/beats-powerbeats.html',
-            text: 'You’ve also earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
-            image: 'assets/images/powerbeats@2x.png',
-            style: 'margin: 70px 0 0 115px; display:block; line-height:1.2; font-size: 16px;'
-          },
-          charityId: 0,
-          charityName: 'SF-MARIN FOOD BANK',
-          id: '0',
-          image: 'assets/images/logos/sf-martin@2x.png',
-          steps: [
-            {
-              type: 'video',
-              copy: 'Powerbeats. Earbuds designed for athletes by LeBron James and Dr. Dre. Learn more below. Press play.',
-              id: '7qraNrqA2pw'
-            },
-            {
-              type: 'rating',
-              text: '<span>MADE FOR ATHLETES.</span><br>Flexible earclips are designed to<br>secure Powerbeats earphones in<br>your ears no matter how rigorous<br>your workout.',
-              options: [ 1, 2, 3, 4]
-            },
-            {
-              type: 'rating',
-              text: '<span>CLEARER SOUND. DEEPER BASS.</span><br>Powerbeats earphones are the<br>only Beats by Dr. Dre earbuds<br>that come with two speakers<br>inside each bud. That means you<br>get crystal clear highs and deep,<br>rumbling lows',
-              options: [ 1, 2, 3, 4]
-            },
-            {
-              type: 'rating',
-              text: '<span>SAFETY FIRST.</span><br>Powerbeats earphones are<br>specially designed to pump<br>clear bass at any volume while<br>letting in ambient noise – making<br>sure athletes stay safe while<br>running on the road.',
-              options: [ 1, 2, 3, 4]
-            },
-            {
-              type: 'rating',
-              text: '<span>REMOTE CONTROL CORD.</span><br>You can adjust your music to<br>find your power song right from<br>the cord. No need to fumble<br>with your MP3 player during<br>your workout.',
-              options: [ 1, 2, 3, 4]
-            }
-          ]
-        },
-        {
-          title: 'Powerbeats',
-          offer: {
-            link: 'http://www.beatsbydre.com/earphones/powerbeats/beats-powerbeats.html',
-            text: 'You’ve also earned<br>this exclusive offer<br>from Powerbeats <span>&gt;</span>',
-            image: 'assets/images/powerbeats@2x.png',
-            style: 'margin: 70px 0 0 115px; display:block; line-height:1.2; font-size: 16px;'
-          },
-          charityId: 1,
-          charityName: 'San Francisco AIDS Foundation',
-          id: '0',
-          image: 'assets/images/logos/sf-af@2x.png',
-          steps: [
-            {
-              type: 'video',
-              copy: 'Powerbeats. Earbuds designed for athletes by LeBron James and Dr. Dre. Learn more below. Press play.',
-              id: '7qraNrqA2pw'
-            },
-            {
-              type: 'rating',
-              text: 'How many licks does it take to get to the center of a Tootsie Roll Tottsie Pop?',
-              options: [
-                {
-                  text: '1',
-                  value: '1'
-                },
-                {
-                  text: '2',
-                  value: '2'
-                },
-                {
-                  text: '3',
-                  value: '3'
-                }
-              ]
-            }
-          ]
-        }
-      ],
+.factory('ProjectModels', function($q, $http){
+  var projects = null,
       current = null,
-      step,
-      answers;
+      step = 0,
+      answers = [],
+      api = 'http://api.cauzcolony.mod.bz/api/';
+      //api = 'http://localhost:3000/api/';
 
   return {
     getProjects: function()
     {
       var deferred = $q.defer();
-      setTimeout(function()
-      {
-        //hack to show loader
-        deferred.resolve(projects);
-      }, 500)
+      $http({
+          url: api + 'projects',
+          method: 'GET',
+          dataType: 'json', 
+          data: ''
+      }).success(function (data, status, headers, config) {
+          projects = data;
+          deferred.resolve(projects);
+      }).error(function(data, status, headers, config) {
+        //TODO Error handling
+      });
+
       return deferred.promise;
     },
     getProjectById: function(id)
     {
       var deferred = $q.defer();
-      current = _.find(projects, {id: id});
-      step = 0;
-      answers = [];
-      deferred.resolve(current);
+      $http({
+          url: api + 'project-by-id',
+          method: 'POST',
+          dataType: 'json', 
+          data: { id: id }
+      }).success(function (data, status, headers, config) {
+          current = data;
+          step = 0;
+          answers = [];
+          deferred.resolve(current);
+      }).error(function(data, status, headers, config) {
+        //TODO Error handling
+      });
+      
       return deferred.promise;
     },
     getCurrent: function(id)
     {
+      console.log('getCurrent');
+
       var deferred = $q.defer();
       if(current)
       {
@@ -143,12 +85,35 @@ angular.module('cauz.services', [])
         step: step
       });
 
+      console.log(answers);
+
       return deferred.promise;
     },
     resetAll: function()
     {
       current = null;
       step = 0;
+    },
+    getAnswers: function()
+    {
+      return answers;
+    },
+    submitAnswers: function()
+    {
+      var deferred = $q.defer();
+      console.log(current, answers);
+      $http({
+          url: api + 'answers',
+          method: 'POST',
+          dataType: 'json', 
+          data: {answers:answers}
+      }).success(function (data, status, headers, config) {
+          console.log(data);
+          deferred.resolve();
+      }).error(function(data, status, headers, config) {
+        //TODO Error handling
+      });
+      return deferred.promise;
     }
   };
 })

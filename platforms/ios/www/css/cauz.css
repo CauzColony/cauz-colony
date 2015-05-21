@@ -7730,6 +7730,14 @@ hr {
           width: 68px;
           height: 68px;
           margin: 0 0 0 22px; } }
+    .button.button-round.button-outline.button-multi {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+      font-size: 24px;
+      float: left;
+      margin-right: 20px; }
 
 .cauz-panel {
   background: white; }
@@ -7954,7 +7962,7 @@ hr {
 .thank-you h1 {
   font-size: 47px;
   width: 100%;
-  margin: 45px 0 -10px;
+  margin: 25px 0 -10px;
   text-align: center;
   color: #3EBBCE; }
 .thank-you h2 {
@@ -7965,7 +7973,7 @@ hr {
   color: #888; }
 .thank-you img {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: -1;
   max-width: 100%; }
@@ -7995,7 +8003,8 @@ hr {
     font-size: 12px;
     color: #888; }
   .login h3 {
-    font-size: 24px; }
+    font-size: 24px;
+    margin-top: 50px; }
   .login p {
     font-size: 19px;
     margin-top: 20px; }
@@ -8030,6 +8039,11 @@ hr {
   max-width: 100%;
   width: 100%;
   direction: ltr; }
+.survey textarea {
+  border: 1px solid #74D1DF;
+  padding: 5px;
+  resize: none;
+  height: 170px; }
 .survey p {
   color: #888; }
   .survey p.instructions {
@@ -8053,7 +8067,7 @@ hr {
           margin-top: 6px;
           padding-top: 2px; } }
   .survey p.question {
-    font-size: 17px;
+    font-size: 16px;
     margin-top: 12px; }
     .survey p.question span {
       display: inline-block;
@@ -8073,6 +8087,18 @@ hr {
   @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
     .survey .btn-group {
       bottom: 140px; } }
+.survey .multiple-choice li {
+  display: table;
+  margin-bottom: 7px; }
+  .survey .multiple-choice li .option {
+    line-height: 16px;
+    font-size: 16px;
+    display: table-cell;
+    vertical-align: middle; }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+      .survey .multiple-choice li .option {
+        font-size: 20px;
+        line-height: 1.1; } }
 
 @font-face {
   font-family: AvenirNext;

@@ -1,5 +1,4 @@
 .controller('SurveyCtrl', function($scope, $stateParams, $sce, ProjectModels) {
-  console.log('SurveyCtrl');
   $scope.pid = $stateParams.pid;
   ProjectModels.getCurrent($scope.pid).then(function(data)
   {
@@ -15,8 +14,10 @@
         setQuestion(data);
       }else
       {
-        //alert('Jon\'s TODO: submit data to backend');
-        $scope.navigate('thankyou', $scope.pid);
+        ProjectModels.submitAnswers().then(function()
+        {
+          $scope.navigate('thankyou', $scope.pid);
+        })
       }
     });
   }
@@ -28,7 +29,10 @@
 
   $scope.submit = function(answer)
   {
-    $scope.setAnswer(answer);
+    $scope.setAnswer({
+      questionId: $scope.question._id,
+      answer: answer + 1
+    });
   }
 
   function setQuestion(data)
@@ -43,10 +47,8 @@
     $scope.qText = $sce.trustAsHtml($scope.qText);
     $scope.answer = null;
 
-    $scope.navigate('survey.' + $scope.question.type, $scope.pid);
+    $scope.navigate($scope.question.type, $scope.pid);
   }
-})
-.controller('SurveyMultipleChoiceCtrl', function($scope) {
 })
 .controller('SurveyCheckAllCtrl', function($scope) {
   $scope.answer = [];
@@ -62,6 +64,17 @@
     }
   }
 })
+.controller('SurveyMultipleChoiceCtrl', function($scope) {
+  $scope.labels = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ];
+
+  $scope.submit = function(answer)
+  {
+    $scope.setAnswer({
+      questionId: $scope.question._id,
+      answer: $scope.labels[answer]
+    });
+  }
+})
 .controller('SurveySelectCtrl', function($scope) {
   $scope.answer = 'Select One';
 })
@@ -70,5 +83,13 @@
   $scope.showSubmit = function()
   {
     return ($scope.question.optional || $scope.answer != '')
+  }
+
+  $scope.submit = function(answer)
+  {
+    $scope.setAnswer({
+      questionId: $scope.question._id,
+      answer: answer
+    });
   }
 })

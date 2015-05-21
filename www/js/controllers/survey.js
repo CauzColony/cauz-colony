@@ -14,8 +14,10 @@
         setQuestion(data);
       }else
       {
-        //alert('Jon\'s TODO: submit data to backend');
-        $scope.navigate('thankyou', $scope.pid);
+        ProjectModels.submitAnswers().then(function()
+        {
+          $scope.navigate('thankyou', $scope.pid);
+        })
       }
     });
   }
@@ -28,7 +30,7 @@
   $scope.submit = function(answer)
   {
     $scope.setAnswer({
-      id: $scope.question.id,
+      questionId: $scope.question._id,
       answer: answer + 1
     });
   }
@@ -68,7 +70,7 @@
   $scope.submit = function(answer)
   {
     $scope.setAnswer({
-      id: $scope.question.id,
+      questionId: $scope.question._id,
       answer: $scope.labels[answer]
     });
   }
@@ -86,7 +88,7 @@
   $scope.submit = function(answer)
   {
     $scope.setAnswer({
-      id: $scope.question.id,
+      questionId: $scope.question._id,
       answer: answer
     });
   }

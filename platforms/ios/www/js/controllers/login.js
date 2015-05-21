@@ -1,39 +1,23 @@
-.controller('LoginCtrl', function($scope, $ionicLoading, UserModels, ProjectModels, projects) {
-  var user = UserModels.getUser();
+.controller('LoginCtrl', function($scope, $ionicLoading, $ionicSlideBoxDelegate, ProjectModels) {
+  $scope.projects;
   ProjectModels.resetAll();
+  showLoader();
 
-  $scope.loginData = {
-    email: (user)? user.email:'',
-    projectId: 0
-  };
-  $scope.projects = projects;
+  ProjectModels.getProjects().then(function(projects){
+    $scope.projects = projects;
+    $scope.projectId = 0;
 
-  $scope.showButton = function()
-  {
-    return $scope.loginData.email != undefined && $scope.loginData.email.length > 0;
-  }
+    $ionicLoading.hide();
+    $ionicSlideBoxDelegate.update();
+  })
 
   $scope.login = function()
   {
     showLoader();
 
-    UserModels.login($scope.loginData).then(function(user)
+    ProjectModels.getProjectById($scope.projects[$scope.projectId].id).then(function(p)
     {
       $ionicLoading.hide();
-      $scope.user = user;
-    })
-    .then(function()
-    {
-      var cur = $scope.loginData.projectId,
-          p;
-      if(cur < 0)
-      {
-        cur = $scope.projects.length - 1;
-      }else if(cur >= $scope.projects.length)
-      {
-        cur -= $scope.projects.length;
-      }
-      p = $scope.projects[cur];
       $scope.navigate(p.steps[0].type, p.id);
     });
   }
@@ -42,7 +26,15 @@
   {
     var i = parseInt(i);
 
-    $scope.loginData.projectId += i;
+    $scope.projectId += i;
+
+    if($scope.projectId >= $scope.projects.length)
+    {
+      $scope.projectId -= $scope.projects.length;
+    }else if($scope.projectId < 0)
+    {
+      $scope.projectId = $scope.projects.length - 1
+    }
   }
 
 

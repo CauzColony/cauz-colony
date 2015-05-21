@@ -41,7 +41,7 @@
         }else
         {
           //go to survey page
-          $scope.navigate('survey.'+data.project.steps[data.step].type, $scope.pid);
+          $scope.navigate(data.project.steps[data.step].type, $scope.pid);
         }
       });
     }else
@@ -55,8 +55,9 @@
   function fetchData()
   {
     var deferred = $q.defer();
-    ProjectModels.getCurrent($scope.pid).then(function(data)
+    ProjectModels.getCurrent().then(function(data)
     {
+      console.log(data);
       deferred.resolve(data);
     })
     return deferred.promise;
@@ -69,8 +70,7 @@
     $scope.currentStep = data.step;
     $scope.video = $scope.steps[$scope.currentStep];
     $scope.steps = data.project.steps.length;
-    $scope.copy = $scope.video.copy;
-    $scope.copy = $sce.trustAsHtml($scope.copy);
+    $scope.text = $sce.trustAsHtml($scope.video.text);
     $scope.title = data.project.title;
   }
 

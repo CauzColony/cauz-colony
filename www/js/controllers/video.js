@@ -55,8 +55,9 @@
   function fetchData()
   {
     var deferred = $q.defer();
-    ProjectModels.getCurrent($scope.pid).then(function(data)
+    ProjectModels.getCurrent().then(function(data)
     {
+      console.log(data);
       deferred.resolve(data);
     })
     return deferred.promise;

@@ -1,4 +1,4 @@
-<h3>{{question.text}}</h3>
+<h3 ng-bind-html="qText"></h3>
 <textarea placeholder="{{placeholder}}" ng-model="answer"></textarea>
 <button class="button button-round button-positive button-bottom" ng-click="submit(answer)" ng-show="answer != null">
   Submit

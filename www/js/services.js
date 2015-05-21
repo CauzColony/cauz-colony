@@ -3,24 +3,19 @@ angular.module('cauz.services', [])
   var projects = null,
       current = null,
       step = 0,
-      answers = [];
+      answers = [],
+      api = 'http://api.cauzcolony.mod.bz/api/';
+      //api = 'http://localhost:3000/api/';
 
   return {
     getProjects: function()
     {
-      console.log('getProjects');
-
       var deferred = $q.defer();
       $http({
-          url: 'http://jsonstub.com/projects',
+          url: api + 'projects',
           method: 'GET',
           dataType: 'json', 
-          data: '',         
-          headers: {
-              'Content-Type': 'application/json',
-              'JsonStub-User-Key': '7221dec9-6763-4f8a-86fc-41d361311c0a',
-              'JsonStub-Project-Key': '838d6804-623d-4f01-97cf-020b075b8453'
-          }
+          data: ''
       }).success(function (data, status, headers, config) {
           projects = data;
           deferred.resolve(projects);
@@ -33,14 +28,26 @@ angular.module('cauz.services', [])
     getProjectById: function(id)
     {
       var deferred = $q.defer();
-      current = _.find(projects, {id: id});
-      step = 0;
-      answers = [];
-      deferred.resolve(current);
+      $http({
+          url: api + 'project-by-id',
+          method: 'POST',
+          dataType: 'json', 
+          data: { id: id }
+      }).success(function (data, status, headers, config) {
+          current = data;
+          step = 0;
+          answers = [];
+          deferred.resolve(current);
+      }).error(function(data, status, headers, config) {
+        //TODO Error handling
+      });
+      
       return deferred.promise;
     },
     getCurrent: function(id)
     {
+      console.log('getCurrent');
+
       var deferred = $q.defer();
       if(current)
       {
@@ -90,6 +97,23 @@ angular.module('cauz.services', [])
     getAnswers: function()
     {
       return answers;
+    },
+    submitAnswers: function()
+    {
+      var deferred = $q.defer();
+      console.log(current, answers);
+      $http({
+          url: api + 'answers',
+          method: 'POST',
+          dataType: 'json', 
+          data: {answers:answers}
+      }).success(function (data, status, headers, config) {
+          console.log(data);
+          deferred.resolve();
+      }).error(function(data, status, headers, config) {
+        //TODO Error handling
+      });
+      return deferred.promise;
     }
   };
 })

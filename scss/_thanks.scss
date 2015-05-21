@@ -2,7 +2,7 @@
   h1 {
     font-size: 47px;
     width: 100%;
-    margin: 45px 0 -10px;
+    margin: 25px 0 -10px;
     text-align: center;
     color: $teal-md;
   }
@@ -16,7 +16,7 @@
   }
   img {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     z-index: -1;
     max-width: 100%;

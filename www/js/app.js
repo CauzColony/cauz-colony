@@ -25,16 +25,7 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
-      controller: 'LoginCtrl',
-      resolve: {
-        projects: function(ProjectModels)
-        {
-          return ProjectModels.getProjects().then(function(data)
-          {
-            return data;
-          })
-        }
-      }
+      controller: 'LoginCtrl'
     })
     .state('about', {
       url: '/about',

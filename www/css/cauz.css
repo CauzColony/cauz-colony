@@ -7962,7 +7962,7 @@ hr {
 .thank-you h1 {
   font-size: 47px;
   width: 100%;
-  margin: 45px 0 -10px;
+  margin: 25px 0 -10px;
   text-align: center;
   color: #3EBBCE; }
 .thank-you h2 {
@@ -7973,7 +7973,7 @@ hr {
   color: #888; }
 .thank-you img {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: -1;
   max-width: 100%; }
@@ -8003,7 +8003,8 @@ hr {
     font-size: 12px;
     color: #888; }
   .login h3 {
-    font-size: 24px; }
+    font-size: 24px;
+    margin-top: 50px; }
   .login p {
     font-size: 19px;
     margin-top: 20px; }
