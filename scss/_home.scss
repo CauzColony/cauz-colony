@@ -10,6 +10,18 @@
       font-size: 21px;
       margin-top: -6px;
     }
+    
+    @media only screen and (min-device-width : 320px) {
+      font-size: 27px;
+      margin: 19px 0 0;
+      line-height: 1.2;
+      span {
+        display: block;
+        font-size: 18px;
+        margin-top: -6px;
+      }
+    }
+
 
     @media only screen 
     and (min-device-width : 375px) 
@@ -34,12 +46,19 @@
     &.large {
       font-size: 20.5px;
       line-height: 1.2;
+
+      @media only screen and (min-device-width : 320px) {
+        font-size: 16px;
+      }
     }
     &.blue {
       color: $teal-dk;
     }
     &.space-top {
       margin-top: 50px;
+      @media only screen and (min-device-width : 320px) {
+        margin-top: 20px;
+      }
     }
     &.align-bottom {
       text-align: center;
@@ -90,6 +109,13 @@
         width: 25%;
         margin: -50px 0 0 12.5%;
       }
+      @media only screen 
+      and (min-device-width : 376px) 
+      and (max-device-width : 667px) {
+        width: 25%;
+        margin: -50px 0 0 12.5%;
+        padding: 15px;
+      }
     }
   }
 
@@ -102,6 +128,10 @@
     color: $teal-dk;
     background: transparent url("../assets/images/rocket@2x.png") no-repeat 22px 0px;
     background-size: 55px 38px;
+
+    @media only screen and (min-device-width : 320px) {
+      bottom: 40px;
+    }
     span {
       display: block;
       margin-top: 42px;
@@ -126,6 +156,21 @@
       text-align: left;
       width: 230px;
       margin: 30px auto;
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+    margin: 5px 0 0 40px;
+    font-size: 16px;
+    line-height: 1.2;
+    color: $teal-dk;
+
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+      margin: 10px 0 0 50px;
+      font-size: 22px;
     }
   }
 }

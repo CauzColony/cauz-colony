@@ -369,3 +369,51 @@ Oct 26 17:23:16 LittleMama rtcreporting[16685] <Debug>: initWithSessionInfo: XPC
 2015-04-25 18:42:10.552 Cauz Colony[11580:1158287] Warning: Attempt to present <ForcedViewController: 0x79161380> on <MainViewController: 0x78f3de20> while a presentation is in progress!
 2015-04-25 18:42:10.552 Cauz Colony[11580:1158287] Warning: Attempt to dismiss from view controller <MainViewController: 0x78f3de20> while a presentation or dismiss is in progress!
 2015-04-25 18:42:15.115 Cauz Colony[11580:1158287] [{"id":"553c12e90bbef76b28cafc4a","image":"https://res.cloudinary.com/cauz-colony/image/upload/v1430000191/lmxgqlndebn29mrwj5fe.jpg"},{"id":"553c16db0bbef76b28cafc50","image":"https://res.cloudinary.com/cauz-colony/image/upload/v1430000275/frgorhdxlvxstsnxhfbo.jpg"}]
+2015-05-28 19:33:42.129 Cauz Colony[71590:6942336] Multi-tasking -> Device: YES, App: YES
+2015-05-28 19:33:42.140 Cauz Colony[71590:6942336] Unlimited access to network resources
+2015-05-28 19:33:42.430 Cauz Colony[71590:6942336] [CDVTimer][keyboard] 0.079989ms
+2015-05-28 19:33:42.528 Cauz Colony[71590:6942336] [CDVTimer][statusbar] 97.463965ms
+2015-05-28 19:33:42.552 Cauz Colony[71590:6942336] [CDVTimer][splashscreen] 23.628950ms
+2015-05-28 19:33:42.552 Cauz Colony[71590:6942336] [CDVTimer][TotalPluginStartup] 121.778965ms
+2015-05-28 19:33:42.669 Cauz Colony[71590:6942336] Resetting plugins due to page load.
+2015-05-28 19:33:42.974 Cauz Colony[71590:6942336] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F638AE75-E04E-462E-8897-2C8079E94E11/data/Containers/Bundle/Application/D3783737-24CB-4655-8528-4F1653DEC169/Cauz%20Colony.app/www/index.html#/home
+2015-05-28 19:34:00.055 Cauz Colony[71590:6942625] Terminating since there is no system app.
+2015-05-28 19:38:35.730 Cauz Colony[72045:6948906] Multi-tasking -> Device: YES, App: YES
+2015-05-28 19:38:35.736 Cauz Colony[72045:6948906] Unlimited access to network resources
+2015-05-28 19:38:35.815 Cauz Colony[72045:6948906] [CDVTimer][keyboard] 0.051022ms
+2015-05-28 19:38:35.829 Cauz Colony[72045:6948906] [CDVTimer][statusbar] 14.308989ms
+2015-05-28 19:38:35.832 Cauz Colony[72045:6948906] [CDVTimer][splashscreen] 3.076971ms
+2015-05-28 19:38:35.832 Cauz Colony[72045:6948906] [CDVTimer][TotalPluginStartup] 17.804027ms
+2015-05-28 19:38:35.909 Cauz Colony[72045:6948906] Resetting plugins due to page load.
+2015-05-28 19:38:36.117 Cauz Colony[72045:6948906] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F638AE75-E04E-462E-8897-2C8079E94E11/data/Containers/Bundle/Application/34D91EF8-BF8D-4784-B7FD-E36F2676169C/Cauz%20Colony.app/www/index.html#/home
+2015-06-02 19:59:16.741 Cauz Colony[73676:7214497] Multi-tasking -> Device: YES, App: YES
+2015-06-02 19:59:16.751 Cauz Colony[73676:7214497] Unlimited access to network resources
+2015-06-02 19:59:17.084 Cauz Colony[73676:7214497] [CDVTimer][keyboard] 0.079989ms
+2015-06-02 19:59:17.155 Cauz Colony[73676:7214497] [CDVTimer][statusbar] 70.685983ms
+2015-06-02 19:59:17.173 Cauz Colony[73676:7214497] [CDVTimer][splashscreen] 18.036008ms
+2015-06-02 19:59:17.173 Cauz Colony[73676:7214497] [CDVTimer][TotalPluginStartup] 89.199960ms
+2015-06-02 19:59:17.281 Cauz Colony[73676:7214497] Resetting plugins due to page load.
+2015-06-02 19:59:17.512 Cauz Colony[73676:7214497] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F638AE75-E04E-462E-8897-2C8079E94E11/data/Containers/Bundle/Application/44F13174-4C12-49AC-BC9C-C55CCFBA89C9/Cauz%20Colony.app/www/index.html#/home
+2015-06-06 18:38:13.549 Cauz Colony[8364:2176894] Multi-tasking -> Device: YES, App: YES
+2015-06-06 18:38:13.558 Cauz Colony[8364:2176894] Unlimited access to network resources
+2015-06-06 18:38:13.818 Cauz Colony[8364:2176894] [CDVTimer][keyboard] 0.060022ms
+2015-06-06 18:38:13.887 Cauz Colony[8364:2176894] [CDVTimer][statusbar] 68.765998ms
+2015-06-06 18:38:13.907 Cauz Colony[8364:2176894] [CDVTimer][splashscreen] 20.309985ms
+2015-06-06 18:38:13.907 Cauz Colony[8364:2176894] [CDVTimer][TotalPluginStartup] 89.545965ms
+2015-06-06 18:38:14.015 Cauz Colony[8364:2176894] Resetting plugins due to page load.
+2015-06-06 18:38:14.306 Cauz Colony[8364:2176894] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F638AE75-E04E-462E-8897-2C8079E94E11/data/Containers/Bundle/Application/7F23A392-DF2A-4341-A3C3-C3A344AE069A/Cauz%20Colony.app/www/index.html#/home
+2015-06-06 18:38:56.499 Cauz Colony[8364:2176894] THREAD WARNING: ['YoikScreenOrientation'] took '104.062012' ms. Plugin should use a background thread.
+2015-06-06 18:38:56.683 Cauz Colony[8364:2176894] Warning: Attempt to present <ForcedViewController: 0x7e056520> on <MainViewController: 0x7a874e70> while a presentation is in progress!
+2015-06-06 18:38:56.684 Cauz Colony[8364:2176894] Warning: Attempt to dismiss from view controller <MainViewController: 0x7a874e70> while a presentation or dismiss is in progress!
+2015-06-06 18:38:56.739 Cauz Colony[8364:2176894] Warning: Attempt to present <ForcedViewController: 0x7a942e80> on <MainViewController: 0x7a874e70> while a presentation is in progress!
+2015-06-06 18:38:56.739 Cauz Colony[8364:2176894] Warning: Attempt to dismiss from view controller <MainViewController: 0x7a874e70> while a presentation or dismiss is in progress!
+2015-06-06 18:39:07.380 Cauz Colony[8364:2177430] Terminating since there is no system app.
+2015-06-06 18:42:41.931 Cauz Colony[8793:2181386] Multi-tasking -> Device: YES, App: YES
+2015-06-06 18:42:41.940 Cauz Colony[8793:2181386] Unlimited access to network resources
+2015-06-06 18:42:42.046 Cauz Colony[8793:2181386] [CDVTimer][keyboard] 0.074029ms
+2015-06-06 18:42:42.067 Cauz Colony[8793:2181386] [CDVTimer][statusbar] 20.359039ms
+2015-06-06 18:42:42.091 Cauz Colony[8793:2181386] [CDVTimer][splashscreen] 23.935020ms
+2015-06-06 18:42:42.091 Cauz Colony[8793:2181386] [CDVTimer][TotalPluginStartup] 44.979036ms
+2015-06-06 18:42:42.194 Cauz Colony[8793:2181386] Resetting plugins due to page load.
+2015-06-06 18:42:42.349 Cauz Colony[8793:2181386] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F638AE75-E04E-462E-8897-2C8079E94E11/data/Containers/Bundle/Application/38C9810C-452C-4B26-B905-DF5D9D726027/Cauz%20Colony.app/www/index.html#/home
+2015-06-06 18:43:03.855 Cauz Colony[8793:2181829] Terminating since there is no system app.

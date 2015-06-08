@@ -1,22 +1,7 @@
 .thank-you {
-  h1 {
-    font-size: 47px;
-    width: 100%;
-    margin: 25px 0 -10px;
-    text-align: center;
-    color: $teal-md;
-  }
-
-  h2 {
-    font-size: 18px;
-    margin: 0 0 50px 0; 
-    width: 100%;
-    text-align: center;
-    color: $gray-dk;
-  }
   img {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     z-index: -1;
     max-width: 100%;

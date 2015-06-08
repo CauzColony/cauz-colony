@@ -7,10 +7,10 @@
   </ion-header-bar>
   <ion-content ng-controller="MenuCtrl" has-bouncing="false">
     <ul class="list">
-    <li class="item" ng-repeat="project in projects" ng-click="navigate('project', {{project.id}})">
-      <h2>{{project.title}}</h2>
-      <img ng-src="{{project.image}}">
-    </li>
-</ul>
+        <li class="item" ng-repeat="project in projects" ng-click="navigate('project', {{project.id}})">
+          <h2>{{project.title}}</h2>
+          <img ng-src="{{project.image}}">
+        </li>
+    </ul>
   </ion-content>
 </div> 

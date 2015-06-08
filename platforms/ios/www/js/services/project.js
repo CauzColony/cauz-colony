@@ -45,7 +45,7 @@
     },
     getCurrent: function(id)
     {
-      console.log('getCurrent');
+      //console.log('getCurrent');
 
       var deferred = $q.defer();
       if(current)
@@ -84,7 +84,7 @@
         step: step
       });
 
-      console.log(answers);
+      //console.log(answers);
 
       return deferred.promise;
     },
@@ -100,14 +100,14 @@
     submitAnswers: function()
     {
       var deferred = $q.defer();
-      console.log(current, answers);
+      //console.log(current, answers);
       $http({
           url: api + 'answers',
           method: 'POST',
           dataType: 'json', 
           data: {answers:answers}
       }).success(function (data, status, headers, config) {
-          console.log(data);
+          //console.log(data);
           deferred.resolve();
       }).error(function(data, status, headers, config) {
         //TODO Error handling

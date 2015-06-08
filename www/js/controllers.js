@@ -241,6 +241,7 @@ angular.module('cauz.controllers', [])
   //TODO
   $scope.offerClick = function()
   {
+    if(typeof $scope.offer.link != undefined && $scope.offer.link != '')
     window.open($scope.offer.link, '_blank', 'location=no,closebuttoncaption=Done,disallowoverscroll=yes,enableViewportScale=yes,toolbarposition=top,presentationstyle=fullscreen');
   }
 })
@@ -251,17 +252,21 @@ angular.module('cauz.controllers', [])
     screen.unlockOrientation();
   }
 
-  $scope.pid = $stateParams.pid;
-  $scope.playerVars = {
-    modestbranding: 1,
-    showinfo: 0,
-    rel: 0,
-    playsinline: 1
-  };
-  $scope.videoWatched = false;
+  $scope.$on('$ionicView.afterEnter', function()
+  {
+    $scope.pid = $stateParams.pid;
+    $scope.playerVars = {
+      modestbranding: 1,
+      showinfo: 0,
+      rel: 0,
+      playsinline: 1
+    };
+    $scope.videoWatched = false;
+  })
 
   $scope.$on('youtube.player.ended', function ($event, player) {
     $scope.videoPlaying = false;
+    $scope.videoWatched = true;
     if(screen && screen.lockOrientation)
     {
       screen.lockOrientation('portrait');
@@ -277,7 +282,7 @@ angular.module('cauz.controllers', [])
   {
     if(ProjectModels.incrementProjectStep())
     {
-      console.log('no thanks');
+      //console.log('no thanks');
       //if a video next play
       fetchData().then(function(data)
       {
@@ -303,7 +308,7 @@ angular.module('cauz.controllers', [])
     var deferred = $q.defer();
     ProjectModels.getCurrent().then(function(data)
     {
-      console.log(data);
+      //console.log(data);
       deferred.resolve(data);
     })
     return deferred.promise;

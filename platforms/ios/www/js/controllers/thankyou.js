@@ -11,6 +11,7 @@
   //TODO
   $scope.offerClick = function()
   {
+    if(typeof $scope.offer.link != undefined && $scope.offer.link != '')
     window.open($scope.offer.link, '_blank', 'location=no,closebuttoncaption=Done,disallowoverscroll=yes,enableViewportScale=yes,toolbarposition=top,presentationstyle=fullscreen');
   }
 })

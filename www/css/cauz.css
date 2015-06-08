@@ -7770,6 +7770,15 @@ hr {
       display: block;
       font-size: 21px;
       margin-top: -6px; }
+    @media only screen and (min-device-width: 320px) {
+      .home h1 {
+        font-size: 27px;
+        margin: 19px 0 0;
+        line-height: 1.2; }
+        .home h1 span {
+          display: block;
+          font-size: 18px;
+          margin-top: -6px; } }
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
       .home h1 {
         font-size: 37px;
@@ -7786,10 +7795,16 @@ hr {
     .home p.large {
       font-size: 20.5px;
       line-height: 1.2; }
+      @media only screen and (min-device-width: 320px) {
+        .home p.large {
+          font-size: 16px; } }
     .home p.blue {
       color: #23576B; }
     .home p.space-top {
       margin-top: 50px; }
+      @media only screen and (min-device-width: 320px) {
+        .home p.space-top {
+          margin-top: 20px; } }
     .home p.align-bottom {
       text-align: center;
       position: absolute;
@@ -7824,6 +7839,11 @@ hr {
         .home ul li {
           width: 25%;
           margin: -50px 0 0 12.5%; } }
+      @media only screen and (min-device-width: 376px) and (max-device-width: 667px) {
+        .home ul li {
+          width: 25%;
+          margin: -50px 0 0 12.5%;
+          padding: 15px; } }
   .home button {
     position: absolute;
     left: 50%;
@@ -7833,6 +7853,9 @@ hr {
     color: #23576B;
     background: transparent url("../assets/images/rocket@2x.png") no-repeat 22px 0px;
     background-size: 55px 38px; }
+    @media only screen and (min-device-width: 320px) {
+      .home button {
+        bottom: 40px; } }
     .home button span {
       display: block;
       margin-top: 42px; }
@@ -7849,6 +7872,16 @@ hr {
       text-align: left;
       width: 230px;
       margin: 30px auto; }
+  .home ol {
+    list-style-type: decimal;
+    margin: 5px 0 0 40px;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #23576B; }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+      .home ol {
+        margin: 10px 0 0 50px;
+        font-size: 22px; } }
 
 .about {
   margin-top: 10px; }
@@ -7924,7 +7957,7 @@ hr {
 
 .video .video-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.3%;
   height: 0;
   overflow: hidden; }
   .video .video-container iframe, .video .video-container object, .video .video-container embed {
@@ -7959,21 +7992,9 @@ hr {
   .video h1 {
     display: none; } }
 
-.thank-you h1 {
-  font-size: 47px;
-  width: 100%;
-  margin: 25px 0 -10px;
-  text-align: center;
-  color: #3EBBCE; }
-.thank-you h2 {
-  font-size: 18px;
-  margin: 0 0 50px 0;
-  width: 100%;
-  text-align: center;
-  color: #888; }
 .thank-you img {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   z-index: -1;
   max-width: 100%; }
@@ -8005,6 +8026,9 @@ hr {
   .login h3 {
     font-size: 24px;
     margin-top: 50px; }
+    @media only screen and (min-device-width: 320px) {
+      .login h3 {
+        margin-top: 20px; } }
   .login p {
     font-size: 19px;
     margin-top: 20px; }
@@ -8025,15 +8049,15 @@ hr {
     border-right: 16px solid #DDD;
     position: absolute;
     top: 275px; }
+    @media only screen and (min-device-width: 320px) {
+      .login i.arrow {
+        top: 215px; } }
     .login i.arrow.right {
-      left: 284px;
       border-top: 18px solid transparent;
       border-bottom: 18px solid transparent;
       border-left: 16px solid #DDD;
-      border-right: none; }
-      @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
-        .login i.arrow.right {
-          left: 340px; } }
+      border-right: none;
+      right: 16px; }
 
 .survey .item-select select {
   max-width: 100%;
