@@ -1,0 +1,3 @@
+.controller('QuestionCtrl', function($scope) {
+	
+})

@@ -12,11 +12,7 @@
         template: 'Loading...'
       });
     }
-
-    if(screen && screen.lockOrientation)
-    {
-      screen.lockOrientation('portrait');
-    }
+    
     $state.go(state, {pid: id});
   }
 

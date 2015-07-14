@@ -1,15 +1,15 @@
 <ion-content class="cauz-panel login" padding="true" scroll="false">
   <!-- <input type="email" ng-model="loginData.email" placeholder="Email"> -->
   <h3>Choose a charity<br>to start your project:</h3>
-  <ion-slide-box does-continue="false" show-pager="false" active-slide="projectId">
+  <ion-slide-box does-continue="true" show-pager="false" on-slide-changed="checkArrows($index)">
     <ion-slide ng-repeat="project in projects track by $index"  >
       <div class="slide-container">
         <img ng-src="{{project.image}}">
       </div>
     </ion-slide>
   </ion-slide-box>
-  <i class="icon arrow left" ng-click="slide(-1)"></i>
-  <i class="icon arrow right" ng-click="slide(1)"></i>
+  <i class="icon arrow left" ng-click="slide(-1)" ng-class="{ghost:hideLeft}"></i>
+  <i class="icon arrow right" ng-click="slide(1)" ng-class="{ghost:hideRight}"></i>
   <p>It only takes a few minutes<br>to be a hero to your cauz.</p>
   <!-- <button class="button button-positive button-round button-bottom" type="submit" ng-click="login()" ng-show="showButton()">GO!</button> -->
   <button class="button button-positive button-round button-bottom" type="submit" ng-click="login()">GO!</button>

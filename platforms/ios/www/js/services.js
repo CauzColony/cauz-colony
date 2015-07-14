@@ -93,6 +93,7 @@ angular.module('cauz.services', [])
     {
       current = null;
       step = 0;
+      answers = [];
     },
     getAnswers: function()
     {

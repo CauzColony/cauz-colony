@@ -1,0 +1,64 @@
+{
+    "com.ionic.keyboard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/driftyco/ionic-plugins-keyboard",
+            "subdir": "."
+        }
+    },
+    "net.yoik.cordova.plugins.screenorientation": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yoik/cordova-yoik-screenorientation",
+            "subdir": "."
+        }
+    },
+    "org.apache.cordova.console": {
+        "source": {
+            "type": "local",
+            "path": "/Users/drmunklung/.plugman/cache/org.apache.cordova.console/0.2.10/package"
+        }
+    },
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "local",
+            "path": "/Users/drmunklung/.plugman/cache/org.apache.cordova.device/0.2.11/package"
+        }
+    },
+    "org.apache.cordova.splashscreen": {
+        "source": {
+            "type": "local",
+            "path": "/Users/jon/.plugman/cache/org.apache.cordova.splashscreen/0.3.5/package"
+        }
+    },
+    "org.apache.cordova.statusbar": {
+        "source": {
+            "type": "local",
+            "path": "/Users/drmunklung/.plugman/cache/org.apache.cordova.statusbar/0.1.7/package"
+        }
+    },
+    "cordova-plugin-inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-inappbrowser"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "remcob00-cordova-youtube-android-player-api": {
+        "source": {
+            "type": "local",
+            "path": "node_modules/remcob00-cordova-youtube-android-player-api"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

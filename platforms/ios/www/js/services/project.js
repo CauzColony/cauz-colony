@@ -92,6 +92,7 @@
     {
       current = null;
       step = 0;
+      answers = [];
     },
     getAnswers: function()
     {

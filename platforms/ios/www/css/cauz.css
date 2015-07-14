@@ -7955,17 +7955,49 @@ hr {
 .menu .item img {
   max-width: 290px; }
 
-.video .video-container {
+.video .video-size {
   position: relative;
-  padding-bottom: 56.3%;
+  padding-bottom: 56.4%;
   height: 0;
   overflow: hidden; }
-  .video .video-container iframe, .video .video-container object, .video .video-container embed {
+  .video .video-size img, .video .video-size video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
+  .video .video-size.poster {
+    margin-top: -56.4%; }
+    .video .video-size.poster .outer {
+      display: table;
+      position: absolute;
+      height: 100%;
+      width: 100%; }
+    .video .video-size.poster .middle {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center; }
+    .video .video-size.poster .play {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 70px;
+      color: #aaa;
+      opacity: 0.5; }
+      @media all and (orientation: landscape) {
+        .video .video-size.poster .play {
+          font-size: 120px; } }
+    .video .video-size.poster.started img, .video .video-size.poster.started .play {
+      opacity: 0; }
+    .video .video-size.poster.started.paused .play {
+      opacity: 0.5; }
+  .video .video-size .mejs-container {
+    padding-bottom: 56.4%; }
+  .video .video-size .mejs-overlay-button {
+    display: none !important; }
+  .video .video-size .mejs-controls {
+    display: none !important; }
+  .video .video-size .mejs-overlay-loading {
+    background: none; }
 .video.about {
   margin-top: 0px; }
   @media all and (orientation: portrait) {
@@ -7973,7 +8005,7 @@ hr {
       margin-top: 30px; } }
   @media all and (orientation: landscape) {
     .video.about .video-container {
-      margin-top: 0px; } }
+      margin-top: -1px; } }
 .video p {
   margin: 14px 0;
   font-size: 17px;
@@ -7991,6 +8023,13 @@ hr {
 @media all and (orientation: landscape) {
   .video h1 {
     display: none; } }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  .platform-ios .video .video-size.poster .outer {
+    top: 50px; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  .platform-ios .video .video-size.poster .outer {
+    top: 100px; } }
 
 .thank-you img {
   position: absolute;
@@ -8048,7 +8087,8 @@ hr {
     border-bottom: 18px solid transparent;
     border-right: 16px solid #DDD;
     position: absolute;
-    top: 275px; }
+    top: 275px;
+    transition: opacity 0.5s; }
     @media only screen and (min-device-width: 320px) {
       .login i.arrow {
         top: 215px; } }
@@ -8058,6 +8098,8 @@ hr {
       border-left: 16px solid #DDD;
       border-right: none;
       right: 16px; }
+    .login i.arrow.ghost {
+      opacity: 0.2; }
 
 .survey .item-select select {
   max-width: 100%;

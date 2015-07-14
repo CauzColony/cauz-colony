@@ -1,0 +1,15 @@
+<h3>
+  {{question.text}}
+</h3>
+<label class="item item-input item-select">
+  <div class="input-label">
+    &nbsp;
+  </div>
+  <select ng-model="answer">
+    <option selected>Select One</option>
+    <option ng-repeat="option in question.options" value="{{$index}}">{{option.text}}</option>
+  </select>
+</label>
+<button class="button button-block button-positive" ng-click="submit(answer)" ng-show="answer != 'Select One'">
+  Submit <i class="icon ion-chevron-right"></i>
+</button>

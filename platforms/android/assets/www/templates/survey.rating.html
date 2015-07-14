@@ -1,0 +1,13 @@
+<p class="instructions">
+  Rate this from:<br><span>1</span> being not important at all.<br><span>4</span> being very important.
+</p>
+<hr>
+<p class="question" ng-bind-html="qText"></p>
+<div class="btn-group">
+	<button class="button button-outline button-gray button-round button-small" ng-repeat="option in question.options" ng-click="select($index)" ng-class="{'button-energized': answer == $index, 'first': $index == 0}">
+	  {{option}}
+	</button>
+</div>
+<button class="button button-round button-positive button-bottom" ng-click="submit(answer)" ng-show="answer != null">
+  Submit
+</button>

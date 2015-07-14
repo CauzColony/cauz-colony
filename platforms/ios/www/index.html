@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
     <title></title>
 
     <link href="css/cauz.min.css" rel="stylesheet">
+    <link href="lib/mediaelement/mediaelementplayer.min.css" rel="stylesheet">
+    <link href="lib/ionicons/ionicons.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -13,8 +16,9 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/angular-youtube-mb/dist/angular-youtube-embed.min.js"></script>
     <script src="lib/lodash/dist/lodash.js"></script>
+    <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="lib/mediaelement/mediaelement-and-player.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>

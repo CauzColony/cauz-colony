@@ -1,0 +1,12 @@
+<h3>{{question.text}}</h3>
+<ul class="list">
+  <li class="item item-checkbox" ng-repeat="option in question.options" ng-click="select($index)">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     {{option.text}}
+  </li>
+</ul>
+<button class="button button-block button-positive" ng-click="submit(answer)" ng-show="answer.length != 0">
+  Submit <i class="icon ion-chevron-right"></i>
+</button>

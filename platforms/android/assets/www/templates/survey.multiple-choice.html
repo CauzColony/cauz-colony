@@ -1,0 +1,15 @@
+<p class="question" ng-bind-html="qText">
+</p>
+<ul class="options multiple-choice">
+  <li ng-repeat="option in question.options">
+    <button class="button button-outline button-gray button-round button-multi" ng-click="select($index)" ng-class="{'button-energized': answer == $index}">
+      {{labels[$index]}}
+    </button>
+    <div class="option">
+      {{option}}
+    </div>
+  </li>
+</ul>
+<button class="button button-round button-positive button-bottom" ng-click="submit(answer)" ng-show="answer != null">
+  Submit
+</button>

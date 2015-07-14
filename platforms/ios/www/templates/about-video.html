@@ -1,6 +1,12 @@
 <ion-content class="cauz-panel video about" padding="true" scroll="false">
-	<div class="video-container">
-  	<youtube-video id="best-vid" video-id="video" player-vars="playerVars"></youtube-video>
+  <div class="video-container video-size" ng-bind-html="videoMarkup"></div>
+  <h2 ng-show="videoStarted">Rotate for full screen</h2>
+  <div class="poster video-size" ng-click="playVideo()" ng-class="{started: videoStarted, paused: videoPaused}">
+    <img ng-src="{{posterURL}}">
+    <div class="outer">
+      <div class="middle">
+        <i class="play ion-android-arrow-dropright-circle"></i>
+      </div>
+    </div>
   </div>
-  <h2 ng-show="videoPlaying">Rotate for full screen</h2>
 </ion-content>

@@ -1,6 +1,6 @@
-angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.services'])
+angular.module('cauz', ['ionic', 'cauz.controllers', 'cauz.services'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -11,10 +11,21 @@ angular.module('cauz', ['ionic', 'youtube-embed', 'cauz.controllers', 'cauz.serv
       // org.apache.cordova.statusbar required
       StatusBar.hide();
     }
+
+    $ionicPlatform.registerBackButtonAction(function(e) {
+      e.preventDefault();
+    }, 100);
+  });
+
+  $rootScope.$on('$stateChangeStart', function(){
+    if(screen && screen.lockOrientation)
+    {
+      screen.lockOrientation('portrait');
+    }
   });
 })
 
-.value('aboutVideo', 'Fv-yov4Snm4')
+.value('aboutVideo', '4503406')
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

@@ -89,9 +89,7 @@ angular.module('youtube-embed', ['ng'])
 
         // We'd prefer a protocol relative url, but let's
         // fallback to `http:` for invalid protocols
-        if (validProtocols.indexOf(window.location.protocol) < 0) {
-            url = 'http:' + url;
-        }
+        url = 'https:' + url;
         var tag = document.createElement('script');
         tag.src = url;
         var firstScriptTag = document.getElementsByTagName('script')[0];

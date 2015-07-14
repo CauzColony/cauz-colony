@@ -1,16 +1,73 @@
 .video {
-  .video-container {
+  .video-size {
       position: relative;
-      padding-bottom: 56.3%;
+      padding-bottom: 56.4%;
       height: 0; 
       overflow: hidden;
 
-      iframe, object, embed {
+      img, video {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+      }
+
+      &.poster {
+        margin-top: -56.4%;
+
+        .outer {
+          display: table;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
+
+        .middle {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+        }
+
+        .play {
+          margin-left: auto;
+          margin-right: auto; 
+          font-size: 70px;
+          color: #aaa;
+          opacity: .5;
+
+          @media all and (orientation: landscape) {
+            font-size: 120px;
+          }
+        }
+
+        &.started {
+          img, .play {
+            opacity: 0;
+          }
+
+          &.paused {
+            .play {
+              opacity: .5;
+            }
+          }
+        }
+      }
+
+      .mejs-container {
+        padding-bottom: 56.4%;
+      }
+
+      .mejs-overlay-button {
+        display: none !important;
+      }
+
+      .mejs-controls {
+        display: none !important;
+      }
+
+      .mejs-overlay-loading {
+        background: none;
       }
   }
 
@@ -22,7 +79,7 @@
         margin-top: 30px;
       }
       @media all and (orientation: landscape) {
-        margin-top: 0px;
+        margin-top: -1px;
       }
     }
   }
@@ -48,6 +105,30 @@
   h1 {
     @media all and (orientation: landscape) {
       display: none;
+    }
+  }
+}
+
+.platform-ios {
+  .video {
+    .video-size {
+      &.poster {
+        .outer {
+          @media only screen 
+          and (min-device-width : 320px) 
+          and (max-device-width : 568px) 
+          and (orientation : portrait) {
+            top: 50px;
+          }
+
+          @media only screen 
+          and (min-device-width : 320px) 
+          and (max-device-width : 568px) 
+          and (orientation : landscape) { 
+            top: 100px;
+          }
+        }
+      }
     }
   }
 }

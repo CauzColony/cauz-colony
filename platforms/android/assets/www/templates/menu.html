@@ -1,0 +1,16 @@
+<div class="modal menu">
+  <ion-header-bar>
+    <h1 class="title">Available Projects</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content ng-controller="MenuCtrl" has-bouncing="false">
+    <ul class="list">
+        <li class="item" ng-repeat="project in projects" ng-click="navigate('project', {{project.id}})">
+          <h2>{{project.title}}</h2>
+          <img ng-src="{{project.image}}">
+        </li>
+    </ul>
+  </ion-content>
+</div> 

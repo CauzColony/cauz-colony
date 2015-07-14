@@ -1,0 +1,62 @@
+{
+  "name": "remcob00-cordova-youtube-android-player-api",
+  "version": "2.0.6",
+  "description": "Cordova / Phonegap YouTube Android Player API plugin.",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "phonegap",
+    "youtube",
+    "android",
+    "player api"
+  ],
+  "homepage": "https://github.com/RemcoB00/cordova-phonegap_youtube_player_api_android",
+  "bugs": {
+    "url": "https://github.com/RemcoB00/cordova-phonegap_youtube_player_api_android/issues",
+    "email": "info@remcob00.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Remco Beugels",
+    "email": "info@remcob00.com",
+    "url": "https://github.com/RemcoB00"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RemcoB00/cordova-phonegap_youtube_player_api_android.git"
+  },
+  "dependencies": {
+    "adm-zip": ">=0.4.7"
+  },
+  "scripts": {
+    "install": "node install.js && cd ../.. && cordova plugin add node_modules/remcob00-cordova-youtube-android-player-api && npm uninstall remcob00-cordova-youtube-android-player-api"
+  },
+  "cordova": {
+    "id": "remcob00-cordova-youtube-android-player-api",
+    "platforms": [
+      "android"
+    ]
+  },
+  "_id": "remcob00-cordova-youtube-android-player-api@2.0.6",
+  "_shasum": "cde1daa19258d8a523484b1b029578f5b63328e9",
+  "_from": "remcob00-cordova-youtube-android-player-api@*",
+  "_npmVersion": "2.11.3",
+  "_nodeVersion": "0.10.26",
+  "_npmUser": {
+    "name": "remcob00",
+    "email": "info@remcob00.com"
+  },
+  "dist": {
+    "shasum": "cde1daa19258d8a523484b1b029578f5b63328e9",
+    "tarball": "http://registry.npmjs.org/remcob00-cordova-youtube-android-player-api/-/remcob00-cordova-youtube-android-player-api-2.0.6.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "remcob00",
+      "email": "info@remcob00.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/remcob00-cordova-youtube-android-player-api/-/remcob00-cordova-youtube-android-player-api-2.0.6.tgz"
+}

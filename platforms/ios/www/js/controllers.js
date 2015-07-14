@@ -1,38 +1,67 @@
 angular.module('cauz.controllers', [])
-.controller('AboutVideoCtrl', function($scope, aboutVideo)
+.controller('AboutVideoCtrl', function($scope, $timeout, $sce, aboutVideo)
 {
+  $scope.videoStarted = false;
+  $scope.videoPaused = false;
+  $scope.posterURL = $sce.trustAsResourceUrl('http://view.vzaar.com/'+ aboutVideo +'/image');
+  $scope.videoMarkup = $sce.trustAsHtml('<video id="vzvd" width="100%" height="100%" webkit-playsinline><source type="video/mp4" src="http://view.vzaar.com/'+ aboutVideo +'/video" /></video>');
+  $timeout(createVideo);
+
   if(screen && screen.unlockOrientation)
   {
     screen.unlockOrientation();
   }
 
-  $scope.playerVars = {
-    modestbranding: 1,
-    showinfo: 0,
-    rel: 0,
-    playsinline: 1
-  };
+  $scope.playVideo = function()
+  {
+    if($scope.videoPaused || !$scope.videoStarted)
+    {
+      $scope.player.play();
+      $scope.videoStarted = true;
+      $scope.videoPaused = false;
+    }else
+    {
+      $scope.player.pause();
+      $scope.videoPaused = true;
+    }
+  }
 
-  $scope.video = aboutVideo;
+  function createVideo()
+  {
+    var options = {
+        features: [],
+        alwaysShowControls: false,
+        success: function(media, node, player) {
+          $scope.player = player;
 
-  $scope.$on('youtube.player.ended', function ($event, player) {
+          node.addEventListener("ended", onEnded);
+
+          //$('.mejs-overlay-play').css('display', 'none')
+
+          // $(Zoo.VideoPlayer.titleSelector).css('z-index', 0);
+        },
+        // fires when a problem is detected
+        error: function (e) { 
+          console.log(e);
+        }
+      };
+
+    new MediaElementPlayer('#vzvd', options);
+  }
+
+  function onEnded()
+  {
     $scope.navigate('about');
-    
-    screen.lockOrientation('portrait');
-  });
-
-  $scope.$on('youtube.player.playing', function ($event, player) {
-    $scope.videoPlaying = true;
-  });
+  }
 })
 .controller('LoginCtrl', function($scope, $ionicLoading, $ionicSlideBoxDelegate, ProjectModels) {
   $scope.projects;
   ProjectModels.resetAll();
   showLoader();
+  $scope.hideLeft = true;
 
   ProjectModels.getProjects().then(function(projects){
     $scope.projects = projects;
-    $scope.projectId = 0;
 
     $ionicLoading.hide();
     $ionicSlideBoxDelegate.update();
@@ -41,27 +70,31 @@ angular.module('cauz.controllers', [])
   $scope.login = function()
   {
     showLoader();
-
-    ProjectModels.getProjectById($scope.projects[$scope.projectId].id).then(function(p)
-    {
-      $ionicLoading.hide();
-      $scope.navigate(p.steps[0].type, p.id);
-    });
+    ProjectModels.getProjectById($scope.projects[$ionicSlideBoxDelegate.currentIndex()].id)
+      .then(function(p)
+      {
+        $ionicLoading.hide();
+        $scope.navigate(p.steps[0].type, p.id);
+      });
   }
 
   $scope.slide = function(i)
   {
-    var i = parseInt(i);
+    i = parseInt(i);
 
-    $scope.projectId += i;
-
-    if($scope.projectId >= $scope.projects.length)
+    if(i > 0)
     {
-      $scope.projectId -= $scope.projects.length;
-    }else if($scope.projectId < 0)
+      $ionicSlideBoxDelegate.next();
+    }else
     {
-      $scope.projectId = $scope.projects.length - 1
+      $ionicSlideBoxDelegate.previous();
     }
+  }
+
+  $scope.checkArrows = function(i)
+  {
+    $scope.hideLeft = (i == 0)? true:false;
+    $scope.hideRight = (i == $scope.projects.length - 1)? true:false;
   }
 
 
@@ -119,11 +152,7 @@ angular.module('cauz.controllers', [])
         template: 'Loading...'
       });
     }
-
-    if(screen && screen.lockOrientation)
-    {
-      screen.lockOrientation('portrait');
-    }
+    
     $state.go(state, {pid: id});
   }
 
@@ -217,7 +246,7 @@ angular.module('cauz.controllers', [])
   $scope.answer = '';
   $scope.showSubmit = function()
   {
-    return ($scope.question.optional || $scope.answer != '')
+    return $scope.answer != '';
   }
 
   $scope.submit = function(answer)
@@ -245,38 +274,17 @@ angular.module('cauz.controllers', [])
     window.open($scope.offer.link, '_blank', 'location=no,closebuttoncaption=Done,disallowoverscroll=yes,enableViewportScale=yes,toolbarposition=top,presentationstyle=fullscreen');
   }
 })
-.controller('VideoCtrl', function($scope, $stateParams, $sce, $q, ProjectModels)
+.controller('VideoCtrl', function($scope, $stateParams, $sce, $q, $timeout, ProjectModels)
 {
+  $scope.videoStarted = false;
+  $scope.videoPaused = false;
+
   if(screen && screen.unlockOrientation)
   {
     screen.unlockOrientation();
   }
 
-  $scope.$on('$ionicView.afterEnter', function()
-  {
-    $scope.pid = $stateParams.pid;
-    $scope.playerVars = {
-      modestbranding: 1,
-      showinfo: 0,
-      rel: 0,
-      playsinline: 1
-    };
-    $scope.videoWatched = false;
-  })
-
-  $scope.$on('youtube.player.ended', function ($event, player) {
-    $scope.videoPlaying = false;
-    $scope.videoWatched = true;
-    if(screen && screen.lockOrientation)
-    {
-      screen.lockOrientation('portrait');
-    }
-    $scope.next();
-  });
-
-  $scope.$on('youtube.player.playing', function ($event, player) {
-    $scope.videoPlaying = true;
-  });
+  $scope.pid = $stateParams.pid;
 
   $scope.next = function()
   {
@@ -302,13 +310,26 @@ angular.module('cauz.controllers', [])
     }
   }
 
+  $scope.playVideo = function()
+  {
+    if($scope.videoPaused || !$scope.videoStarted)
+    {
+      $scope.player.play();
+      $scope.videoStarted = true;
+      $scope.videoPaused = false;
+    }else
+    {
+      $scope.player.pause();
+      $scope.videoPaused = true;
+    }
+  }
+
   //helper functions
   function fetchData()
   {
     var deferred = $q.defer();
     ProjectModels.getCurrent().then(function(data)
     {
-      //console.log(data);
       deferred.resolve(data);
     })
     return deferred.promise;
@@ -320,9 +341,41 @@ angular.module('cauz.controllers', [])
     $scope.steps = data.project.steps;
     $scope.currentStep = data.step;
     $scope.video = $scope.steps[$scope.currentStep];
+    $scope.posterURL = $sce.trustAsResourceUrl('http://view.vzaar.com/'+ $scope.video.videoId +'/image');
+    $scope.videoMarkup = $sce.trustAsHtml('<video id="vzvd" width="100%" height="100%" webkit-playsinline><source type="video/mp4" src="http://view.vzaar.com/'+ $scope.video.videoId +'/video" /></video>');
     $scope.steps = data.project.steps.length;
     $scope.text = $sce.trustAsHtml($scope.video.text);
     $scope.title = data.project.title;
+
+    $timeout(createVideo);
+  }
+
+  function createVideo()
+  {
+    var options = {
+        features: [],
+        alwaysShowControls: false,
+        success: function(media, node, player) {
+          $scope.player = player;
+
+          node.addEventListener("ended", onEnded);
+
+          //$('.mejs-overlay-play').css('display', 'none')
+
+          // $(Zoo.VideoPlayer.titleSelector).css('z-index', 0);
+        },
+        // fires when a problem is detected
+        error: function (e) { 
+          console.log(e);
+        }
+      };
+
+    new MediaElementPlayer('#vzvd', options);
+  }
+
+  function onEnded()
+  {
+    $scope.next();
   }
 
   fetchData().then(updateScopeVars);

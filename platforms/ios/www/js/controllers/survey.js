@@ -82,7 +82,7 @@
   $scope.answer = '';
   $scope.showSubmit = function()
   {
-    return ($scope.question.optional || $scope.answer != '')
+    return $scope.answer != '';
   }
 
   $scope.submit = function(answer)

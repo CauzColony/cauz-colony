@@ -36,13 +36,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
-        "id": "org.apache.cordova.inappbrowser.inappbrowser",
-        "clobbers": [
-            "window.open"
-        ]
-    },
-    {
         "file": "plugins/net.yoik.cordova.plugins.screenorientation/www/screenorientation.js",
         "id": "net.yoik.cordova.plugins.screenorientation.screenorientation",
         "clobbers": [
@@ -62,6 +55,21 @@ module.exports = [
         "clobbers": [
             "navigator.splashscreen"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+        "id": "cordova-plugin-inappbrowser.inappbrowser",
+        "clobbers": [
+            "cordova.InAppBrowser.open",
+            "window.open"
+        ]
+    },
+    {
+        "file": "plugins/remcob00-cordova-youtube-android-player-api/www/youtube.js",
+        "id": "remcob00-cordova-youtube-android-player-api.youtube",
+        "clobbers": [
+            "youtube"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -71,9 +79,11 @@ module.exports.metadata =
     "org.apache.cordova.console": "0.2.10",
     "org.apache.cordova.device": "0.2.11",
     "org.apache.cordova.statusbar": "0.1.7",
-    "org.apache.cordova.inappbrowser": "0.5.1",
     "net.yoik.cordova.plugins.screenorientation": "1.3.0",
-    "org.apache.cordova.splashscreen": "0.3.5"
+    "org.apache.cordova.splashscreen": "0.3.5",
+    "cordova-plugin-inappbrowser": "1.0.1",
+    "cordova-plugin-whitelist": "1.0.0",
+    "remcob00-cordova-youtube-android-player-api": "2.0.6"
 }
 // BOTTOM OF METADATA
 });

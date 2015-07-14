@@ -1,5 +1,7 @@
 <h3 ng-bind-html="qText"></h3>
-<textarea placeholder="{{placeholder}}" ng-model="answer"></textarea>
-<button class="button button-round button-positive button-bottom" ng-click="submit(answer)" ng-show="answer != null">
-  Submit
-</button>
+<form name="form" novalidate>
+  <textarea type="text" placeholder="{{placeholder}}" ng-model="answer" required></textarea>
+  <button class="button button-round button-positive button-bottom" ng-show="form.$valid" ng-click="submit(answer)">
+    Submit
+  </button>
+</form>

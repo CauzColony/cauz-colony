@@ -2,10 +2,10 @@
   $scope.projects;
   ProjectModels.resetAll();
   showLoader();
+  $scope.hideLeft = true;
 
   ProjectModels.getProjects().then(function(projects){
     $scope.projects = projects;
-    $scope.projectId = 0;
 
     $ionicLoading.hide();
     $ionicSlideBoxDelegate.update();
@@ -14,27 +14,31 @@
   $scope.login = function()
   {
     showLoader();
-
-    ProjectModels.getProjectById($scope.projects[$scope.projectId].id).then(function(p)
-    {
-      $ionicLoading.hide();
-      $scope.navigate(p.steps[0].type, p.id);
-    });
+    ProjectModels.getProjectById($scope.projects[$ionicSlideBoxDelegate.currentIndex()].id)
+      .then(function(p)
+      {
+        $ionicLoading.hide();
+        $scope.navigate(p.steps[0].type, p.id);
+      });
   }
 
   $scope.slide = function(i)
   {
-    var i = parseInt(i);
+    i = parseInt(i);
 
-    $scope.projectId += i;
-
-    if($scope.projectId >= $scope.projects.length)
+    if(i > 0)
     {
-      $scope.projectId -= $scope.projects.length;
-    }else if($scope.projectId < 0)
+      $ionicSlideBoxDelegate.next();
+    }else
     {
-      $scope.projectId = $scope.projects.length - 1
+      $ionicSlideBoxDelegate.previous();
     }
+  }
+
+  $scope.checkArrows = function(i)
+  {
+    $scope.hideLeft = (i == 0)? true:false;
+    $scope.hideRight = (i == $scope.projects.length - 1)? true:false;
   }
 
 

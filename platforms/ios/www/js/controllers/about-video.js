@@ -1,26 +1,55 @@
-.controller('AboutVideoCtrl', function($scope, aboutVideo)
+.controller('AboutVideoCtrl', function($scope, $timeout, $sce, aboutVideo)
 {
+  $scope.videoStarted = false;
+  $scope.videoPaused = false;
+  $scope.posterURL = $sce.trustAsResourceUrl('http://view.vzaar.com/'+ aboutVideo +'/image');
+  $scope.videoMarkup = $sce.trustAsHtml('<video id="vzvd" width="100%" height="100%" webkit-playsinline><source type="video/mp4" src="http://view.vzaar.com/'+ aboutVideo +'/video" /></video>');
+  $timeout(createVideo);
+
   if(screen && screen.unlockOrientation)
   {
     screen.unlockOrientation();
   }
 
-  $scope.playerVars = {
-    modestbranding: 1,
-    showinfo: 0,
-    rel: 0,
-    playsinline: 1
-  };
+  $scope.playVideo = function()
+  {
+    if($scope.videoPaused || !$scope.videoStarted)
+    {
+      $scope.player.play();
+      $scope.videoStarted = true;
+      $scope.videoPaused = false;
+    }else
+    {
+      $scope.player.pause();
+      $scope.videoPaused = true;
+    }
+  }
 
-  $scope.video = aboutVideo;
+  function createVideo()
+  {
+    var options = {
+        features: [],
+        alwaysShowControls: false,
+        success: function(media, node, player) {
+          $scope.player = player;
 
-  $scope.$on('youtube.player.ended', function ($event, player) {
+          node.addEventListener("ended", onEnded);
+
+          //$('.mejs-overlay-play').css('display', 'none')
+
+          // $(Zoo.VideoPlayer.titleSelector).css('z-index', 0);
+        },
+        // fires when a problem is detected
+        error: function (e) { 
+          console.log(e);
+        }
+      };
+
+    new MediaElementPlayer('#vzvd', options);
+  }
+
+  function onEnded()
+  {
     $scope.navigate('about');
-    
-    screen.lockOrientation('portrait');
-  });
-
-  $scope.$on('youtube.player.playing', function ($event, player) {
-    $scope.videoPlaying = true;
-  });
+  }
 })

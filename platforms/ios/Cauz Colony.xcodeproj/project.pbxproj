@@ -45,7 +45,7 @@
 		7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DB1810823500FA85AD /* icon-76@2x.png */; };
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
-		8D4EE11FDA764D50BF65F723 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD3A079E1742F2960E8751 /* CDVInAppBrowser.m */; };
+		BAC42FF3473A4E719E82A79A /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EDE2DD05684F2EA62C7B71 /* CDVInAppBrowser.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +105,7 @@
 		5AEE5B34173C68D80009041E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		732F65D813F3477D83DA4E0E /* CDVStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = org.apache.cordova.statusbar/CDVStatusBar.h; sourceTree = "<group>"; };
+		7600A663D6E34F2C8A50E06F /* CDVInAppBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowser.h; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; };
 		76DDFCE9D202418F90D3AAC1 /* YoikScreenOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YoikScreenOrientation.m; path = net.yoik.cordova.plugins.screenorientation/YoikScreenOrientation.m; sourceTree = "<group>"; };
 		7E7966D41810823500FA85AD /* icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40.png"; sourceTree = "<group>"; };
 		7E7966D51810823500FA85AD /* icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40@2x.png"; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		C9709EA5650D47AAA3A0540A /* IonicKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IonicKeyboard.h; path = com.ionic.keyboard/IonicKeyboard.h; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		D8BB2193C0D0455CB19B3DE3 /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = org.apache.cordova.console/CDVLogger.m; sourceTree = "<group>"; };
+		D9EDE2DD05684F2EA62C7B71 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; };
 		EB87FDF21871DA7A0020F90C /* merges */ = {isa = PBXFileReference; lastKnownFileType = folder; name = merges; path = ../../merges; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
@@ -263,6 +265,8 @@
 				0A69879B0110484282AF23D6 /* YoikScreenOrientation.h */,
 				09E1A194AB5246668E466614 /* CDVSplashScreen.m */,
 				F3857ABDF4614DABAB595505 /* CDVSplashScreen.h */,
+				D9EDE2DD05684F2EA62C7B71 /* CDVInAppBrowser.m */,
+				7600A663D6E34F2C8A50E06F /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = "Cauz Colony/Plugins";
@@ -467,9 +471,9 @@
 				6AE68DB3732141589C328048 /* CDVLogger.m in Sources */,
 				6D80F205128040A99B77CDE3 /* CDVDevice.m in Sources */,
 				3FC9C29EE2ED419E96CE022F /* CDVStatusBar.m in Sources */,
-				8D4EE11FDA764D50BF65F723 /* CDVInAppBrowser.m in Sources */,
 				268EECE97B494CDFBC156E23 /* YoikScreenOrientation.m in Sources */,
 				26AFCAB2ED614F3D95E70811 /* CDVSplashScreen.m in Sources */,
+				BAC42FF3473A4E719E82A79A /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
