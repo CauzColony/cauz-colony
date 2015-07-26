@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1B0A034E93C946E8999470D6 /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F97FC3A42640829A875DC1 /* UIWebViewExtension.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -47,6 +46,9 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		BAC42FF3473A4E719E82A79A /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EDE2DD05684F2EA62C7B71 /* CDVInAppBrowser.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		6D82DA417F854EDEAFB8C094 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5575BC9DD3914C49AB058339 /* SocialSharing.m */; };
+		9BE39B9F8198478980D3701C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB1C609915F4B519385E277 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9A2D6A54D5D8451B96A24466 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA762F50C20F498196BD824B /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,10 @@
 		F3857ABDF4614DABAB595505 /* CDVSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = org.apache.cordova.splashscreen/CDVSplashScreen.h; sourceTree = "<group>"; };
 		F6F97FC3A42640829A875DC1 /* UIWebViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIWebViewExtension.m; path = com.ionic.keyboard/UIWebViewExtension.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Cauz Colony/config.xml"; sourceTree = "<group>"; };
+		5575BC9DD3914C49AB058339 /* SocialSharing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SocialSharing.m"; path = "nl.x-services.plugins.socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		9BC2CFA405324876A17DD15F /* SocialSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SocialSharing.h"; path = "nl.x-services.plugins.socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		8FB1C609915F4B519385E277 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		CA762F50C20F498196BD824B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,8 @@
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
+				9BE39B9F8198478980D3701C /* Social.framework in Frameworks */,
+				9A2D6A54D5D8451B96A24466 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +242,8 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				8FB1C609915F4B519385E277 /* Social.framework */,
+				CA762F50C20F498196BD824B /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -267,6 +277,8 @@
 				F3857ABDF4614DABAB595505 /* CDVSplashScreen.h */,
 				D9EDE2DD05684F2EA62C7B71 /* CDVInAppBrowser.m */,
 				7600A663D6E34F2C8A50E06F /* CDVInAppBrowser.h */,
+				5575BC9DD3914C49AB058339 /* SocialSharing.m */,
+				9BC2CFA405324876A17DD15F /* SocialSharing.h */,
 			);
 			name = Plugins;
 			path = "Cauz Colony/Plugins";
@@ -474,6 +486,7 @@
 				268EECE97B494CDFBC156E23 /* YoikScreenOrientation.m in Sources */,
 				26AFCAB2ED614F3D95E70811 /* CDVSplashScreen.m in Sources */,
 				BAC42FF3473A4E719E82A79A /* CDVInAppBrowser.m in Sources */,
+				6D82DA417F854EDEAFB8C094 /* SocialSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -70,6 +70,13 @@ module.exports = [
         "clobbers": [
             "youtube"
         ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
+        "id": "nl.x-services.plugins.socialsharing.SocialSharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -83,7 +90,8 @@ module.exports.metadata =
     "org.apache.cordova.splashscreen": "0.3.5",
     "cordova-plugin-inappbrowser": "1.0.1",
     "cordova-plugin-whitelist": "1.0.0",
-    "remcob00-cordova-youtube-android-player-api": "2.0.6"
+    "remcob00-cordova-youtube-android-player-api": "2.0.6",
+    "nl.x-services.plugins.socialsharing": "4.3.19"
 }
 // BOTTOM OF METADATA
 });

@@ -47,6 +47,10 @@
                         {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -60,6 +64,18 @@
                         },
                         {
                             "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "Social.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "MessageUI.framework": [
+                        {
+                            "xml": true,
                             "count": 1
                         }
                     ]
@@ -93,6 +109,9 @@
             "PACKAGE_NAME": "com.cauzcolony.mvp"
         },
         "remcob00-cordova-youtube-android-player-api": {
+            "PACKAGE_NAME": "com.cauzcolony.mvp"
+        },
+        "nl.x-services.plugins.socialsharing": {
             "PACKAGE_NAME": "com.cauzcolony.mvp"
         }
     },
