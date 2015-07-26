@@ -1397,3 +1397,15 @@ Oct 26 17:23:16 LittleMama rtcreporting[16685] <Debug>: initWithSessionInfo: XPC
 2015-07-11 15:18:27.377 Cauz Colony[16546:19856349] [CDVTimer][TotalPluginStartup] 145.560026ms
 2015-07-11 15:18:27.646 Cauz Colony[16546:19856349] Resetting plugins due to page load.
 2015-07-11 15:18:28.261 Cauz Colony[16546:19856349] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/F638AE75-E04E-462E-8897-2C8079E94E11/data/Containers/Bundle/Application/80017538-A83C-4B48-B7AE-EE5C243BA655/Cauz%20Colony.app/www/index.html#/home
+2015-07-26 12:01:54.237 Cauz Colony[4329:919159] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Data/Application/A0D4DF4E-D361-4F1D-AFF6-8140D2E73B67/Library/Cookies/Cookies.binarycookies
+2015-07-26 12:01:54.300 Cauz Colony[4329:919159] Multi-tasking -> Device: YES, App: YES
+2015-07-26 12:01:54.307 Cauz Colony[4329:919159] Unlimited access to network resources
+2015-07-26 12:01:54.663 Cauz Colony[4329:919159] [CDVTimer][keyboard] 0.059009ms
+2015-07-26 12:01:54.727 Cauz Colony[4329:919159] [CDVTimer][statusbar] 64.206004ms
+2015-07-26 12:01:54.743 Cauz Colony[4329:919159] [CDVTimer][splashscreen] 16.449988ms
+2015-07-26 12:01:54.786 Cauz Colony[4329:919159] [CDVTimer][socialsharing] 42.478025ms
+2015-07-26 12:01:54.786 Cauz Colony[4329:919159] [CDVTimer][TotalPluginStartup] 123.681009ms
+2015-07-26 12:01:55.266 Cauz Colony[4329:919159] Resetting plugins due to page load.
+2015-07-26 12:01:55.704 Cauz Colony[4329:919159] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Bundle/Application/42E0C69E-9F65-4B10-8BF9-F450280F11D9/Cauz%20Colony.app/www/index.html#/home
+2015-07-26 12:02:12.636 Cauz Colony[4329:919159] Warning: Attempt to present <ForcedViewController: 0x7be33ff0> on <MainViewController: 0x7a638400> while a presentation is in progress!
+2015-07-26 12:02:12.636 Cauz Colony[4329:919159] Warning: Attempt to dismiss from view controller <MainViewController: 0x7a638400> while a presentation or dismiss is in progress!

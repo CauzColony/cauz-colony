@@ -44,6 +44,20 @@
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+        <param name="onload" value="true" />
+    </feature>
+    <config-file parent="SocialSharingExcludeActivities" platform="ios" target="*-Info.plist">
+        <array>
+            <string>com.apple.UIKit.activity.Print</string>
+            <string>com.apple.UIKit.activity.CopyToPasteboard</string>
+            <string>com.apple.UIKit.activity.AssignToContact</string>
+            <string>com.apple.UIKit.activity.SaveToCameraRoll</string>
+            <string>com.apple.UIKit.activity.AddToReadingList</string>
+            <string>com.apple.UIKit.activity.AirDrop</string>
+        </array>
+    </config-file>
     <name>Cauz Colony</name>
     <description>
         An Ionic Framework and Cordova project.
@@ -59,8 +73,4 @@
     <preference name="SplashScreen" value="screen" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
-    <feature name="SocialSharing">
-        <param name="ios-package" value="SocialSharing" />
-        <param name="onload" value="true" />
-    </feature>
 </widget>

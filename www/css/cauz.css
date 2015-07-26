@@ -7709,6 +7709,10 @@ hr {
     left: 50%;
     bottom: 20px;
     margin-left: -35px; }
+    .button.button-round.button-bottom.left {
+      margin-left: -90px; }
+    .button.button-round.button-bottom.right {
+      margin-left: 20px; }
   .button.button-round.button-outline {
     border-style: 1px solid; }
     .button.button-round.button-outline.button-gray {

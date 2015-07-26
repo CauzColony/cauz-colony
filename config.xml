@@ -17,6 +17,18 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="false"/>
   </feature>
+  <platform name="ios">
+    <config-file platform="ios" target="*-Info.plist" parent="SocialSharingExcludeActivities">
+      <array>
+        <string>com.apple.UIKit.activity.Print</string>
+        <string>com.apple.UIKit.activity.CopyToPasteboard</string>
+        <string>com.apple.UIKit.activity.AssignToContact</string>
+        <string>com.apple.UIKit.activity.SaveToCameraRoll</string>
+        <string>com.apple.UIKit.activity.AddToReadingList</string>
+        <string>com.apple.UIKit.activity.AirDrop</string>
+      </array>
+    </config-file>
+  </platform>
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>

@@ -1,4 +1,4 @@
-.factory('ProjectModels', function($q, $http){
+.factory('ProjectModels', function($q, $http, testing){
   var projects = null,
       current = null,
       step = 0,
@@ -9,9 +9,9 @@
   return {
     getProjects: function()
     {
-      var deferred = $q.defer();
+      var deferred = $q.defer()
       $http({
-          url: api + 'projects',
+          url: (testing)? api + 'projects' + '?testing=true':api + 'projects',
           method: 'GET',
           dataType: 'json', 
           data: ''
