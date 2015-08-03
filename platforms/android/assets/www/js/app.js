@@ -1,4 +1,4 @@
-angular.module('cauz', ['ionic', 'cauz.controllers', 'cauz.services'])
+angular.module('cauz', ['ionic', 'ngCordova', 'cauz.controllers', 'cauz.services'])
 
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
@@ -26,6 +26,8 @@ angular.module('cauz', ['ionic', 'cauz.controllers', 'cauz.services'])
 })
 
 .value('aboutVideo', '4503406')
+//coment next line for production build
+.value('testing', true)
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

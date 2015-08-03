@@ -4,8 +4,8 @@ angular.module('cauz.services', [])
       current = null,
       step = 0,
       answers = [],
-      api = 'http://api.cauzcolony.mod.bz/api/';
-      //api = 'http://localhost:3000/api/';
+      //api = 'http://api.cauzcolony.mod.bz/api/';
+      api = 'http://localhost:3000/api/';
 
   return {
     getProjects: function()
@@ -102,12 +102,12 @@ angular.module('cauz.services', [])
     submitAnswers: function()
     {
       var deferred = $q.defer();
-      //console.log(current, answers);
+      console.log(current, answers);
       $http({
           url: api + 'answers',
           method: 'POST',
           dataType: 'json', 
-          data: {answers:answers}
+          data: {project: current.id, answers:answers}
       }).success(function (data, status, headers, config) {
           //console.log(data);
           deferred.resolve();

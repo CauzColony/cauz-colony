@@ -1,17 +1,17 @@
-.factory('ProjectModels', function($q, $http){
+.factory('ProjectModels', function($q, $http, testing){
   var projects = null,
       current = null,
       step = 0,
       answers = [],
-      api = 'http://api.cauzcolony.mod.bz/api/';
-      //api = 'http://localhost:3000/api/';
+      //api = 'http://api.cauzcolony.mod.bz/api/';
+      api = 'http://localhost:3000/api/';
 
   return {
     getProjects: function()
     {
-      var deferred = $q.defer();
+      var deferred = $q.defer()
       $http({
-          url: api + 'projects',
+          url: (testing)? api + 'projects' + '?testing=true':api + 'projects',
           method: 'GET',
           dataType: 'json', 
           data: ''
@@ -101,12 +101,12 @@
     submitAnswers: function()
     {
       var deferred = $q.defer();
-      //console.log(current, answers);
+      console.log(current, answers);
       $http({
           url: api + 'answers',
           method: 'POST',
           dataType: 'json', 
-          data: {answers:answers}
+          data: {project: current.id, answers:answers}
       }).success(function (data, status, headers, config) {
           //console.log(data);
           deferred.resolve();

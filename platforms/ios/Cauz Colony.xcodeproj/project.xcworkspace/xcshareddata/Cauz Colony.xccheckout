@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>07726C4C-6E5B-423C-8E0C-EADE3952ACA9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Cauz Colony</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6F0C9CCB1EE7EBAABA36A9F8775E64C9516B3E7C</key>
 		<string>github.com:CauzColony/cauz-colony.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/Cauz Colony.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/Cauz Colony.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6F0C9CCB1EE7EBAABA36A9F8775E64C9516B3E7C</key>

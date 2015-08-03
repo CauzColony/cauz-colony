@@ -1,4 +1,4 @@
-.controller('RootCtrl', function($scope, $q, $ionicModal, $state, $ionicLoading, $timeout, UserModels, $ionicSideMenuDelegate)
+.controller('RootCtrl', function($scope, $q, $ionicModal, $state, $ionicLoading, $timeout, UserModels, $ionicSideMenuDelegate, $cordovaSocialSharing)
 {
   $scope.loggedIn = false;
   $scope.user = UserModels.getUser();

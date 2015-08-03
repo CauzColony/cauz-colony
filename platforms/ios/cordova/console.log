@@ -1409,3 +1409,29 @@ Oct 26 17:23:16 LittleMama rtcreporting[16685] <Debug>: initWithSessionInfo: XPC
 2015-07-26 12:01:55.704 Cauz Colony[4329:919159] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Bundle/Application/42E0C69E-9F65-4B10-8BF9-F450280F11D9/Cauz%20Colony.app/www/index.html#/home
 2015-07-26 12:02:12.636 Cauz Colony[4329:919159] Warning: Attempt to present <ForcedViewController: 0x7be33ff0> on <MainViewController: 0x7a638400> while a presentation is in progress!
 2015-07-26 12:02:12.636 Cauz Colony[4329:919159] Warning: Attempt to dismiss from view controller <MainViewController: 0x7a638400> while a presentation or dismiss is in progress!
+2015-08-02 13:12:24.146 Cauz Colony[2236:388265] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Data/Application/268262D1-432A-49E3-84DC-7CE8E72810AA/Library/Cookies/Cookies.binarycookies
+2015-08-02 13:12:24.241 Cauz Colony[2236:388265] Multi-tasking -> Device: YES, App: YES
+2015-08-02 13:12:24.250 Cauz Colony[2236:388265] Unlimited access to network resources
+2015-08-02 13:12:24.601 Cauz Colony[2236:388265] [CDVTimer][keyboard] 0.058949ms
+2015-08-02 13:12:24.686 Cauz Colony[2236:388265] [CDVTimer][statusbar] 84.769964ms
+2015-08-02 13:12:24.715 Cauz Colony[2236:388265] [CDVTimer][splashscreen] 28.231978ms
+2015-08-02 13:12:24.776 Cauz Colony[2236:388265] [CDVTimer][socialsharing] 60.846031ms
+2015-08-02 13:12:24.776 Cauz Colony[2236:388265] [CDVTimer][TotalPluginStartup] 174.566984ms
+2015-08-02 13:12:24.874 Cauz Colony[2236:388265] Resetting plugins due to page load.
+2015-08-02 13:12:25.456 Cauz Colony[2236:388265] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Bundle/Application/1262FC20-96EA-41C7-99EB-DFF746770CD4/Cauz%20Colony.app/www/index.html#/home
+2015-08-02 13:13:18.998 Cauz Colony[2236:388265] Resetting plugins due to page load.
+2015-08-02 13:13:19.713 Cauz Colony[2236:388265] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Bundle/Application/1262FC20-96EA-41C7-99EB-DFF746770CD4/Cauz%20Colony.app/www/index.html#/login
+2015-08-02 13:14:23.056 Cauz Colony[2236:388265] Resetting plugins due to page load.
+2015-08-02 13:14:23.906 Cauz Colony[2236:388265] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Bundle/Application/1262FC20-96EA-41C7-99EB-DFF746770CD4/Cauz%20Colony.app/www/index.html#/login
+2015-08-02 13:14:31.853 Cauz Colony[2236:388265] {"project":{"title":"Test","id":"55be4f165193e72a072920b5","offer":{"link":"","image":"https://res.cloudinary.com/cauz-colony/image/upload/v1433291985/bep7tyzzbyxtd8fqazge.jpg"},"charityId":"5584c7f35635323a143d7fe9","charityName":"Cauz Colony","steps":[{"_id":"55b54b8ddae04c9336db6c32","optionA":"Lots","optionB":"Some","optionC":"","optionD":"","text":"<p>How much wood could a woodchuck chuck?</p>","type":"survey.multiple-choice","videoId":"","options":["Lots","Some","",""]}]},"step":1}
+2015-08-02 13:15:46.227 Cauz Colony[2717:393950] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Data/Application/8149938D-4AC2-499F-9434-EDC3F3E9170F/Library/Cookies/Cookies.binarycookies
+2015-08-02 13:15:46.313 Cauz Colony[2717:393950] Multi-tasking -> Device: YES, App: YES
+2015-08-02 13:15:46.320 Cauz Colony[2717:393950] Unlimited access to network resources
+2015-08-02 13:15:46.423 Cauz Colony[2717:393950] [CDVTimer][keyboard] 0.073016ms
+2015-08-02 13:15:46.441 Cauz Colony[2717:393950] [CDVTimer][statusbar] 17.740011ms
+2015-08-02 13:15:46.446 Cauz Colony[2717:393950] [CDVTimer][splashscreen] 4.545987ms
+2015-08-02 13:15:46.502 Cauz Colony[2717:393950] [CDVTimer][socialsharing] 56.028008ms
+2015-08-02 13:15:46.502 Cauz Colony[2717:393950] [CDVTimer][TotalPluginStartup] 79.141021ms
+2015-08-02 13:15:46.596 Cauz Colony[2717:393950] Resetting plugins due to page load.
+2015-08-02 13:15:47.109 Cauz Colony[2717:393950] Finished load of: file:///Users/jon/Library/Developer/CoreSimulator/Devices/311C3F65-7A3E-4F86-866B-F651F92B5A0A/data/Containers/Bundle/Application/D95D6A57-E156-44A0-B20D-D331919BE26F/Cauz%20Colony.app/www/index.html#/home
+2015-08-02 13:16:05.855 Cauz Colony[2717:393950] {"project":{"title":"Test","id":"55be4f165193e72a072920b5","offer":{"link":"","image":"https://res.cloudinary.com/cauz-colony/image/upload/v1433291985/bep7tyzzbyxtd8fqazge.jpg"},"charityId":"5584c7f35635323a143d7fe9","charityName":"Cauz Colony","steps":[{"_id":"55b54b8ddae04c9336db6c32","optionA":"Lots","optionB":"Some","optionC":"","optionD":"","text":"<p>How much wood could a woodchuck chuck?</p>","type":"survey.multiple-choice","videoId":"","options":["Lots","Some","",""]}],"shareMessage":{"__v":0,"_id":"55be4d2eafa6c60507775913","link":"http://www.cauzcolony.com","message":"I made the world a better place today and it only took me five minutes. You can too.","name":"Default","subject":"Join the Cauz!","image":{"public_id":"uoe4jhlum0c0hc7dcf8m","version":1438534988,"signature":"e8e0d625eb66d4f25ff0a437cc35ba7834bdfa0c","width":470,"height":250,"format":"png","resource_type":"image","url":"http://res.cloudinary.com/cauz-colony/image/upload/v1438534988/uoe4jhlum0c0hc7dcf8m.png","secure_url":"https://res.cloudinary.com/cauz-colony/image/upload/v1438534988/uoe4jhlum0c0hc7dcf8m.png"}}},"step":1}
