@@ -3,8 +3,8 @@
       current = null,
       step = 0,
       answers = [],
-      //api = 'http://api.cauzcolony.mod.bz/api/';
-      api = 'http://localhost:3000/api/';
+      api = 'http://api.cauzcolony.mod.bz/api/';
+      //api = 'http://localhost:3000/api/';
 
   return {
     getProjects: function()
